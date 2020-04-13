@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
+import { API } from './features/API'
 import screenTimeReports from './features/screenTimeReports'
 
 const {
@@ -18,6 +19,9 @@ export default function Routes() {
 	return (
 		<Container>
 			<Switch>
+				<PageRoute path='/API'>
+					<API />
+				</PageRoute>
 				<PageRoute path='/about'>
 					<About />
 				</PageRoute>
