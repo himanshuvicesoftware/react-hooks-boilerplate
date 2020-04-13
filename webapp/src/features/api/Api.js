@@ -3,7 +3,7 @@ import axios from 'axios'
 export function Api() {
 	const [data, setData] = useState([])
 	const [cpage, setCPage] = useState(1)
-	const [postpage, setPostPage] = useState()
+	const [postpage, setPostPage] = useState(6)
 	useEffect(() => {
 		axios.get('https://reqres.in/api/users').then((res) => {
 			console.log(res)
