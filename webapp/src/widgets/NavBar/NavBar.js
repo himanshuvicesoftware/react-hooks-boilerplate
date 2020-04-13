@@ -9,9 +9,14 @@ export default function NavBar() {
 			<LinkContainer to='/'>
 				<Navbar.Brand>Yowza</Navbar.Brand>
 			</LinkContainer>
-			<Nav className='mr-auto'>
+			<Nav>
 				<LinkContainer to='/about'>
 					<Nav.Link href='about'>About</Nav.Link>
+				</LinkContainer>
+			</Nav>
+			<Nav className='mr-auto'>
+				<LinkContainer to='/table'>
+					<Nav.Link href='table'>API</Nav.Link>
 				</LinkContainer>
 			</Nav>
 		</Navbar>
