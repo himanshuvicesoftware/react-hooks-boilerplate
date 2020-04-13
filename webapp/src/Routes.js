@@ -5,6 +5,7 @@ import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
 import screenTimeReports from './features/screenTimeReports'
+import ApiTesting from './features/Api'
 
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -18,6 +19,9 @@ export default function Routes() {
 	return (
 		<Container>
 			<Switch>
+				<PageRoute path='/api'>
+					<ApiTesting />
+				</PageRoute>
 				<PageRoute path='/about'>
 					<About />
 				</PageRoute>
