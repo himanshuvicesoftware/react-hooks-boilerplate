@@ -15,9 +15,10 @@ import {
 	getScreenTimeReportsConfig,
 } from '../screenTimeReports.selectors'
 import {
-	useGetScreenTimeReportById,
+	useGetScreenTimeReportByUserId,
 	useGetScreenTimeReportsConfig,
 	useCreateActivity,
+	useGetAllScreenTimeReports,
 } from '../screenTimeReports.effects'
 import { BusyIndicator } from '../../../widgets/busyIndicator'
 import modal from '../../../widgets/modal'
@@ -29,10 +30,10 @@ const {
 export default function ScreenTimeReports() {
 	const { userId } = useParams()
 
-	useGetScreenTimeReportById(userId)
+	useGetScreenTimeReportByUserId(userId)
 
 	useGetScreenTimeReportsConfig()
-
+	useGetAllScreenTimeReports()
 	const activities = useSelector(getScreenTimeReportsByUserId(userId))
 
 	const config = useSelector(getScreenTimeReportsConfig)
@@ -143,7 +144,7 @@ function AddActivityModal({ activities, userId }) {
 								placeholder='Select an activity...'
 							>
 								<>
-									<option value='' disabled selected>
+									<option value='' disabled defaultValue>
 										Select an activity...
 									</option>
 									{activities.map((activity) => (

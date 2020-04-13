@@ -4,8 +4,8 @@ export default function dispatchAsync({
 	url,
 	actionType,
 	dispatch,
-	dummyResponse,
-	dummyError,
+	stubSuccess,
+	stubError,
 } = {}) {
 	if (!url) {
 		throw new Error('url is required!')
@@ -20,23 +20,23 @@ export default function dispatchAsync({
 		)
 	}
 
-	if (dummyResponse && dummyError) {
+	if (stubSuccess && stubError) {
 		throw new Error(
-			"It's invalid to specify dummyResponse and dummyError. You must specify one or the other."
+			"It's invalid to specify stubSuccess and stubError. You must specify one or the other."
 		)
 	}
 
 	dispatch({ type: actionType.REQUESTED })
 
-	if (dummyResponse) {
+	if (stubSuccess) {
 		setTimeout(
-			() => dispatch({ type: actionType.RECEIVED, payload: dummyResponse }),
+			() => dispatch({ type: actionType.RECEIVED, payload: stubSuccess }),
 			DUMMY_ASYNC_DELAY
 		)
 		return
-	} else if (dummyError) {
+	} else if (stubError) {
 		setTimeout(
-			() => dispatch({ type: actionType.ERROR, dummyError }),
+			() => dispatch({ type: actionType.ERROR, stubError }),
 			DUMMY_ASYNC_DELAY
 		)
 	}
