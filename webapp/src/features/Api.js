@@ -7,16 +7,36 @@ const ApiTesting = () => {
 	const [options] = useState({
 		defaultSortName: '',
 		defaultSortOrder: 'desc',
+		sizePerPageList: [
+			{
+				text: '6',
+				value: 6,
+			},
+			{
+				text: '12',
+				value: 12,
+			},
+		],
+		sizePerPage: 6,
+		pageStartIndex: 1,
 	})
 
 	useEffect(() => {
-		Axios.get('https://reqres.in/api/users').then((res) => setApiData(res.data))
+		Axios.get('https://reqres.in/api/users').then((res) => {
+			let firstPageData = res.data.data
+			if (res && res.data.total_pages > 1) {
+				Axios.get('https://reqres.in/api/users?page=2').then((response) => {
+					let totalData = [...firstPageData, ...response.data.data]
+					setApiData(totalData)
+				})
+			}
+		})
 	}, [])
 
 	return (
 		<div>
 			<BootstrapTable
-				data={apiData.data}
+				data={apiData}
 				options={options}
 				pagination={true}
 				striped
