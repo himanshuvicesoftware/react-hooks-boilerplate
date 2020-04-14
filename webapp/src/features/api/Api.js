@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Pagination from './Pagination'
 export function Api() {
 	const [data, setData] = useState([])
 	const [cpage, setCPage] = useState(1)
-	const [postpage, setPostPage] = useState(6)
+	const [postpage, setPostPage] = useState(2)
+
 	useEffect(() => {
 		axios.get('https://reqres.in/api/users').then((res) => {
-			console.log(res)
+			console.log(res, 'second')
 			setData(res.data.data)
 		})
 	})
@@ -14,6 +16,7 @@ export function Api() {
 	const firstPost = lastPost - postpage
 	const currentpost = data.slice(firstPost, lastPost)
 
+	const paginate = (pageNo) => setCPage(pageNo)
 	return (
 		<div>
 			<table border='1'>
@@ -33,6 +36,11 @@ export function Api() {
 					</tr>
 				))}
 			</table>
+			<Pagination
+				postpage={postpage}
+				totalPosts={data.length}
+				paginate={paginate}
+			/>
 		</div>
 	)
 }
