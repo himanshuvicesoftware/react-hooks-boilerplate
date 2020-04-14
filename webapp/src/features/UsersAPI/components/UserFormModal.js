@@ -1,26 +1,33 @@
 import React, { useState } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap'
-import { addUser } from '../usersAPI.effects'
+import { addUser, editUserDetails } from '../usersAPI.effects'
 import { useDispatch } from 'react-redux'
 import './userAPI.css'
+import { useEffect } from 'react'
 
-export default function UserFormModal() {
-	const [show, setShow] = useState(false)
-
-	const handleClose = () => setShow(false)
-	const handleShow = () => setShow(true)
-
-	const [firstName, setFirstName] = useState('')
-	const [lastName, setLastName] = useState('')
-	const [email, setEmail] = useState('')
-
+export default function UserFormModal({
+	show,
+	handleClose,
+	firstName,
+	setFirstName,
+	lastName,
+	setLastName,
+	email,
+	setEmail,
+	userId,
+	index,
+}) {
+	debugger
 	const submitUser = () => {
-		const user = {
+		const newUser = {
 			first_name: firstName,
 			last_name: lastName,
 			email: email,
+			id: userId || 0,
 		}
-		addUser(dispatch, user)
+		userId
+			? editUserDetails(dispatch, newUser, index)
+			: addUser(dispatch, newUser)
 		setFirstName('')
 		setLastName('')
 		setEmail('')
@@ -29,10 +36,6 @@ export default function UserFormModal() {
 	const dispatch = useDispatch()
 	return (
 		<>
-			<Button variant='primary' onClick={handleShow}>
-				Add User
-			</Button>
-
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<Modal.Title>Add New User</Modal.Title>
