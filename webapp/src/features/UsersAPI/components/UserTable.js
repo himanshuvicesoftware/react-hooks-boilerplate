@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllUsers } from '../usersAPI.selectors'
 import { Table, Button } from 'react-bootstrap'
@@ -6,10 +6,9 @@ import { editUserDetails, deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
 
 function UserTable() {
-	const editUser = {}
 	const allUsers = useSelector(getAllUsers)
 	const somemethod = () => {}
-	debugger
+
 	const dispatch = useDispatch()
 	return (
 		<div>
@@ -29,14 +28,14 @@ function UserTable() {
 				</thead>
 				<tbody>
 					{allUsers.map((user, index) => (
-						<tr>
+						<tr key={index}>
 							<td>{user.id}</td>
 							<td>{user.first_name} </td>
 							<td>{user.last_name}</td>
 							<td>{user.email}</td>
 							<td>
 								<Button variant='secondary' onClick={() => somemethod()}>
-									<i class='icon-pencil'></i>Edit
+									Edit
 								</Button>
 								{}
 							</td>
@@ -45,7 +44,7 @@ function UserTable() {
 									variant='danger'
 									onClick={() => deleteUser(dispatch, index)}
 								>
-									<i class='icon-trash'></i>Delete
+									Delete
 								</Button>
 							</td>
 						</tr>

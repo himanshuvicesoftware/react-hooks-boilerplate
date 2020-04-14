@@ -3,7 +3,7 @@ import {
 	DELETE_USER,
 	ADD_USER,
 } from './usersAPI.actionsTypes'
-import { mergeCollections } from '../../infrastructure/reduxHelpers'
+// import { mergeCollections } from '../../infrastructure/reduxHelpers'
 
 const intitialState = {
 	allUsers: [],
@@ -14,7 +14,7 @@ export default function reducer(state = intitialState, action) {
 		case GET_ALL_USERS_ASYNC.RECEIVED:
 			return {
 				...state,
-				allUsers: action.payload,
+				allUsers: action.payload.data,
 			}
 		case DELETE_USER.RECEIVED:
 			return {
@@ -25,11 +25,12 @@ export default function reducer(state = intitialState, action) {
 				],
 			}
 		case ADD_USER.RECEIVED:
-			const newUser = { ...action.payload, id: state.allUsers.length + 1 }
-			debugger
 			return {
 				...state,
-				allUsers: [...state.allUsers, newUser],
+				allUsers: [
+					...state.allUsers,
+					{ ...action.payload, id: state.allUsers.length + 1 },
+				],
 			}
 		default: {
 			return state
