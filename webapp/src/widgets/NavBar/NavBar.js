@@ -19,6 +19,11 @@ export default function NavBar() {
 					<Nav.Link href='api'>Api</Nav.Link>
 				</LinkContainer>
 			</Nav>
+			<Nav className='mr-auto'>
+				<LinkContainer to='/chart'>
+					<Nav.Link href='chart'>Chart</Nav.Link>
+				</LinkContainer>
+			</Nav>
 		</Navbar>
 	)
 }
