@@ -5,6 +5,7 @@ import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
 import { TableForApi } from './features/implementApi/TableForApi'
+import { ModalForDocument } from './features/uploadDocument/ModalForDocument'
 import screenTimeReports from './features/screenTimeReports'
 
 const {
@@ -19,6 +20,9 @@ export default function Routes() {
 	return (
 		<Container>
 			<Switch>
+				<PageRoute path='/document'>
+					<ModalForDocument />
+				</PageRoute>
 				<PageRoute path='/table'>
 					<TableForApi />
 				</PageRoute>

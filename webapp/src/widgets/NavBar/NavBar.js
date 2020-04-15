@@ -14,9 +14,14 @@ export default function NavBar() {
 					<Nav.Link href='about'>About</Nav.Link>
 				</LinkContainer>
 			</Nav>
-			<Nav className='mr-auto'>
+			<Nav>
 				<LinkContainer to='/table'>
 					<Nav.Link href='table'>API</Nav.Link>
+				</LinkContainer>
+			</Nav>
+			<Nav className='mr-auto'>
+				<LinkContainer to='/document'>
+					<Nav.Link href='document'>Document</Nav.Link>
 				</LinkContainer>
 			</Nav>
 		</Navbar>
