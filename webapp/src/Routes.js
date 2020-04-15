@@ -3,9 +3,9 @@ import { Switch, Route } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import users from './features/users'
 import Page from './widgets/Page/Page'
-import { About } from './features/About'
+import Test from './features/About'
 import screenTimeReports from './features/screenTimeReports'
-import ApiTesting from './features/Api'
+import ApiTest from './features/apiTest/components/ApiTest'
 
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -20,10 +20,10 @@ export default function Routes() {
 		<Container>
 			<Switch>
 				<PageRoute path='/api'>
-					<ApiTesting />
+					<ApiTest />
 				</PageRoute>
 				<PageRoute path='/about'>
-					<About />
+					<Test />
 				</PageRoute>
 				<PageRoute path='/users/:id'>
 					<UserDetailsPage />

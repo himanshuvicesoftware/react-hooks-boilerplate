@@ -1,5 +1,5 @@
 import localStorage from 'localStorage'
-import { API_URL } from './http.constants'
+// import { API_URL } from './http.constants'
 // import { getJwtToken } from "../../modules/userContext/userContext.selectors";
 // import { getState } from "../store";
 // import * as actionTypes from "../userContext/userContext.actionTypes";
@@ -83,7 +83,7 @@ function doFetch(url, config, { stubSuccess, stubError } = {}) {
 			)
 		}
 	}
-	return fetch(buildUrl(url), addJwtToken(config)).then((response) => {
+	return fetch(url, addJwtToken(config)).then((response) => {
 		if (response.headers) {
 			const authHeader = response.headers.get('Authorization')
 
@@ -92,7 +92,10 @@ function doFetch(url, config, { stubSuccess, stubError } = {}) {
 		}
 
 		if (response.ok) {
-			if (response.headers.map['content-type'].includes('stream')) {
+			if (
+				response.headers.length &&
+				response.headers.map['content-type'].includes('stream')
+			) {
 				return response
 			}
 			return response.json()
@@ -109,9 +112,9 @@ function doFetch(url, config, { stubSuccess, stubError } = {}) {
 	})
 }
 
-function buildUrl(url) {
-	return `${API_URL}/${url}`
-}
+// function buildUrl(url) {
+// 	return `${API_URL}/${url}`
+// }
 
 function addJwtToken(config) {
 	// TODO: Implement me
