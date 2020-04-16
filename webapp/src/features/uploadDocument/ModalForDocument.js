@@ -1,33 +1,57 @@
 import React, { useState } from 'react'
-import { Modal, Button, Card } from 'react-bootstrap'
+import {
+	Modal,
+	Button,
+	Card,
+	ProgressBar,
+	Container,
+	Row,
+	Col,
+} from 'react-bootstrap'
 import Dropzone from 'react-dropzone'
 import axios from 'axios'
-import { fakedata } from './try.js'
+// import { fakedata } from './try.js'
 
 export function ModalForDocument() {
 	const [open, setOpen] = useState(false)
-	// var fakedata = {
-	// 	name: 'morpheus',
-	// 	job: 'leader',
-	// 	dat2: 'aasdasd',
-	// 	dasd: 'asdasdas',
-	// 	asdasd: 'asdjgashdahg',
-	// 	hasgdajhsgd: 'asjgdkajshd',
-	// 	ajshfkashfkj: 'asfhkasfhkfahb',
-	// }
-
-	const config = {
-		onUploadProgress: (progressEvent) =>
-			console.log('>>>', progressEvent.loaded),
+	const [progressVal, setProgress] = useState(0)
+	const [uploadedFiles, setUploadedFiles] = useState([])
+	var fakedata = {
+		name: 'morpheus',
+		job: 'leader',
+		dat2: 'aasdasd',
+		dasd: 'asdasdas',
+		asdasd: 'asdjgashdahg',
+		hasgdajhsgd: 'asjgdkajshd',
+		ajshfkashfkj: 'asfhkasfhkfahb',
 	}
+
+	const deleteImage = (index) => {
+		// setUploadedFiles((prevUploadedFiles) => {
+		// 	prevUploadedFiles.splice(index, 1)
+		// 	return prevUploadedFiles
+		// })
+		// var index = uploadedFiles.indexOf(filename)
+		const x = uploadedFiles
+		x.splice(index, 1)
+		// console.log(x, 'x')
+		setUploadedFiles(x)
+		console.log(uploadedFiles, 'uplo')
+	}
+
 	// const config = {
-	// 	onUploadProgress: (progressEvent) => {
-	// 		const percentCompleted = Math.round(
-	// 			(progressEvent.loaded * 100) / progressEvent.total
-	// 		)
-	// 		console.log('>>>', percentCompleted, '%')
-	// 	},
+	// 	onUploadProgress: (progressEvent) =>
+	// 		console.log('>>>', progressEvent.loaded),
 	// }
+	const config = {
+		onUploadProgress: (progressEvent) => {
+			const percentCompleted = Math.round(
+				(progressEvent.loaded * 100) / progressEvent.total
+			)
+			setProgress(percentCompleted)
+			console.log('>>>', percentCompleted, '%')
+		},
+	}
 
 	const submitButtonHandler = () => {
 		axios
@@ -39,7 +63,14 @@ export function ModalForDocument() {
 
 	return (
 		<>
-			<Button variant='primary' onClick={() => setOpen(true)}>
+			<Button
+				variant='primary'
+				onClick={() => {
+					setProgress(0)
+					setOpen(true)
+					setUploadedFiles([])
+				}}
+			>
 				Create document
 			</Button>
 
@@ -55,7 +86,12 @@ export function ModalForDocument() {
 				</Modal.Header>
 
 				<Modal.Body>
-					<Dropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
+					<Dropzone
+						onDrop={(acceptedFiles) => {
+							console.log(acceptedFiles)
+							setUploadedFiles(acceptedFiles)
+						}}
+					>
 						{({ getRootProps, getInputProps }) => (
 							<section>
 								<Card body {...getRootProps()}>
@@ -65,6 +101,26 @@ export function ModalForDocument() {
 							</section>
 						)}
 					</Dropzone>
+
+					{uploadedFiles.map((file, i) => (
+						<>
+							<br />
+							<Card key={i}>
+								<Card.Body>
+									<Container fluid>
+										<Row>
+											<Col>
+												<p>{file.name}</p>
+											</Col>
+											<Button onClick={() => deleteImage(i)} variant='danger'>
+												Delete
+											</Button>{' '}
+										</Row>
+									</Container>
+								</Card.Body>
+							</Card>
+						</>
+					))}
 				</Modal.Body>
 
 				<Modal.Footer>
@@ -72,6 +128,7 @@ export function ModalForDocument() {
 						Begin Uploading
 					</Button>
 				</Modal.Footer>
+				<ProgressBar animated now={progressVal} variant='success' />
 			</Modal>
 		</>
 	)
