@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Container, Table, Pagination } from 'react-bootstrap'
+import { Container, Table, Pagination, Form, Row, Col } from 'react-bootstrap'
 
 export function API() {
 	const [users, setUsers] = useState([])
@@ -8,22 +8,24 @@ export function API() {
 	const [usersPerPage, setUsersPerPage] = useState(3)
 	const [total, setTotal] = useState(6)
 
+	useEffect(() => {
+		fetchUser(1)
+	}, [])
+
 	const fetchUser = async (currentPage) => {
 		const res = await axios.get(
 			`https://reqres.in/api/users?page=${currentPage}`
 		)
-		console.log(res.data)
 		setUsers(res.data.data)
 		setCurrentPage(res.data.page)
 		setUsersPerPage(res.data.per_page)
 		setTotal(res.data.total)
 	}
-	useEffect(() => {
-		fetchUser(1)
-	}, [])
 
 	const active = 1
+
 	const pageNumbers = []
+
 	for (let i = 1; i <= Math.ceil(total / usersPerPage); i++) {
 		pageNumbers.push(
 			<Pagination.Item
@@ -36,17 +38,155 @@ export function API() {
 		)
 	}
 
+	const [sortDirection, setSortDirection] = useState('default')
+
+	const sorting = (colName, sortDirection) => {
+		if (sortDirection === 'default') {
+			switch (colName) {
+				default:
+					users.sort((a, b) => {
+						if (a.id > b.id) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+			}
+			return setSortDirection('asc')
+		} else if (sortDirection === 'asc') {
+			switch (colName) {
+				case 'id':
+					users.sort((a, b) => {
+						if (a.id > b.id) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'first_name':
+					users.sort((a, b) => {
+						if (a.first_name > b.first_name) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'last_name':
+					users.sort((a, b) => {
+						if (a.last_name > b.last_name) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'email':
+					users.sort((a, b) => {
+						if (a.email > b.email) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+			}
+			return setSortDirection('desc')
+		} else {
+			switch (colName) {
+				case 'id':
+					users.sort((a, b) => {
+						if (a.id < b.id) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'first_name':
+					users.sort((a, b) => {
+						if (a.first_name < b.first_name) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'last_name':
+					users.sort((a, b) => {
+						if (a.last_name < b.last_name) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+				case 'email':
+					users.sort((a, b) => {
+						if (a.email < b.email) {
+							return 1
+						} else {
+							return -1
+						}
+					})
+					break
+			}
+			return setSortDirection('default')
+		}
+	}
+
+	const [searchTerm, setSearchTerm] = useState('')
+
+	const searchHandle = (event) => {
+		setSearchTerm(event.target.value)
+	}
+
+	// function searchingfor(searchTerm) {
+	// 	return function (x) {
+	// 		return x.first.toLowerCase().include(searchTerm.toLowerCase())
+	// 	}
+	// }
+
 	return (
 		<Container>
+			<Row className='mb-2'>
+				<Col>
+					<Form>
+						<Form.Control
+							type='text'
+							onChange={searchHandle}
+							value={searchTerm}
+						/>
+					</Form>
+				</Col>
+				<Col>
+					<strong>You are searching for:</strong> {searchTerm}
+				</Col>
+			</Row>
 			<Table striped bordered hover>
 				<thead>
-					<th>Id</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
+					<th>
+						<div onClick={() => sorting('id', sortDirection)}>Id</div>
+					</th>
+					<th>
+						<div onClick={() => sorting('first_name', sortDirection)}>
+							First Name
+						</div>
+					</th>
+					<th>
+						<div onClick={() => sorting('last_name', sortDirection)}>
+							Last Name
+						</div>
+					</th>
+					<th>
+						<div onClick={() => sorting('email', sortDirection)}>Email</div>
+					</th>
 					<th>Avatar</th>
 				</thead>
 				<tbody>
+					{/* {users.filter(searchingfor(searchTerm)).map((user) => ( */}
 					{users.map((user) => (
 						<tr key={user.id}>
 							<td>{user.id}</td>
