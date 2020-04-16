@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as ReactBootStrap from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
 export function About() {
 	const [items, setItem] = useState([])
 	const [show, setShow] = useState(false)
@@ -43,8 +42,8 @@ export function About() {
 					</tr>
 				</thead>
 				<tbody>
-					{items.map((item) => (
-						<tr>
+					{items.map((item, index) => (
+						<tr key={index}>
 							<td>{item.id}</td>
 							<td>{item.email}</td>
 							<td>{item.first_name}</td>

@@ -7,17 +7,19 @@ import { useAuth0 } from './react-auth0-spa'
 import history from './utils/history'
 
 const App = () => {
-	const { loading } = useAuth0()
-
+	const { loading, user, loginWithRedirect } = useAuth0()
 	if (loading) {
 		return <Loading />
 	}
 
 	return (
-		<Router history={history}>
-			<NavBar />
-			<Routes />
-		</Router>
+		<div className='App'>
+			<Router history={history}>
+				<NavBar />
+				{!user && loginWithRedirect({})}
+				{user && <Routes />}
+			</Router>
+		</div>
 	)
 }
 
