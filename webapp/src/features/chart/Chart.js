@@ -1,6 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-
+var d = new Date()
 const state = {
 	labels: [
 		'11/19',
@@ -13,20 +13,16 @@ const state = {
 		'06/20',
 		'07/20',
 		'08/20',
-		'09/20',
+		d,
 		'10/20',
 		'11/20',
 	],
 	datasets: [
 		{
-			// label: '',
-			// borderJoinStyle: false,
 			fill: false,
 			lineTension: 0.5,
-			// backgroundColor: 'rgba(75,192,192,1)',
 			borderColor: 'rgba(0,0,0,1)',
-			// borderWidth: 2,
-			// lineJoin: 'round',
+			pointRadius: 0,
 			data: [
 				88,
 				150,
@@ -55,14 +51,28 @@ export function Chart() {
 			<Line
 				data={state}
 				options={{
+					responsive: true,
+					tooltips: {
+						//  intersect: state.labels[10] === d,
+						intersect: state.labels[10] === d,
+
+						callbacks: {
+							title: () => {
+								// if (state.labels[10] === d) {
+								return 'Active Employees 120 '
+								// }
+							},
+						},
+					},
+
 					title: {
 						display: true,
-						// text: 'Average Rainfall per month',
+
 						fontSize: 20,
 					},
 					legend: {
 						display: true,
-						position: 'right',
+						position: 'top',
 					},
 				}}
 			/>

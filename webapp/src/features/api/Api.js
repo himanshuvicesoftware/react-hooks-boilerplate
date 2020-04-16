@@ -4,7 +4,7 @@ import Pagination from './Pagination'
 export function Api() {
 	const [data, setData] = useState([])
 	const [cpage, setCPage] = useState(1)
-	const [postpage, setPostPage] = useState(2)
+	const [postpage] = useState(2)
 
 	useEffect(() => {
 		axios.get('https://reqres.in/api/users').then((res) => {
