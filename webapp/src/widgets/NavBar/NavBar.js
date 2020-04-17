@@ -13,6 +13,9 @@ export default function NavBar() {
 				<LinkContainer to='/about'>
 					<Nav.Link href='about'>About</Nav.Link>
 				</LinkContainer>
+				<LinkContainer to='/api'>
+					<Nav.Link href='api'>API</Nav.Link>
+				</LinkContainer>
 			</Nav>
 		</Navbar>
 	)
