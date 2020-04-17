@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllUsers } from '../usersAPI.selectors'
 import { Table, Button } from 'react-bootstrap'
-import { editUserDetails, deleteUser } from '../usersAPI.effects'
+import { deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,7 +39,6 @@ function UserTable() {
 		setIndex(index)
 		handleShow()
 	}
-	debugger
 	const dispatch = useDispatch()
 	return (
 		<div>

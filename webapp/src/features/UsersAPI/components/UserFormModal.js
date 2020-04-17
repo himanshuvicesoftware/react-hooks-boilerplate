@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Modal, Form } from 'react-bootstrap'
 import { addUser, editUserDetails } from '../usersAPI.effects'
 import { useDispatch } from 'react-redux'
 import './userAPI.css'
-import { useEffect } from 'react'
 
 export default function UserFormModal({
 	show,
@@ -17,7 +16,6 @@ export default function UserFormModal({
 	userId,
 	index,
 }) {
-	debugger
 	const submitUser = () => {
 		if (firstName === '') {
 			alert('Please provide your first name!')
