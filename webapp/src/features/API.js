@@ -143,28 +143,17 @@ export function API() {
 		setSearchTerm(event.target.value)
 	}
 
-	// function searchingfor(searchTerm) {
-	// 	return function (x) {
-	// 		return x.first.toLowerCase().include(searchTerm.toLowerCase())
-	// 	}
-	// }
+	const filteredUsers = users.filter((user) => {
+		return (
+			user.first_name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+		)
+	})
 
 	return (
 		<Container>
-			<Row className='mb-2'>
-				<Col>
-					<Form>
-						<Form.Control
-							type='text'
-							onChange={searchHandle}
-							value={searchTerm}
-						/>
-					</Form>
-				</Col>
-				<Col>
-					<strong>You are searching for:</strong> {searchTerm}
-				</Col>
-			</Row>
+			<Form>
+				<Form.Control type='text' onChange={searchHandle} value={searchTerm} />
+			</Form>
 			<Table striped bordered hover>
 				<thead>
 					<th>
@@ -186,8 +175,7 @@ export function API() {
 					<th>Avatar</th>
 				</thead>
 				<tbody>
-					{/* {users.filter(searchingfor(searchTerm)).map((user) => ( */}
-					{users.map((user) => (
+					{filteredUsers.map((user) => (
 						<tr key={user.id}>
 							<td>{user.id}</td>
 							<td>{user.first_name}</td>
