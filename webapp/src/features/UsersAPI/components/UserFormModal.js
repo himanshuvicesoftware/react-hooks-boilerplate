@@ -19,13 +19,32 @@ export default function UserFormModal({
 }) {
 	debugger
 	const submitUser = () => {
+		if (firstName === '') {
+			alert('Please provide your first name!')
+			return false
+		} else if (lastName === '') {
+			alert('Please provide your last name!')
+			return false
+		} else if (email === '') {
+			alert('Please provide your email!')
+			return false
+		} else if (email) {
+			var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+			const emailCheck = emailPattern.test(email)
+			if (emailCheck === true) {
+				alert('Data Submitted Successfully!')
+			} else {
+				alert('Please provide valid email!')
+				return false
+			}
+		}
 		const newUser = {
 			first_name: firstName,
 			last_name: lastName,
 			email: email,
 			id: userId || 0,
 		}
-		userId
+		userId !== 0
 			? editUserDetails(dispatch, newUser, index)
 			: addUser(dispatch, newUser)
 		setFirstName('')

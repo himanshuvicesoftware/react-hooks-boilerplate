@@ -5,6 +5,12 @@ import { Table, Button } from 'react-bootstrap'
 import { editUserDetails, deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+	faUserPlus,
+	faUserEdit,
+	faTrash,
+} from '@fortawesome/free-solid-svg-icons'
 
 function UserTable() {
 	const [show, setShow] = useState(false)
@@ -13,7 +19,14 @@ function UserTable() {
 	const [email, setEmail] = useState('')
 	const [userId, setUserID] = useState(0)
 	const [index, setIndex] = useState(0)
-	const handleClose = () => setShow(false)
+	const handleClose = () => {
+		setShow(false)
+		setFirstName('')
+		setLastName('')
+		setEmail('')
+		setUserID(0)
+		setIndex(0)
+	}
 	const handleShow = () => setShow(true)
 
 	const allUsers = useSelector(getAllUsers)
@@ -44,7 +57,7 @@ function UserTable() {
 					index={index}
 				/>
 				<Button variant='primary' onClick={handleShow}>
-					Add User
+					<FontAwesomeIcon icon={faUserPlus} />
 				</Button>
 			</div>
 			<Table striped bordered hover>
@@ -70,7 +83,7 @@ function UserTable() {
 									variant='secondary'
 									onClick={() => editUser(user, index)}
 								>
-									Edit
+									<FontAwesomeIcon icon={faUserEdit} />
 								</Button>
 								{}
 							</td>
@@ -79,7 +92,7 @@ function UserTable() {
 									variant='danger'
 									onClick={() => deleteUser(dispatch, index)}
 								>
-									Delete
+									<FontAwesomeIcon icon={faTrash} />
 								</Button>
 							</td>
 						</tr>
