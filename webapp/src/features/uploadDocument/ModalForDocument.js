@@ -16,33 +16,22 @@ export function ModalForDocument() {
 	const [open, setOpen] = useState(false)
 	const [progressVal, setProgress] = useState(0)
 	const [uploadedFiles, setUploadedFiles] = useState([])
-	var fakedata = {
-		name: 'morpheus',
-		job: 'leader',
-		dat2: 'aasdasd',
-		dasd: 'asdasdas',
-		asdasd: 'asdjgashdahg',
-		hasgdajhsgd: 'asjgdkajshd',
-		ajshfkashfkj: 'asfhkasfhkfahb',
-	}
-
-	const deleteImage = (index) => {
-		// setUploadedFiles((prevUploadedFiles) => {
-		// 	prevUploadedFiles.splice(index, 1)
-		// 	return prevUploadedFiles
-		// })
-		// var index = uploadedFiles.indexOf(filename)
-		const x = uploadedFiles
-		x.splice(index, 1)
-		// console.log(x, 'x')
-		setUploadedFiles(x)
-		console.log(uploadedFiles, 'uplo')
-	}
-
-	// const config = {
-	// 	onUploadProgress: (progressEvent) =>
-	// 		console.log('>>>', progressEvent.loaded),
+	// var fakedata = {
+	// 	name: 'morpheus',
+	// 	job: 'leader',
+	// 	dat2: 'aasdasd',
+	// 	dasd: 'asdasdas',
+	// 	asdasd: 'asdjgashdahg',
+	// 	hasgdajhsgd: 'asjgdkajshd',
+	// 	ajshfkashfkj: 'asfhkasfhkfahb',
 	// }
+
+	const deleteImage = async (index) => {
+		var x = [...uploadedFiles]
+		x.splice(index, 1)
+		setUploadedFiles(x)
+	}
+
 	const config = {
 		onUploadProgress: (progressEvent) => {
 			const percentCompleted = Math.round(
@@ -55,7 +44,7 @@ export function ModalForDocument() {
 
 	const submitButtonHandler = () => {
 		axios
-			.post('https://reqres.in/api/user', fakedata, config)
+			.post('https://reqres.in/api/user', uploadedFiles, config)
 			.then((response) => {
 				console.log(response, 'axios post response')
 			})
