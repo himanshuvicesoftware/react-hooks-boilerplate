@@ -1,6 +1,10 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 var d = new Date()
+var date = d.getDate()
+var mon = d.getMonth()
+var year = d.getFullYear()
+var fdate = date + '/' + mon + '/' + year
 const state = {
 	labels: [
 		'11/19',
@@ -13,7 +17,7 @@ const state = {
 		'06/20',
 		'07/20',
 		'08/20',
-		d,
+		fdate,
 		'10/20',
 		'11/20',
 	],
@@ -22,6 +26,8 @@ const state = {
 			fill: false,
 			lineTension: 0.5,
 			borderColor: 'rgba(0,0,0,1)',
+			pointHoverBackgroundColor: 'rgba(255,255,255)',
+
 			pointRadius: 0,
 			data: [
 				88,
@@ -47,22 +53,23 @@ const state = {
 export function Chart() {
 	return (
 		<div>
-			<h6>Engagment</h6>
 			<Line
 				data={state}
 				options={{
 					responsive: true,
-					tooltips: {
-						//  intersect: state.labels[10] === d,
-						intersect: state.labels[10] === d,
 
+					tooltips: {
 						callbacks: {
-							title: () => {
-								// if (state.labels[10] === d) {
-								return 'Active Employees 120 '
-								// }
+							textColor: () => {},
+							label: () => {
+								return [
+									'Active Employess        120 ',
+									'Documents created       99',
+									'Documents Flagged       1',
+								]
 							},
 						},
+						backgroundColor: '#808080',
 					},
 
 					title: {
