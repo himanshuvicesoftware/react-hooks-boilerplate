@@ -10,7 +10,6 @@ import {
 } from 'react-bootstrap'
 import Dropzone from 'react-dropzone'
 import axios from 'axios'
-import DatePickerComponent from './DatePickerComponent'
 // import { fakedata } from './try.js'
 
 export function ModalForDocument() {
@@ -136,7 +135,6 @@ export function ModalForDocument() {
 				</Modal.Footer>
 				<ProgressBar animated now={progressVal} variant='success' />
 			</Modal>
-			<DatePickerComponent />
 		</>
 	)
 }
