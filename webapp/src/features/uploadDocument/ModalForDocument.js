@@ -10,12 +10,15 @@ import {
 } from 'react-bootstrap'
 import Dropzone from 'react-dropzone'
 import axios from 'axios'
+import DatePickerComponent from './DatePickerComponent'
 // import { fakedata } from './try.js'
 
 export function ModalForDocument() {
 	const [open, setOpen] = useState(false)
 	const [progressVal, setProgress] = useState(0)
 	const [uploadedFiles, setUploadedFiles] = useState([])
+	const [uploadButton, changeUploadButton] = useState('Begin Uploading')
+	const [ifNothingToUpload, showErrorIfNothingToUpload] = useState(false)
 	// var fakedata = {
 	// 	name: 'morpheus',
 	// 	job: 'leader',
@@ -26,7 +29,7 @@ export function ModalForDocument() {
 	// 	ajshfkashfkj: 'asfhkasfhkfahb',
 	// }
 
-	const deleteImage = async (index) => {
+	const deleteImage = (index) => {
 		var x = [...uploadedFiles]
 		x.splice(index, 1)
 		setUploadedFiles(x)
@@ -38,16 +41,20 @@ export function ModalForDocument() {
 				(progressEvent.loaded * 100) / progressEvent.total
 			)
 			setProgress(percentCompleted)
-			console.log('>>>', percentCompleted, '%')
 		},
 	}
 
 	const submitButtonHandler = () => {
-		axios
-			.post('https://reqres.in/api/user', uploadedFiles, config)
-			.then((response) => {
-				console.log(response, 'axios post response')
-			})
+		if (uploadedFiles.length !== 0) {
+			changeUploadButton('Uploading')
+			axios
+				.post('https://reqres.in/api/user', uploadedFiles, config)
+				.then((response) => {
+					console.log(response, 'axios post response')
+				})
+		} else {
+			showErrorIfNothingToUpload(true)
+		}
 	}
 
 	return (
@@ -58,6 +65,7 @@ export function ModalForDocument() {
 					setProgress(0)
 					setOpen(true)
 					setUploadedFiles([])
+					changeUploadButton('Begin Uploading')
 				}}
 			>
 				Create document
@@ -77,8 +85,9 @@ export function ModalForDocument() {
 				<Modal.Body>
 					<Dropzone
 						onDrop={(acceptedFiles) => {
-							console.log(acceptedFiles)
-							setUploadedFiles(acceptedFiles)
+							setUploadedFiles((prevUploadedFiles) => {
+								return [...prevUploadedFiles, ...acceptedFiles]
+							})
 						}}
 					>
 						{({ getRootProps, getInputProps }) => (
@@ -113,12 +122,21 @@ export function ModalForDocument() {
 				</Modal.Body>
 
 				<Modal.Footer>
+					{uploadButton === 'Begin Uploading' &&
+					uploadedFiles.length === 0 &&
+					ifNothingToUpload === true ? (
+						<Card.Text>
+							<h3>Nothing to upload!!</h3>
+						</Card.Text>
+					) : null}
+
 					<Button variant='primary' onClick={submitButtonHandler}>
-						Begin Uploading
+						{uploadButton}
 					</Button>
 				</Modal.Footer>
 				<ProgressBar animated now={progressVal} variant='success' />
 			</Modal>
+			<DatePickerComponent />
 		</>
 	)
 }
