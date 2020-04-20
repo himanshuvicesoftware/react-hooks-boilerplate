@@ -4,7 +4,10 @@ import Container from 'react-bootstrap/Container'
 import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
+import { TableForApi } from './features/implementApi/TableForApi'
+import { ModalForDocument } from './features/uploadDocument/ModalForDocument'
 import screenTimeReports from './features/screenTimeReports'
+import DatePickerComponent from './features/uploadDocument/DatePickerComponent'
 
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -18,6 +21,15 @@ export default function Routes() {
 	return (
 		<Container>
 			<Switch>
+				<PageRoute path='/document'>
+					<ModalForDocument />
+				</PageRoute>
+				<PageRoute path='/date'>
+					<DatePickerComponent />
+				</PageRoute>
+				<PageRoute path='/table'>
+					<TableForApi />
+				</PageRoute>
 				<PageRoute path='/about'>
 					<About />
 				</PageRoute>
