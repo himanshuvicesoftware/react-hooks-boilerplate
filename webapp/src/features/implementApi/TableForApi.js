@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 // import $ from 'jquery'
-import { Table } from 'react-bootstrap'
+import { Table, Tab, Tabs } from 'react-bootstrap'
 
 export function TableForApi() {
 	const [apidata, setApiData] = useState([])
@@ -83,35 +83,42 @@ export function TableForApi() {
 				className='form-control'
 				placeholder='Search!!'
 			></input> */}
-			{
-				<input
-					type='text'
-					id='myInput'
-					placeholder='Search for names..'
-					title='Type in a name'
-				></input>
-			}
 
-			<Table striped bordered hover className='table'>
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-					{apidata.map((response) => (
-						<tr key={response.id}>
-							<td>{response.id}</td>
-							<td>{response.first_name}</td>
-							<td>{response.last_name}</td>
-							<td>{response.email}</td>
-						</tr>
-					))}
-				</tbody>
-			</Table>
+			<Tabs defaultActiveKey='home' id='noanim-tab-example'>
+				<Tab eventKey='table' title='Table'>
+					{
+						<input
+							type='text'
+							id='myInput'
+							placeholder='Search for names..'
+							title='Type in a name'
+						></input>
+					}
+					<Table striped bordered hover className='table'>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							{apidata.map((response) => (
+								<tr key={response.id}>
+									<td>{response.id}</td>
+									<td>{response.first_name}</td>
+									<td>{response.last_name}</td>
+									<td>{response.email}</td>
+								</tr>
+							))}
+						</tbody>
+					</Table>
+				</Tab>
+				<Tab eventKey='aything' title='Anything'>
+					No data for this tab
+				</Tab>
+			</Tabs>
 		</>
 	)
 }
