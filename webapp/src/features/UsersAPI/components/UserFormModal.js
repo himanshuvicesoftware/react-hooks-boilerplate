@@ -8,16 +8,16 @@ export default function UserFormModal({
 	show,
 	handleClose,
 	firstName,
-	setFirstName,
+	// setFirstName,
 	lastName,
-	setLastName,
+	// setLastName,
 	email,
-	setEmail,
+	// setEmail,
 	userId,
 	index,
 }) {
-	const submitUser = () => {
-		if (firstName === '') {
+	const validationOfForm = () => {
+		if (firstName === '' || firstName === undefined) {
 			alert('Please provide your first name!')
 			return false
 		} else if (lastName === '') {
@@ -36,6 +36,12 @@ export default function UserFormModal({
 				return false
 			}
 		}
+	}
+	const submitUser = () => {
+		const isFormValid = validationOfForm()
+		if (isFormValid === false) {
+			return false
+		}
 		const newUser = {
 			first_name: firstName,
 			last_name: lastName,
@@ -45,12 +51,26 @@ export default function UserFormModal({
 		userId !== 0
 			? editUserDetails(dispatch, newUser, index)
 			: addUser(dispatch, newUser)
-		setFirstName('')
-		setLastName('')
-		setEmail('')
+		firstName = ''
+		lastName = ''
+		email = ''
 		handleClose()
 	}
+
 	const dispatch = useDispatch()
+
+	const handleChangeName = (event) => {
+		firstName = event.target.value
+	}
+
+	const handleChangeLastName = (event) => {
+		lastName = event.target.value
+	}
+
+	const handleChangeEmail = (event) => {
+		email = event.target.value
+	}
+
 	return (
 		<>
 			<Modal show={show} onHide={handleClose}>
@@ -65,25 +85,25 @@ export default function UserFormModal({
 								type='text'
 								placeholder='Enter Your First Name'
 								value={firstName}
-								onChange={(e) => setFirstName(e.target.value)}
+								onChange={handleChangeName}
 							/>
 						</Form.Group>
 						<Form.Group controlId='userForm.lastName'>
 							<Form.Label>Last Name</Form.Label>
 							<input
 								type='text'
-								placeholder='Enter Your Last Name'
+								placeholder='Enter Your First Name'
 								value={lastName}
-								onChange={(e) => setLastName(e.target.value)}
+								onChange={handleChangeLastName}
 							/>
 						</Form.Group>
 						<Form.Group controlId='userForm.email'>
 							<Form.Label>Email address</Form.Label>
 							<input
-								type='email'
-								placeholder='name@example.com'
+								type='text'
+								placeholder='Enter Your First Name'
 								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								onChange={handleChangeEmail}
 							/>
 						</Form.Group>
 					</Form>

@@ -4,7 +4,6 @@ import { getAllUsers } from '../usersAPI.selectors'
 import { Table, Button } from 'react-bootstrap'
 import { deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faUserPlus,
@@ -12,18 +11,21 @@ import {
 	faTrash,
 } from '@fortawesome/free-solid-svg-icons'
 
+const users = {
+	firstname: '',
+	lastName: '',
+	email: '',
+}
+
 function UserTable() {
 	const [show, setShow] = useState(false)
-	const [firstName, setFirstName] = useState('')
-	const [lastName, setLastName] = useState('')
-	const [email, setEmail] = useState('')
 	const [userId, setUserID] = useState(0)
 	const [index, setIndex] = useState(0)
 	const handleClose = () => {
 		setShow(false)
-		setFirstName('')
-		setLastName('')
-		setEmail('')
+		users.firstName = ''
+		users.lastName = ''
+		users.email = ''
 		setUserID(0)
 		setIndex(0)
 	}
@@ -32,9 +34,9 @@ function UserTable() {
 	const allUsers = useSelector(getAllUsers)
 
 	const editUser = (user, index) => {
-		setFirstName(user.first_name)
-		setLastName(user.last_name)
-		setEmail(user.email)
+		users.firstName = user.first_name
+		users.lastName = user.last_name
+		users.email = user.email
 		setUserID(user.id)
 		setIndex(index)
 		handleShow()
@@ -46,12 +48,12 @@ function UserTable() {
 				<UserFormModal
 					show={show}
 					handleClose={handleClose}
-					firstName={firstName}
-					lastName={lastName}
-					email={email}
-					setEmail={setEmail}
-					setFirstName={setFirstName}
-					setLastName={setLastName}
+					firstName={users.firstName}
+					lastName={users.lastName}
+					email={users.email}
+					// setEmail={setEmail}
+					// setFirstName={setFirstName}
+					// setLastName={setLastName}
 					userId={userId}
 					index={index}
 				/>
