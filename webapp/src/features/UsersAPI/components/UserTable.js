@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllUsers } from '../usersAPI.selectors'
-import { Table, Button } from 'react-bootstrap'
+import { Container, Row, Col, Table, Button } from 'react-bootstrap'
 import { deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,22 +11,18 @@ import {
 	faTrash,
 } from '@fortawesome/free-solid-svg-icons'
 
-const users = {
-	firstname: '',
-	lastName: '',
-	email: '',
-}
-
 function UserTable() {
+	const [users, setUsers] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		userId: '',
+	})
 	const [show, setShow] = useState(false)
-	const [userId, setUserID] = useState(0)
 	const [index, setIndex] = useState(0)
 	const handleClose = () => {
 		setShow(false)
-		users.firstName = ''
-		users.lastName = ''
-		users.email = ''
-		setUserID(0)
+		setUsers({ firstName: '', lastName: '', email: '', userId: '' })
 		setIndex(0)
 	}
 	const handleShow = () => setShow(true)
@@ -34,33 +30,55 @@ function UserTable() {
 	const allUsers = useSelector(getAllUsers)
 
 	const editUser = (user, index) => {
-		users.firstName = user.first_name
-		users.lastName = user.last_name
-		users.email = user.email
-		setUserID(user.id)
+		setUsers({
+			firstName: user.first_name,
+			lastName: user.last_name,
+			email: user.email,
+			userId: user.id,
+		})
 		setIndex(index)
 		handleShow()
 	}
+
 	const dispatch = useDispatch()
+
+	const showDetail = (user, index) => {
+		setUsers({
+			firstName: user.first_name,
+			lastName: user.last_name,
+			email: user.email,
+			userId: user.id,
+		})
+		setIndex(index)
+		alert(user.id)
+		// data to send in router and show on url
+	}
+
 	return (
-		<div>
-			<div>
-				<UserFormModal
-					show={show}
-					handleClose={handleClose}
-					firstName={users.firstName}
-					lastName={users.lastName}
-					email={users.email}
-					// setEmail={setEmail}
-					// setFirstName={setFirstName}
-					// setLastName={setLastName}
-					userId={userId}
-					index={index}
-				/>
-				<Button variant='primary' onClick={handleShow}>
-					<FontAwesomeIcon icon={faUserPlus} />
-				</Button>
-			</div>
+		<Container>
+			<Container>
+				<Row>
+					<Col>
+						<UserFormModal
+							show={show}
+							handleClose={handleClose}
+							users={users}
+							setUsers={setUsers}
+							firstName={users.firstName}
+							lastName={users.lastName}
+							email={users.email}
+							userId={users.userId}
+							index={index}
+						/>
+						<Button variant='primary' onClick={handleShow}>
+							<FontAwesomeIcon icon={faUserPlus} />
+						</Button>
+					</Col>
+					<Col>
+						<h4>Total Users: {allUsers.length}</h4>
+					</Col>
+				</Row>
+			</Container>
 			<Table striped bordered hover>
 				<thead>
 					<tr>
@@ -68,6 +86,7 @@ function UserTable() {
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>Email</th>
+						<th>Avatar</th>
 						<th>Edit User Details</th>
 						<th>Delete User</th>
 					</tr>
@@ -75,10 +94,15 @@ function UserTable() {
 				<tbody>
 					{allUsers.map((user, index) => (
 						<tr key={index}>
-							<td>{user.id}</td>
+							<td>
+								<div onClick={() => showDetail(user, index)}>{user.id}</div>
+							</td>
 							<td>{user.first_name} </td>
 							<td>{user.last_name}</td>
 							<td>{user.email}</td>
+							<td>
+								<img src={user.avatar} />
+							</td>
 							<td>
 								<Button
 									variant='secondary'
@@ -100,7 +124,7 @@ function UserTable() {
 					))}
 				</tbody>
 			</Table>
-		</div>
+		</Container>
 	)
 }
 

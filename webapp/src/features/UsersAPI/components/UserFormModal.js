@@ -8,23 +8,25 @@ export default function UserFormModal({
 	show,
 	handleClose,
 	firstName,
-	// setFirstName,
 	lastName,
-	// setLastName,
 	email,
-	// setEmail,
 	userId,
+	users,
+	setUsers,
 	index,
 }) {
 	const validationOfForm = () => {
-		if (firstName === '' || firstName === undefined) {
-			alert('Please provide your first name!')
+		if (firstName === '') {
+			document.getElementById('error-first-name').innerHTML =
+				'Please provide your first name!'
 			return false
 		} else if (lastName === '') {
-			alert('Please provide your last name!')
+			document.getElementById('error-last-name').innerHTML =
+				'Please provide your last name!'
 			return false
 		} else if (email === '') {
-			alert('Please provide your email!')
+			document.getElementById('error-email').innerHTML =
+				'Please provide your email!'
 			return false
 		} else if (email) {
 			var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -32,7 +34,8 @@ export default function UserFormModal({
 			if (emailCheck === true) {
 				alert('Data Submitted Successfully!')
 			} else {
-				alert('Please provide valid email!')
+				document.getElementById('error-invalid-email').innerHTML =
+					'Please enter a valid email!'
 				return false
 			}
 		}
@@ -43,12 +46,12 @@ export default function UserFormModal({
 			return false
 		}
 		const newUser = {
-			first_name: firstName,
-			last_name: lastName,
-			email: email,
-			id: userId || 0,
+			first_name: users.firstName,
+			last_name: users.lastName,
+			email: users.email,
+			id: users.userId || 0,
 		}
-		userId !== 0
+		userId
 			? editUserDetails(dispatch, newUser, index)
 			: addUser(dispatch, newUser)
 		firstName = ''
@@ -58,18 +61,6 @@ export default function UserFormModal({
 	}
 
 	const dispatch = useDispatch()
-
-	const handleChangeName = (event) => {
-		firstName = event.target.value
-	}
-
-	const handleChangeLastName = (event) => {
-		lastName = event.target.value
-	}
-
-	const handleChangeEmail = (event) => {
-		email = event.target.value
-	}
 
 	return (
 		<>
@@ -85,26 +76,36 @@ export default function UserFormModal({
 								type='text'
 								placeholder='Enter Your First Name'
 								value={firstName}
-								onChange={handleChangeName}
+								onChange={(event) =>
+									setUsers({ ...users, firstName: event.target.value })
+								}
 							/>
+							{firstName.length < 1 ? <span id='error-first-name'></span> : ''}
 						</Form.Group>
 						<Form.Group controlId='userForm.lastName'>
 							<Form.Label>Last Name</Form.Label>
 							<input
 								type='text'
-								placeholder='Enter Your First Name'
+								placeholder='Enter Your Last Name'
 								value={lastName}
-								onChange={handleChangeLastName}
+								onChange={(event) =>
+									setUsers({ ...users, lastName: event.target.value })
+								}
 							/>
+							{lastName.length < 1 ? <span id='error-last-name'></span> : ''}
 						</Form.Group>
 						<Form.Group controlId='userForm.email'>
 							<Form.Label>Email address</Form.Label>
 							<input
 								type='text'
-								placeholder='Enter Your First Name'
+								placeholder='Enter Your Email'
 								value={email}
-								onChange={handleChangeEmail}
+								onChange={(event) =>
+									setUsers({ ...users, email: event.target.value })
+								}
 							/>
+							{email.length < 1 ? <span id='error-email'></span> : ''}
+							<span id='error-invalid-email'></span>
 						</Form.Group>
 					</Form>
 				</Modal.Body>
