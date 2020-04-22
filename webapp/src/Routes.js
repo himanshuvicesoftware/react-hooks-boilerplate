@@ -6,6 +6,7 @@ import Page from './widgets/Page/Page'
 import { About } from './features/About'
 import screenTimeReports from './features/screenTimeReports'
 import UserAPI from './features/UsersAPI/components/UserAPI'
+import UserShowDetail from './features/UsersAPI/components/UserShowDetail'
 
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -30,6 +31,9 @@ export default function Routes() {
 				</PageRoute>
 				<PageRoute path='/reports/:userId'>
 					<ScreenTimeReports />
+				</PageRoute>
+				<PageRoute path='/usersAPI/:userId'>
+					<UserShowDetail />
 				</PageRoute>
 				<PageRoute path='/usersAPI'>
 					<UserAPI />

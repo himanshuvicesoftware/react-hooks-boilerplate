@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllUsers } from '../usersAPI.selectors'
-import { Container, Row, Col, Table, Button } from 'react-bootstrap'
+import { Container, Row, Col, Table, Button, Image } from 'react-bootstrap'
 import { deleteUser } from '../usersAPI.effects'
 import UserFormModal from './UserFormModal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,6 +10,7 @@ import {
 	faUserEdit,
 	faTrash,
 } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 function UserTable() {
 	const [users, setUsers] = useState({
@@ -42,18 +43,6 @@ function UserTable() {
 
 	const dispatch = useDispatch()
 
-	const showDetail = (user, index) => {
-		setUsers({
-			firstName: user.first_name,
-			lastName: user.last_name,
-			email: user.email,
-			userId: user.id,
-		})
-		setIndex(index)
-		alert(user.id)
-		// data to send in router and show on url
-	}
-
 	return (
 		<Container>
 			<Container>
@@ -70,7 +59,7 @@ function UserTable() {
 							userId={users.userId}
 							index={index}
 						/>
-						<Button variant='primary' onClick={handleShow}>
+						<Button variant='primary' onClick={handleShow} size='lg'>
 							<FontAwesomeIcon icon={faUserPlus} />
 						</Button>
 					</Col>
@@ -79,51 +68,56 @@ function UserTable() {
 					</Col>
 				</Row>
 			</Container>
-			<Table striped bordered hover>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Avatar</th>
-						<th>Edit User Details</th>
-						<th>Delete User</th>
-					</tr>
-				</thead>
-				<tbody>
-					{allUsers.map((user, index) => (
-						<tr key={index}>
-							<td>
-								<div onClick={() => showDetail(user, index)}>{user.id}</div>
-							</td>
-							<td>{user.first_name} </td>
-							<td>{user.last_name}</td>
-							<td>{user.email}</td>
-							<td>
-								<img src={user.avatar} />
-							</td>
-							<td>
-								<Button
-									variant='secondary'
-									onClick={() => editUser(user, index)}
-								>
-									<FontAwesomeIcon icon={faUserEdit} />
-								</Button>
-								{}
-							</td>
-							<td>
-								<Button
-									variant='danger'
-									onClick={() => deleteUser(dispatch, index)}
-								>
-									<FontAwesomeIcon icon={faTrash} />
-								</Button>
-							</td>
+			<br />
+			<Container>
+				<Table striped bordered hover>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+							<th>Avatar</th>
+							<th>Edit User Details</th>
+							<th>Delete User</th>
 						</tr>
-					))}
-				</tbody>
-			</Table>
+					</thead>
+					<tbody>
+						{allUsers.map((user, index) => (
+							<tr key={index}>
+								<td>
+									<Link to={`/usersAPI/${user.id}`}>{user.id}</Link>
+								</td>
+								<td>{user.first_name} </td>
+								<td>{user.last_name}</td>
+								<td>{user.email}</td>
+								<td>
+									<Image src={user.avatar} roundedCircle />
+								</td>
+								<td>
+									<Button
+										variant='secondary'
+										onClick={() => editUser(user, index)}
+										size='lg'
+									>
+										<FontAwesomeIcon icon={faUserEdit} />
+									</Button>
+									{}
+								</td>
+								<td>
+									<Button
+										variant='danger'
+										onClick={() => deleteUser(dispatch, index)}
+										size='lg'
+									>
+										<FontAwesomeIcon icon={faTrash} />
+									</Button>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</Table>
+			</Container>
 		</Container>
 	)
 }
