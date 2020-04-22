@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 
 export function useGetAllScreenTimeReports() {
 	useAsync({
-		url: '/screen-time-reports',
+		url: 'screen-time-reports',
 		actionType: screenTimeReportsActions.GET_ALL_SCREEN_TIME_REPORTS,
 		stubSuccess: ['Dummy Result 1', 'Dummy Result 2'], // Delete dummyResponse to have live api called or update it to have dummy data you want to fake
 	})
@@ -14,7 +14,7 @@ export function useGetAllScreenTimeReports() {
 
 export function useGetScreenTimeReportByUserId(userId) {
 	useAsync({
-		url: `/ScreenTimeReports/${userId}`,
+		url: `ScreenTimeReports/${userId}`,
 		actionType: screenTimeReportsActions.GET_SCREEN_TIME_REPORTS_BY_USER_ID,
 		dependencies: [userId],
 		stubSuccess: getDummyScreenTimeReports().filter(
@@ -25,7 +25,7 @@ export function useGetScreenTimeReportByUserId(userId) {
 
 export function useGetScreenTimeReportById(reportId) {
 	useAsync({
-		url: `/ScreenTimeReports/${reportId}`,
+		url: `ScreenTimeReports/${reportId}`,
 		actionType: screenTimeReportsActions.GET_SCREEN_TIME_REPORTS_BY_ID,
 		dependencies: [reportId],
 		stubSuccess: getDummyScreenTimeReports().find(

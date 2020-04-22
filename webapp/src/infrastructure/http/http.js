@@ -92,7 +92,10 @@ function doFetch(url, config, { stubSuccess, stubError } = {}) {
 		}
 
 		if (response.ok) {
-			if (response.headers.map['content-type'].includes('stream')) {
+			if (
+				response.headers.length &&
+				response.headers.map['content-type'].includes('stream')
+			) {
 				return response
 			}
 			return response.json()
@@ -110,6 +113,9 @@ function doFetch(url, config, { stubSuccess, stubError } = {}) {
 }
 
 function buildUrl(url) {
+	if (url.startsWith('http')) {
+		return url
+	}
 	return `${API_URL}/${url}`
 }
 
