@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button'
 import './profile.css'
 
 export default function Profile() {
@@ -34,7 +33,7 @@ export function ProfileImage() {
 						>
 							<g>
 								<path
-									fill={profileImage ? profileImage : '#3d71de'}
+									fill={profileImage || '#3d71de'}
 									d='M256,0C115.39,0,0,115.39,0,256s115.39,256,256,256s256-115.39,256-256S396.61,0,256,0z'
 								/>
 							</g>
