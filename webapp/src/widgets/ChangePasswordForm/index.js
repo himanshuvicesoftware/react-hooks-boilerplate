@@ -1,3 +1,3 @@
-import ChangePasswordForm from './ChangePasswordForm'
+import ResetPasswordForm from './ResetPasswordForm'
 
-export default ChangePasswordForm
+export default ResetPasswordForm
