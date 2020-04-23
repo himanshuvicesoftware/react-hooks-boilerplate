@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NotificationsIcon from '@material-ui/icons/Notifications'
+import { IconButton } from '@material-ui/core'
+import Badge from '@material-ui/core/Badge'
 
 import {
 	Collapse,
@@ -21,6 +24,8 @@ import { useAuth0 } from '../react-auth0-spa'
 
 const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false)
+	//const [count, setCount] = useState(0)
+	const [notifyToggle, setNotifyToggle] = useState(false)
 	const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0()
 	const toggle = () => setIsOpen(!isOpen)
 
@@ -46,6 +51,36 @@ const NavBar = () => {
 									Home
 								</NavLink>
 							</NavItem>
+							<NavItem>
+								<IconButton onClick={() => setNotifyToggle(!notifyToggle)}>
+									<Badge
+										badgeStyle={{
+											backgroundColor: 'red',
+											top: 12,
+											right: 12,
+										}}
+										secondary={true}
+									>
+										<NotificationsIcon />
+									</Badge>
+								</IconButton>
+							</NavItem>
+							{notifyToggle && (
+								<div
+									style={{
+										backgroundColor: 'gray',
+										width: '150px',
+										height: '100px',
+									}}
+								>
+									<ul>
+										<li>Option 1</li>
+										<li>Option 2</li>
+										<li>Option 3</li>
+										<li>Option 4</li>
+									</ul>
+								</div>
+							)}
 						</Nav>
 						<Nav className='d-none d-md-block' navbar>
 							{!isAuthenticated && (
@@ -130,6 +165,9 @@ const NavBar = () => {
 									>
 										Profile
 									</RouterNavLink>
+								</NavItem>
+								<NavItem>
+									<NotificationsIcon />
 								</NavItem>
 								<NavItem>
 									<FontAwesomeIcon icon='power-off' className='mr-3' />
