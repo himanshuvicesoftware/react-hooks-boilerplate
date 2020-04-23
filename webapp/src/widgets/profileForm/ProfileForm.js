@@ -21,84 +21,82 @@ export default function ProfileForm() {
 	})
 
 	return (
-		<div>
-			<Formik
-				initialValues={{ name: '', email: '', phone: '' }}
-				validationSchema={validationSchema}
-				onSubmit={(values, { setSubmitting, resetForm }) => {
-					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2))
-						resetForm()
-						setSubmitting(false)
-					}, 300)
-				}}
-			>
-				{({
-					values,
-					errors,
-					touched,
-					handleChange,
-					handleBlur,
-					handleSubmit,
-					isSubmitting,
-				}) => (
-					<div>
-						{!isEmpty(errors) && (
-							<Alert variant='danger'>Error: Incorrect Password</Alert>
-						)}
-						<Form onSubmit={handleSubmit}>
-							<Form.Group controlId='profileFormName'>
-								<Form.Label>Your Name</Form.Label>
-								<Form.Control
-									type='text'
-									name='name'
-									placeholder='Your Name'
-									onChange={handleChange}
-									onBlur={handleBlur}
-									value={values.name}
-									className={touched.name && errors.name ? 'error' : null}
-								/>
-								{touched.name && errors.name ? (
-									<div className='error-message'>{errors.name}</div>
-								) : null}
-							</Form.Group>
-							<Form.Group controlId='profileFormEmail'>
-								<Form.Label>Your Email</Form.Label>
-								<Form.Control
-									type='email'
-									name='email'
-									placeholder='Your Email'
-									onChange={handleChange}
-									onBlur={handleBlur}
-									value={values.email}
-									className={touched.email && errors.email ? 'error' : null}
-								/>
-								{touched.email && errors.email ? (
-									<div className='error-message'>{errors.email}</div>
-								) : null}
-							</Form.Group>
-							<Form.Group className='mb-15' controlId='profileFormPhone'>
-								<Form.Label>Your Phone Number</Form.Label>
-								<Form.Control
-									type='text'
-									name='phone'
-									placeholder='Your Phone Number'
-									onChange={handleChange}
-									onBlur={handleBlur}
-									value={values.phone}
-									className={touched.phone && errors.phone ? 'error' : null}
-								/>
-								{touched.phone && errors.phone ? (
-									<div className='error-message'>{errors.phone}</div>
-								) : null}
-							</Form.Group>
-							<Button variant='secondary' type='submit' disabled={isSubmitting}>
-								Save
-							</Button>
-						</Form>
-					</div>
-				)}
-			</Formik>
-		</div>
+		<Formik
+			initialValues={{ name: '', email: '', phone: '' }}
+			validationSchema={validationSchema}
+			onSubmit={(values, { setSubmitting, resetForm }) => {
+				setTimeout(() => {
+					alert(JSON.stringify(values, null, 2))
+					resetForm()
+					setSubmitting(false)
+				}, 300)
+			}}
+		>
+			{({
+				values,
+				errors,
+				touched,
+				handleChange,
+				handleBlur,
+				handleSubmit,
+				isSubmitting,
+			}) => (
+				<>
+					{!isEmpty(errors) && (
+						<Alert variant='danger'>Error: All fields need to be correct</Alert>
+					)}
+					<Form onSubmit={handleSubmit}>
+						<Form.Group controlId='profileFormName'>
+							<Form.Label>Your Name</Form.Label>
+							<Form.Control
+								type='text'
+								name='name'
+								placeholder='Your Name'
+								onChange={handleChange}
+								onBlur={handleBlur}
+								value={values.name}
+								className={touched.name && errors.name ? 'error' : null}
+							/>
+							{touched.name && errors.name ? (
+								<div className='error-message'>{errors.name}</div>
+							) : null}
+						</Form.Group>
+						<Form.Group controlId='profileFormEmail'>
+							<Form.Label>Your Email</Form.Label>
+							<Form.Control
+								type='email'
+								name='email'
+								placeholder='Your Email'
+								onChange={handleChange}
+								onBlur={handleBlur}
+								value={values.email}
+								className={touched.email && errors.email ? 'error' : null}
+							/>
+							{touched.email && errors.email ? (
+								<div className='error-message'>{errors.email}</div>
+							) : null}
+						</Form.Group>
+						<Form.Group className='mb-15' controlId='profileFormPhone'>
+							<Form.Label>Your Phone Number</Form.Label>
+							<Form.Control
+								type='text'
+								name='phone'
+								placeholder='Your Phone Number'
+								onChange={handleChange}
+								onBlur={handleBlur}
+								value={values.phone}
+								className={touched.phone && errors.phone ? 'error' : null}
+							/>
+							{touched.phone && errors.phone ? (
+								<div className='error-message'>{errors.phone}</div>
+							) : null}
+						</Form.Group>
+						<Button variant='secondary' type='submit' disabled={isSubmitting}>
+							Save
+						</Button>
+					</Form>
+				</>
+			)}
+		</Formik>
 	)
 }

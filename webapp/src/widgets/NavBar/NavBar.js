@@ -1,11 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Dropdown from 'react-bootstrap/Dropdown'
+import { Navbar, Nav, Dropdown, Image as Img } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { selectIsAuthenticated, logout } from '../../features/userContext'
-import Img from 'react-bootstrap/Image'
 import './NavBar.css'
 const bellIcon = require('../../assets/icons/Bell.svg')
 const caretIcon = require('../../assets/icons/Caret.svg')

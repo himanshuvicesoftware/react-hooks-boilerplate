@@ -4,24 +4,8 @@ import ProfileForm from '../../widgets/profileForm/ProfileForm'
 import ResetPasswordForm from '../../widgets/resetPasswordForm/ResetPasswordForm'
 import { Card, Row, Col } from 'react-bootstrap'
 import './Profile.styles.css'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { selectAllProfile, selectProfileFilter } from './profile.selectors'
-// import { actions } from './profile.slice'
-// import { fetchAllProfile } from './profile.asyncActions'
-// import BusyIndicator from '../../widgets/busyIndicator'
-
-// const { updateFilter } = actions
 
 export default function Profile() {
-	// const profile = useSelector(selectAllProfile)
-	// const filter = useSelector(selectProfileFilter)
-
-	// const dispatch = useDispatch()
-
-	// useEffect(() => {
-	// 	dispatch(fetchAllProfile())
-	// }, [dispatch])
-
 	return (
 		<>
 			<h2 className='page-title'>Your Profile</h2>
