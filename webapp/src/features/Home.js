@@ -1,4 +1,5 @@
 import React from 'react'
+import ChangePasswordForm from '../widgets/ChangePasswordForm'
 export default function Home() {
 	return (
 		<>
@@ -17,6 +18,7 @@ export default function Home() {
 				</a>
 				.
 			</p>
+			<ChangePasswordForm />
 		</>
 	)
 }
