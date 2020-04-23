@@ -7,13 +7,13 @@ import Authorized from './features/Authorized'
 import Users from './features/users'
 import Settings from './features/settings'
 import SignIn from './features/SignIn'
-import ProfileForm from './widgets/profileForm'
+import Profile from './features/profile'
 
 export default function Routes() {
 	return (
 		<Switch>
-			<PageRoute path='/profileForm'>
-				<ProfileForm />
+			<PageRoute path='/profile'>
+				<Profile />
 			</PageRoute>
 			<PageRoute path='/users'>
 				<Users />

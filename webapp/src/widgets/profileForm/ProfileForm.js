@@ -1,30 +1,11 @@
 import React from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import {
-// 	selectAllProfileForm,
-// 	selectProfileFormFilter,
-// } from './profileForm.selectors'
-// import { actions } from './profileForm.slice'
-// import { fetchAllProfileForm } from './profileForm.asyncActions'
-// import BusyIndicator from '../../widgets/busyIndicator'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileForm.styles.css'
 import isEmpty from 'lodash/isEmpty'
 
-// const { updateFilter } = actions
-
 export default function ProfileForm() {
-	// const profileForm = useSelector(selectAllProfileForm)
-	// const filter = useSelector(selectProfileFormFilter)
-
-	// const dispatch = useDispatch()
-
-	// useEffect(() => {
-	// 	dispatch(fetchAllProfileForm())
-	// }, [dispatch])
-
 	// RegEx for phone number validation
 	const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
 
@@ -96,7 +77,7 @@ export default function ProfileForm() {
 									<div className='error-message'>{errors.email}</div>
 								) : null}
 							</Form.Group>
-							<Form.Group controlId='profileFormPhone'>
+							<Form.Group className='mb-15' controlId='profileFormPhone'>
 								<Form.Label>Your Phone Number</Form.Label>
 								<Form.Control
 									type='text'

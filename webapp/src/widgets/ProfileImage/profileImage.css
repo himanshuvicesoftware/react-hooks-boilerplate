@@ -71,8 +71,8 @@
 	border-color: #0d1e45 !important;
 }
 .btn-secondary:hover {
-	background-color: #283c73;
-	border-color: #283c73;
+	background-color: #283c73 !important;
+	border-color: #283c73 !important;
 }
 .btn-outline {
 	border-color: rgba(50, 55, 60, 0.5);

@@ -1,15 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import doAsync from '../../infrastructure/doAsync'
 
-export const fetchAllProfileForm = createAsyncThunk(
-	'profileForm/getAll',
+export const fetchAllProfile = createAsyncThunk(
+	'profile/getAll',
 	async ({ useCaching, noBusySpinner } = {}, thunkArgs) =>
 		await doAsync({
-			url: 'profile-form',
+			url: 'profile',
 			useCaching,
 			noBusySpinner,
-			successMessage: 'ProfileForm loaded',
-			errorMessage: 'Unable to load profileForm. Please try again later.',
+			successMessage: 'Profile loaded',
+			errorMessage: 'Unable to load profile. Please try again later.',
 			stubSuccess: ['Dummy item 1', 'Dummy item 2'],
 			...thunkArgs,
 		})

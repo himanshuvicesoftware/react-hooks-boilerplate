@@ -52,3 +52,6 @@
 	padding-top: 1rem !important;
 	margin-bottom: 3rem !important;
 }
+.mb-15.form-group {
+	margin-bottom: 25px;
+}

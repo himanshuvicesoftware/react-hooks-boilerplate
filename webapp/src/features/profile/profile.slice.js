@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
-import * as asyncActions from './profileForm.asyncActions'
+import * as asyncActions from './profile.asyncActions'
 
 const initialState = {
-	allProfileForm: [],
+	allProfile: [],
 	filter: '',
 }
 
 const slice = createSlice({
-	name: 'profileForm',
+	name: 'profile',
 	initialState,
 	reducers: {
 		// synchronous actions
@@ -17,8 +17,8 @@ const slice = createSlice({
 	},
 	extraReducers: {
 		// asynchronous actions
-		[asyncActions.fetchAllProfileForm.fulfilled]: (state, action) => {
-			state.allProfileForm = action.payload
+		[asyncActions.fetchAllProfile.fulfilled]: (state, action) => {
+			state.allProfile = action.payload
 		},
 	},
 })
