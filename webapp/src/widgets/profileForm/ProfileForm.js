@@ -1,24 +1,25 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-	selectAllProfileForm,
-	selectProfileFormFilter,
-} from './profileForm.selectors'
-import { actions } from './profileForm.slice'
+// import { useSelector, useDispatch } from 'react-redux'
+// import {
+// 	selectAllProfileForm,
+// 	selectProfileFormFilter,
+// } from './profileForm.selectors'
+// import { actions } from './profileForm.slice'
 // import { fetchAllProfileForm } from './profileForm.asyncActions'
 // import BusyIndicator from '../../widgets/busyIndicator'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 import './profileForm.styles.css'
+import isEmpty from 'lodash/isEmpty'
 
-const { updateFilter } = actions
+// const { updateFilter } = actions
 
 export default function ProfileForm() {
-	const profileForm = useSelector(selectAllProfileForm)
-	const filter = useSelector(selectProfileFormFilter)
+	// const profileForm = useSelector(selectAllProfileForm)
+	// const filter = useSelector(selectProfileFormFilter)
 
-	const dispatch = useDispatch()
+	// const dispatch = useDispatch()
 
 	// useEffect(() => {
 	// 	dispatch(fetchAllProfileForm())
@@ -60,56 +61,61 @@ export default function ProfileForm() {
 					handleSubmit,
 					isSubmitting,
 				}) => (
-					<Form onSubmit={handleSubmit}>
-						<Form.Group controlId='profileFormName'>
-							<Form.Label>Your Name</Form.Label>
-							<Form.Control
-								type='text'
-								name='name'
-								placeholder='Your Name'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.name}
-								className={touched.name && errors.name ? 'error' : null}
-							/>
-							{touched.name && errors.name ? (
-								<div className='error-message'>{errors.name}</div>
-							) : null}
-						</Form.Group>
-						<Form.Group controlId='profileFormEmail'>
-							<Form.Label>Your Email</Form.Label>
-							<Form.Control
-								type='email'
-								name='email'
-								placeholder='Your Email'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.email}
-								className={touched.email && errors.email ? 'error' : null}
-							/>
-							{touched.email && errors.email ? (
-								<div className='error-message'>{errors.email}</div>
-							) : null}
-						</Form.Group>
-						<Form.Group controlId='profileFormPhone'>
-							<Form.Label>Your Phone Number</Form.Label>
-							<Form.Control
-								type='text'
-								name='phone'
-								placeholder='Your Phone Number'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.phone}
-								className={touched.phone && errors.phone ? 'error' : null}
-							/>
-							{touched.phone && errors.phone ? (
-								<div className='error-message'>{errors.phone}</div>
-							) : null}
-						</Form.Group>
-						<Button variant='secondary' type='submit' disabled={isSubmitting}>
-							Save
-						</Button>
-					</Form>
+					<div>
+						{!isEmpty(errors) && (
+							<Alert variant='danger'>Error: Incorrect Password</Alert>
+						)}
+						<Form onSubmit={handleSubmit}>
+							<Form.Group controlId='profileFormName'>
+								<Form.Label>Your Name</Form.Label>
+								<Form.Control
+									type='text'
+									name='name'
+									placeholder='Your Name'
+									onChange={handleChange}
+									onBlur={handleBlur}
+									value={values.name}
+									className={touched.name && errors.name ? 'error' : null}
+								/>
+								{touched.name && errors.name ? (
+									<div className='error-message'>{errors.name}</div>
+								) : null}
+							</Form.Group>
+							<Form.Group controlId='profileFormEmail'>
+								<Form.Label>Your Email</Form.Label>
+								<Form.Control
+									type='email'
+									name='email'
+									placeholder='Your Email'
+									onChange={handleChange}
+									onBlur={handleBlur}
+									value={values.email}
+									className={touched.email && errors.email ? 'error' : null}
+								/>
+								{touched.email && errors.email ? (
+									<div className='error-message'>{errors.email}</div>
+								) : null}
+							</Form.Group>
+							<Form.Group controlId='profileFormPhone'>
+								<Form.Label>Your Phone Number</Form.Label>
+								<Form.Control
+									type='text'
+									name='phone'
+									placeholder='Your Phone Number'
+									onChange={handleChange}
+									onBlur={handleBlur}
+									value={values.phone}
+									className={touched.phone && errors.phone ? 'error' : null}
+								/>
+								{touched.phone && errors.phone ? (
+									<div className='error-message'>{errors.phone}</div>
+								) : null}
+							</Form.Group>
+							<Button variant='secondary' type='submit' disabled={isSubmitting}>
+								Save
+							</Button>
+						</Form>
+					</div>
 				)}
 			</Formik>
 		</div>
