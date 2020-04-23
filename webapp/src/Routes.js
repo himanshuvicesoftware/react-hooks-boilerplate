@@ -8,6 +8,7 @@ import Users from './features/users'
 import Settings from './features/settings'
 import SignIn from './features/SignIn'
 import Profile from './features/profile'
+import DocumentItem from './widgets/DocumentItem/DocumentItem'
 
 export default function Routes() {
 	return (
@@ -29,6 +30,9 @@ export default function Routes() {
 			</PageRoute>
 			<PageRoute path='/sign-in'>
 				<SignIn />
+			</PageRoute>
+			<PageRoute path='/document/:customerId'>
+				<DocumentItem />
 			</PageRoute>
 			<PageRoute path='/'>
 				<Home />

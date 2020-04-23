@@ -1,0 +1,120 @@
+.text-light {
+	color: rgba(13, 30, 69, 0.75) !important;
+}
+.mb-0 {
+	margin-bottom: 0px !important;
+}
+.mb-1 {
+	margin-bottom: 1px !important;
+}
+.mb-2 {
+	margin-bottom: 2px !important;
+}
+.mb-15 {
+	margin-bottom: 15px !important;
+}
+.mb-25 {
+	margin-bottom: 25px !important;
+}
+.mb-50 {
+	margin-bottom: 50px !important;
+}
+.mb-35 {
+	margin-bottom: 35px !important;
+}
+.mt-35 {
+	margin-top: 35px !important;
+}
+.pt-50 {
+	padding-top: 50px !important;
+}
+.p-25 {
+	padding: 25px !important;
+}
+.f-15 {
+	font-size: 15px !important;
+}
+.font-semi-bold {
+	font-weight: 600 !important;
+}
+.shadow-sm,
+.shadow-sm--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.separator {
+	height: 2px;
+}
+
+/*###############-------Btn  css Start------###################*/
+.btn {
+	height: 50px;
+	min-width: 290px;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 4px;
+	border-width: 2px;
+}
+.btn-sm {
+	min-width: 125px;
+	height: 30px;
+	line-height: 1;
+}
+.btn-md {
+	min-width: 195px;
+	height: 36.5px;
+	line-height: 1;
+}
+.btn-small {
+	min-width: 150px;
+}
+.btn-block {
+	min-width: 100%;
+}
+.btn-auto {
+	min-width: auto;
+	height: auto;
+}
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+	background-color: #3d71de !important;
+	background-color: #3d71de !important;
+}
+.btn-primary:hover {
+	background-color: #025cbd !important;
+	border-color: #025cbd !important;
+}
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:not(:disabled):not(.disabled):active {
+	background-color: #0d1e45 !important;
+	border-color: #0d1e45 !important;
+}
+.btn-secondary:hover {
+	background-color: #283c73;
+	border-color: #283c73;
+}
+.btn-outline {
+	border-color: rgba(50, 55, 60, 0.5);
+	color: #0d1e45;
+}
+/*###############-------Btn  css End------###################*/
+
+/*###############-------Avatar css Start------###################*/
+.user-circle .user-name {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+/*###############-------Avatar css End------###################*/
+
+.user-circle .position-absolute {
+	top: 0;
+}
