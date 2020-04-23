@@ -37,8 +37,8 @@ export default function NavBar() {
 
 				<Nav className='nav-bar-right'>
 					<Nav.Item className='dropdown notification-dropdown mr-lg-1'>
-						<Dropdown className='nav-link position-relative'>
-							<Dropdown.Toggle variant='light'>
+						<Dropdown className='nav-link position-relative' as={Nav.Item}>
+							<Dropdown.Toggle variant='light' as={Nav.Link}>
 								<span className='position-relative'>
 									<img src={bellIcon} alt='' className='bell-icon' width='25' />
 									<span className='badge badge-pill bg-primary text-white font-weight-normal '>
@@ -47,7 +47,7 @@ export default function NavBar() {
 								</span>
 							</Dropdown.Toggle>
 
-							<Dropdown.Menu className='dropdown-menu-right p-15 text-center shadow'>
+							<Dropdown.Menu className='dropdown-menu-center notification-dropdown p-15 text-center shadow'>
 								<Dropdown.Item href='#'>
 									Cody Miles Created a New Version of #1235
 								</Dropdown.Item>
@@ -55,8 +55,12 @@ export default function NavBar() {
 						</Dropdown>
 					</Nav.Item>
 					<Nav.Item className='dropdown user-dropdown pl-lg-4 ml-lg-2'>
-						<Dropdown className='nav-link user-link'>
-							<Dropdown.Toggle variant='light' id='dropdown-basic'>
+						<Dropdown className='user-link' as={Nav.Item}>
+							<Dropdown.Toggle
+								variant='light'
+								id='dropdown-basic'
+								as={Nav.Link}
+							>
 								<span className='user-name f-12 bg-primary text-white rounded-circle font-weight-normal'>
 									CM
 								</span>
