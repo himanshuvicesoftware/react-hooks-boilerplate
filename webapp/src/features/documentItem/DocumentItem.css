@@ -151,6 +151,9 @@
 .table thead th:last-child {
 	border-radius: 0px 10px 0px 0px;
 }
+.table tbody td:last-child {
+	text-align: end;
+}
 .table tbody td {
 	padding: 15px;
 	border: 0px;
@@ -158,6 +161,25 @@
 }
 .table {
 	margin-bottom: 50px;
+}
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-top: 4px solid \9;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+	border-top: 0;
+	border-bottom: 4px dashed;
+	border-bottom: 4px solid \9;
+	content: '';
 }
 /* #######################-------Table Style Ends------------############### */
 
@@ -175,7 +197,13 @@
 dt {
 	font-weight: 700;
 }
-
+.spacer {
+	min-height: 50px;
+}
 .card-title {
 	letter-spacing: 1.5px;
+}
+body {
+	color: #0d1e45;
+	font-weight: 600;
 }

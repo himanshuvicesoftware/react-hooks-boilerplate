@@ -47,18 +47,22 @@ export default function FileList() {
 		{
 			dataField: 'fileName',
 			text: 'File Name',
+			sort: true,
 		},
 		{
 			dataField: 'uploadedBy',
 			text: 'Uploaded By',
+			sort: true,
 		},
 		{
 			dataField: 'uploadedOn',
 			text: 'Uploaded On',
+			sort: true,
 		},
 		{
 			dataField: 'fileType',
 			text: 'Type',
+			sort: true,
 		},
 		{
 			dataField: 'id',

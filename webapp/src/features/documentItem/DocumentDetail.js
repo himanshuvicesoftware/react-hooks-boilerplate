@@ -14,10 +14,7 @@ export default function DocumentDetail() {
 
 						<dl className='mb-0 no-gutters'>
 							<DocumentDetailProp property='Creation Date' value='11/01/20' />
-							<DocumentDetailProp
-								property='Expiration Date'
-								value='555-555-555555'
-							/>
+							<DocumentDetailProp property='Expiration Date' value='11/01/2' />
 							<DocumentDetailProp
 								property='Serial Number'
 								value='666-666-666666'
