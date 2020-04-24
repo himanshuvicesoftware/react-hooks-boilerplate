@@ -1,6 +1,4 @@
-.text-light {
-	color: rgba(13, 30, 69, 0.75) !important;
-}
+/* #####################-------- Margins & Paddings Start -----------############ */
 .mb-0 {
 	margin-bottom: 0px !important;
 }
@@ -31,35 +29,21 @@
 .p-25 {
 	padding: 25px !important;
 }
+/* #####################-------- Margins & Paddings End -----------############ */
+
+/* ####################--------- Fonts Starts ---------------########### */
 .f-15 {
 	font-size: 15px !important;
 }
 .font-semi-bold {
 	font-weight: 600 !important;
 }
-.shadow-sm,
-.shadow-sm--on-hover:hover {
-	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+.text-light {
+	color: rgba(13, 30, 69, 0.75) !important;
 }
-.opacity-75 {
-	opacity: 0.75;
-}
-.separator {
-	height: 2px;
-}
+/* ####################--------- Fonts Ends ---------------########### */
 
-dt {
-	font-weight: 700;
-}
-/* .body {
-	font-family: ;
-} */
-
-.card-title {
-	letter-spacing: 1.5px;
-}
-
-/*###############-------Btn  css Start------###################*/
+/* ###############-------Btn  css Start------################### */
 .btn {
 	height: 50px;
 	min-width: 290px;
@@ -88,16 +72,6 @@ dt {
 	min-width: auto;
 	height: auto;
 }
-.btn-primary,
-.btn-primary:focus,
-.btn-primary:active {
-	background-color: #3d71de !important;
-	background-color: #3d71de !important;
-}
-.btn-primary:hover {
-	background-color: #025cbd !important;
-	border-color: #025cbd !important;
-}
 .btn-secondary,
 .btn-secondary:focus,
 .btn-secondary:active,
@@ -109,13 +83,20 @@ dt {
 	background-color: #283c73;
 	border-color: #283c73;
 }
+/* .btn-primary {
+	color: #0d1e45 !important;
+} */
 .btn-outline {
 	border-color: rgba(50, 55, 60, 0.5);
 	color: #0d1e45;
+	background-color: #ffffff !important;
 }
-/*###############-------Btn  css End------###################*/
+.btn-outline:hover .btn-outline:active {
+	color: #0d1e45;
+}
+/* ###############-------Btn  css End------################### */
 
-/*###############-------Avatar css Start------###################*/
+/* ###############-------Avatar css Start------################### */
 .user-circle .user-name {
 	height: 100%;
 	width: 100%;
@@ -125,11 +106,10 @@ dt {
 	color: white;
 	font-size: 9px;
 }
-/*###############-------Avatar css End------###################*/
-
 .user-circle .position-absolute {
 	top: 0;
 }
+/* ###############-------Avatar css End------################### */
 
 /* #######################-------Table Style Starts------------############### */
 .headerStyle {
@@ -180,3 +160,22 @@ dt {
 	margin-bottom: 50px;
 }
 /* #######################-------Table Style Ends------------############### */
+
+.shadow-sm,
+.shadow-sm--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.separator {
+	height: 2px;
+}
+
+dt {
+	font-weight: 700;
+}
+
+.card-title {
+	letter-spacing: 1.5px;
+}

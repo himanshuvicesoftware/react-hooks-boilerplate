@@ -1,10 +1,6 @@
 import React, { Fragment } from 'react'
 import { Row, Image, Col, Card, Button } from 'react-bootstrap'
-const circleIcon = require('../../assets/icons/circle.svg')
-const editIcon = require('../../assets/icons/Edit.svg')
-const downloadIcon = require('../../assets/icons/Download.svg')
-const logIcon = require('../../assets/icons/Log.svg')
-const flagIcon = require('../../assets/icons/Flag.svg')
+import Icons from '../../assets/index'
 
 export default function DocumentDetail() {
 	return (
@@ -35,49 +31,15 @@ export default function DocumentDetail() {
 
 						<div className='bg-secondary opacity-75 separator mt-35 mb-35'></div>
 
-						<div className='mb-15'>
-							<h6 className='text-light font-semi-bold mb-1'>
-								Document Assigned To:
-							</h6>
-							<div className='d-flex'>
-								<div className='d-flex align-items-center '>
-									<div className='user-circle d-inline-block position-relative rounded-circle'>
-										<Image src={circleIcon} width='25' />
-										<div
-											className='position-absolute user-name font-weight-normal'
-											// style='font-size:9px'
-										>
-											CM
-										</div>
-									</div>
-									<span className='f-15 ml-2 '>Cody Miles</span>
-								</div>
+						<DocumentAssignToAndCreatedBy
+							title='Document Assigned To'
+							username='Code Miles'
+						/>
 
-								<a className='d-block ml-auto'>
-									<Image src={editIcon} width='25' />
-								</a>
-							</div>
-						</div>
-
-						<div className='pt-1'>
-							<h6 className='text-light font-semi-bold mb-1'>
-								Document Created By:
-							</h6>
-							<div className='d-flex'>
-								<div className='d-flex align-items-center '>
-									<div className='user-circle d-inline-block position-relative rounded-circle'>
-										<Image src={circleIcon} width='25' />
-										<div
-											className='position-absolute user-name font-weight-normal'
-											// style='font-size:9px'
-										>
-											CM
-										</div>
-									</div>
-									<span className='f-15 ml-2 '>Cody Miles</span>
-								</div>
-							</div>
-						</div>
+						<DocumentAssignToAndCreatedBy
+							title='Document Created By'
+							username='Code Miles'
+						/>
 
 						<div className='bg-secondary opacity-75 separator mt-35 mb-35'></div>
 
@@ -88,22 +50,35 @@ export default function DocumentDetail() {
 							Upload Files
 						</Button>
 						<Button className='btn btn-block btn-secondary'>Add Note</Button>
-						<button className='btn btn-outline btn-block d-flex align-items-center'>
+
+						<Button
+							variant='light'
+							className='btn btn-outline btn-block d-flex align-items-center'
+						>
 							View Correction Log
-							<Image className='ml-auto' src={logIcon} width='25' />
-						</button>
-						<button className='btn btn-outline btn-block d-flex align-items-center'>
+							<Image className='ml-auto' src={Icons.logIcon} width='25' />
+						</Button>
+						<Button
+							variant='light'
+							className='btn btn-outline btn-block d-flex align-items-center'
+						>
 							Flag Document
-							<Image className='ml-auto' src={flagIcon} width='25' />
-						</button>
-						<button className='btn btn-outline btn-block d-flex align-items-center'>
+							<Image className='ml-auto' src={Icons.flagIcon} width='25' />
+						</Button>
+						<Button
+							variant='light'
+							className='btn btn-outline btn-block d-flex align-items-center'
+						>
 							Export Document
-							<Image className='ml-auto' src={downloadIcon} width='25' />
-						</button>
-						<button className='btn btn-outline btn-block d-flex align-items-center'>
+							<Image className='ml-auto' src={Icons.downloadIcon} width='25' />
+						</Button>
+						<Button
+							variant='light'
+							className='btn btn-outline btn-block d-flex align-items-center'
+						>
 							Export History
-							<Image className='ml-auto' src={downloadIcon} width='25' />
-						</button>
+							<Image className='ml-auto' src={Icons.downloadIcon} width='25' />
+						</Button>
 					</Card.Body>
 				</Card>
 			</Col>
@@ -123,5 +98,30 @@ export function DocumentDetailProp({ property, value }) {
 				</Col>
 			</Row>
 		</Fragment>
+	)
+}
+
+export function DocumentAssignToAndCreatedBy({ title, username }) {
+	return (
+		<div className='mb-15'>
+			<h6 className='text-light font-semi-bold mb-1'>{title}</h6>
+			<div className='d-flex'>
+				<div className='d-flex align-items-center '>
+					<div className='user-circle d-inline-block position-relative rounded-circle'>
+						<Image src={Icons.circleIcon} width='25' />
+						<div className='position-absolute user-name font-weight-normal'>
+							CM
+						</div>
+					</div>
+					<span className='f-15 ml-2 '>{username}</span>
+				</div>
+
+				{title === 'Document Assigned To' ? (
+					<a className='d-block ml-auto'>
+						<Image src={Icons.editIcon} width='25' />
+					</a>
+				) : null}
+			</div>
+		</div>
 	)
 }
