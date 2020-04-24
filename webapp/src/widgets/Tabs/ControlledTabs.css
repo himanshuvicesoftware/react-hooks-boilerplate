@@ -22,3 +22,12 @@ a {
 .nav-tabs {
 	margin-right: 10px;
 }
+
+.tab-pane {
+	border: 1px !important;
+}
+body {
+	color: #0d1e45 !important;
+	background-color: #f1f4f9 !important;
+	font-weight: 600 !important;
+}

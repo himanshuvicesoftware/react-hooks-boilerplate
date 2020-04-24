@@ -1,7 +1,8 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import './UserHistoryTable.css'
-function UserHistoryTable() {
+import userthumb from './user-thumb.jpg'
+const UserHistoryTable = (props) => {
 	return (
 		<div>
 			<Table responsive={true} borderless={true}>
@@ -15,28 +16,48 @@ function UserHistoryTable() {
 				</thead>
 				<tbody>
 					<tr>
-						<td>Cody Miles</td>
-						<td>Admin</td>
-						<td>Yesterday at 11:00pm</td>
-						<td>enabled</td>
+						<td>
+							<div>
+								<img src={userthumb} width='30' />
+							</div>
+							<span>{props.Name}</span>
+						</td>
+						<td>{props.Permission}</td>
+						<td>{props.Last_Sign_In}</td>
+						<td>{props.User_Status}</td>
 					</tr>
 					<tr>
-						<td>Cody Miles</td>
-						<td>Admin</td>
-						<td>Yesterday at 11:00pm</td>
-						<td>enabled</td>
+						<td>
+							<div>
+								<img src={userthumb} width='30' />
+							</div>
+							<span>{props.Name}</span>
+						</td>
+						<td>{props.Permission}</td>
+						<td>{props.Last_Sign_In}</td>
+						<td>{props.User_Status}</td>
 					</tr>
 					<tr>
-						<td>Cody Miles</td>
-						<td>Admin</td>
-						<td>Yesterday at 11:00pm</td>
-						<td>enabled</td>
+						<td>
+							<div>
+								<img src={userthumb} width='30' />
+							</div>
+							<span>{props.Name}</span>
+						</td>
+						<td>{props.Permission}</td>
+						<td>{props.Last_Sign_In}</td>
+						<td>{props.User_Status}</td>
 					</tr>
 					<tr>
-						<td>Cody Miles</td>
-						<td>Admin</td>
-						<td>Yesterday at 11:00pm</td>
-						<td>enabled</td>
+						<td>
+							<div>
+								<img src={userthumb} width='30' />
+							</div>
+							<span>{props.Name}</span>
+						</td>
+						<td>{props.Permission}</td>
+						<td>{props.Last_Sign_In}</td>
+						<td>{props.User_Status}</td>
 					</tr>
 				</tbody>
 			</Table>

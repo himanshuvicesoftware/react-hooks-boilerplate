@@ -12,12 +12,7 @@
 	color: #212529;
 	font-weight: 400 !important;
 }
-tbody tr:nth-of-type(odd) {
-	background-color: #e9edf0;
-}
-/* table tbody tr:nth-child(2n-1) {
-	background: #f2f2f2;
-} */
+
 .tab-pane {
 	padding-top: 50px !important ;
 	padding-bottom: 50px !important ;
@@ -34,4 +29,25 @@ tbody tr:nth-of-type(odd) {
 }
 tr {
 	font-size: 15px !important;
+}
+span {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	opacity: 0.5 !important;
+}
+.d-flex {
+	display: flex !important;
+}
+.nav-tabs .nav-item {
+	margin-right: 10px;
+	border: 0px !important;
+}
+tr th {
+	border: 0 !important;
+}
+.tab-content {
+	background-color: white;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #e9edf0 !important;
 }
