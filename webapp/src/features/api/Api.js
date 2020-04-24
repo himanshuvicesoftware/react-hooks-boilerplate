@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
-import Pagination from './Pagination'
+import jsPDF from 'jspdf'
+// import Pagination from './Pagination'
+var ss = []
 export function Api() {
 	const [data, setData] = useState([])
-	const [cpage, setCPage] = useState(1)
-	const [postpage] = useState(2)
+	// const [cpage, setCPage] = useState(1)
+	// const [postpage] = useState(2)
 	const [firstname, setFirstName] = useState('')
 	const [lastname, setLastName] = useState('')
 	useEffect(() => {
 		axios.get('https://reqres.in/api/users').then((res) => {
 			setData(res.data.data)
+			console.log(res)
+			ss = res.data.data
+			// console.log(ss, 'try')
 		})
 	})
 
@@ -26,12 +30,18 @@ export function Api() {
 	const handleChangeLastName = (event) => {
 		setLastName(event.target.value)
 	}
+	const jsfPdfCreator = () => {
+		var doc = new jsPDF()
+		// console.log(ss, 'dddd')
 
-	const lastPost = cpage * postpage
-	const firstPost = lastPost - postpage
-	const currentpost = data.slice(firstPost, lastPost)
+		doc.text(20, 30, 'This is trial')
+		doc.save('generated.pdf')
+	}
+	// const lastPost = cpage * postpage
+	// const firstPost = lastPost - postpage
+	// const currentpost = data.slice(firstPost, lastPost)
 
-	const paginate = (pageNo) => setCPage(pageNo)
+	// const paginate = (pageNo) => setCPage(pageNo)
 
 	return (
 		<div>
@@ -74,12 +84,13 @@ export function Api() {
 					<option>Ramos</option>
 				</select>
 			</form>
+			<button onClick={jsfPdfCreator}>Download Pdf</button>
 
-			<Pagination
+			{/* <Pagination
 				postpage={postpage}
 				totalPosts={data.length}
 				paginate={paginate}
-			/>
+			/> */}
 		</div>
 	)
 }

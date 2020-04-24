@@ -12,6 +12,7 @@
     "classnames": "^2.2.6",
     "code": "^5.2.4",
     "formik": "^2.1.4",
+    "jspdf": "^1.5.3",
     "localStorage": "^1.0.4",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",

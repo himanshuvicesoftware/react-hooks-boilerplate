@@ -20,8 +20,8 @@ export default function NavBar() {
 				</LinkContainer>
 			</Nav>
 			<Nav className='mr-auto'>
-				<LinkContainer to='/chart'>
-					<Nav.Link href='chart'>Chart</Nav.Link>
+				<LinkContainer to='/dashboard'>
+					<Nav.Link href='dashboard'>Dashboard</Nav.Link>
 				</LinkContainer>
 			</Nav>
 		</Navbar>
