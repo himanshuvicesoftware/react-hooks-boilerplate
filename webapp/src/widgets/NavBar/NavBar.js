@@ -4,8 +4,7 @@ import { Navbar, Nav, Dropdown, Image as Img } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { selectIsAuthenticated, logout } from '../../features/userContext'
 import './NavBar.css'
-const bellIcon = require('../../assets/icons/Bell.svg')
-const caretIcon = require('../../assets/icons/Caret.svg')
+import Icons from '../../assets/icons'
 
 export default function NavBar() {
 	const isAuthenticated = useSelector(selectIsAuthenticated)
@@ -42,7 +41,7 @@ export default function NavBar() {
 								<Dropdown.Toggle variant='light' as={Nav.Link}>
 									<span className='position-relative'>
 										<Img
-											src={bellIcon}
+											src={Icons.bellIcon}
 											alt=''
 											className='bell-icon'
 											width='25'
@@ -70,7 +69,12 @@ export default function NavBar() {
 									<span className='user-name f-12 bg-primary text-white rounded-circle font-weight-normal'>
 										CM
 									</span>
-									<Img className='ml-1' src={caretIcon} alt='' width='25' />
+									<Img
+										className='ml-1'
+										src={Icons.caretIcon}
+										alt=''
+										width='25'
+									/>
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu className='dropdown-menu-right p-15 text-center shadow'>

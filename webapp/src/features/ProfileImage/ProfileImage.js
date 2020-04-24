@@ -23,11 +23,11 @@ const ProfileImage = () => {
 	return (
 		<>
 			<div className='user-circle d-inline-block position-relative mb-50'>
-				{error ? (
+				{error && (
 					<Alert variant='danger'>
 						<span className='py-1 d-block'>{error}</span>
 					</Alert>
-				) : null}
+				)}
 				{imageBlob ? (
 					<img
 						src={imageBlob}
@@ -47,9 +47,7 @@ const ProfileImage = () => {
 					accept='image/jpg, image/png'
 				/>
 			</div>
-			<Button type='button' variant='secondary'>
-				Upload Profile Image
-			</Button>
+			<Button variant='secondary'>Upload Profile Image</Button>
 		</>
 	)
 }

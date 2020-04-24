@@ -4,25 +4,25 @@ import * as Yup from 'yup'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileForm.styles.css'
 import isEmpty from 'lodash/isEmpty'
+import { PHONE_NUMBER_REG_EXP } from './profileForm.constants'
+import classNames from 'classnames'
 
 const ProfileForm = () => {
-	// RegEx for phone number validation
-	const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
-
 	const validationSchema = Yup.object().shape({
 		name: Yup.string().required('Name is required'),
 		email: Yup.string()
 			.email('E-mail is invalid')
 			.required('E-mail is required'),
 		phone: Yup.string()
-			.matches(phoneRegExp, 'Phone number is not valid')
+			.matches(PHONE_NUMBER_REG_EXP, 'Phone number is not valid')
 			.min(10, 'Phone number should be atleast 10 character')
 			.required('Phone number is required'),
 	})
+	const initialValues = { name: '', email: '', phone: '' }
 
 	return (
 		<Formik
-			initialValues={{ name: '', email: '', phone: '' }}
+			initialValues={initialValues}
 			validationSchema={validationSchema}
 			onSubmit={(values, { setSubmitting, resetForm }) => {
 				setTimeout(() => {
@@ -55,11 +55,11 @@ const ProfileForm = () => {
 								onChange={handleChange}
 								onBlur={handleBlur}
 								value={values.name}
-								className={touched.name && errors.name ? 'error' : null}
+								className={classNames({ error: touched.name && errors.name })}
 							/>
-							{touched.name && errors.name ? (
+							{touched.name && errors.name && (
 								<div className='error-message'>{errors.name}</div>
-							) : null}
+							)}
 						</Form.Group>
 						<Form.Group controlId='profileFormEmail'>
 							<Form.Label>Your Email</Form.Label>
@@ -70,11 +70,11 @@ const ProfileForm = () => {
 								onChange={handleChange}
 								onBlur={handleBlur}
 								value={values.email}
-								className={touched.email && errors.email ? 'error' : null}
+								className={classNames({ error: touched.email && errors.email })}
 							/>
-							{touched.email && errors.email ? (
+							{touched.email && errors.email && (
 								<div className='error-message'>{errors.email}</div>
-							) : null}
+							)}
 						</Form.Group>
 						<Form.Group className='mb-15' controlId='profileFormPhone'>
 							<Form.Label>Your Phone Number</Form.Label>
@@ -85,11 +85,11 @@ const ProfileForm = () => {
 								onChange={handleChange}
 								onBlur={handleBlur}
 								value={values.phone}
-								className={touched.phone && errors.phone ? 'error' : null}
+								className={classNames({ error: touched.email && errors.email })}
 							/>
-							{touched.phone && errors.phone ? (
+							{touched.phone && errors.phone && (
 								<div className='error-message'>{errors.phone}</div>
-							) : null}
+							)}
 						</Form.Group>
 						<Button variant='secondary' type='submit' disabled={isSubmitting}>
 							Save
