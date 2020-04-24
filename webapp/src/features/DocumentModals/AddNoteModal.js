@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import Modal, { showModal, hideModal } from '../modal'
+import Modal, { hideModal } from '../modal'
 
 const AddNote = () => {
 	const dispatch = useDispatch()
@@ -24,25 +24,16 @@ const AddNote = () => {
 		</>
 	)
 	return (
-		<>
-			<Button
-				onClick={() => {
-					dispatch(showModal())
-				}}
-			>
-				AddNote
-			</Button>
-			<Modal header='Add Note' footer={footer}>
-				<Form.Group controlId='controlTextarea'>
-					<Form.Control
-						as='textarea'
-						rows='10'
-						cols='80'
-						placeholder='Your Note Here...'
-					/>
-				</Form.Group>
-			</Modal>
-		</>
+		<Modal header='Add Note' footer={footer}>
+			<Form.Group controlId='controlTextarea'>
+				<Form.Control
+					as='textarea'
+					rows='10'
+					cols='80'
+					placeholder='Your Note Here...'
+				/>
+			</Form.Group>
+		</Modal>
 	)
 }
 export default AddNote

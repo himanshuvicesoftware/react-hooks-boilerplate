@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal, { showModal, hideModal } from '../modal'
+import Modal, { hideModal } from '../modal'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 
@@ -27,24 +27,15 @@ const AssignUser = () => {
 		</>
 	)
 	return (
-		<div>
-			<Button
-				onClick={() => {
-					dispatch(showModal())
-				}}
-			>
-				Assign
-			</Button>
-			<Modal header='Assign To User' footer={footer}>
-				<Form.Group controlId='exampleForm.SelectCustom'>
-					<Form.Label>Select User</Form.Label>
-					<Form.Control as='select' custom>
-						<option>User1</option>
-						<option>User2</option>
-					</Form.Control>
-				</Form.Group>
-			</Modal>
-		</div>
+		<Modal header='Assign To User' footer={footer}>
+			<Form.Group controlId='exampleForm.SelectCustom'>
+				<Form.Label>Select User</Form.Label>
+				<Form.Control as='select' custom>
+					<option>User1</option>
+					<option>User2</option>
+				</Form.Control>
+			</Form.Group>
+		</Modal>
 	)
 }
 
