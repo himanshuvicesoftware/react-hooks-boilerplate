@@ -32,7 +32,7 @@ const AddNote = () => {
 			>
 				AddNote
 			</Button>
-			<Modal header='Add Notes' footer={footer}>
+			<Modal header='Add Note' footer={footer}>
 				<Form.Group controlId='controlTextarea'>
 					<Form.Control
 						as='textarea'

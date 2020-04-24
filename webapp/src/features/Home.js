@@ -1,7 +1,10 @@
 import React from 'react'
+import AssignUserModal from '../widgets/AssignUserModal/AssignUserModal'
+import AddNote from '../widgets/AddNoteModal/AddNoteModal'
+
 export default function Home() {
 	return (
-		<>
+		<div>
 			<h2>Vice Software Boilerplate</h2>
 			<p>
 				Created by{' '}
@@ -17,6 +20,8 @@ export default function Home() {
 				</a>
 				.
 			</p>
-		</>
+			<AssignUserModal />
+			<AddNote />
+		</div>
 	)
 }
