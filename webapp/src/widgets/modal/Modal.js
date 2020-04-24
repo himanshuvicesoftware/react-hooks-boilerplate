@@ -13,17 +13,19 @@ export default function ViceModal({ children, header, footer }) {
 	const dispatch = useDispatch()
 	return (
 		<Modal show={show} onHide={() => dispatch(hideModal())}>
-			<Modal.Header>
-				<Modal.Title className='f-32 font-semi-bold'>{header}</Modal.Title>
+			<Modal.Header className='border-0'>
+				<h5>
+					<Modal.Title className='f-32 font-semi-bold'>{header}</Modal.Title>
+				</h5>
 				<Button
-					type='button'
+					variant='light'
 					className='close p-0 pr-2'
 					onClick={() => dispatch(hideModal())}
 				>
 					<Image src={closeIcon} alt='' width='25' />
 				</Button>
 			</Modal.Header>
-			<Modal.Body>{children}</Modal.Body>
+			<Modal.Body className='py-0'>{children}</Modal.Body>
 			<Modal.Footer className='justify-content-start border-0'>
 				{footer}
 			</Modal.Footer>

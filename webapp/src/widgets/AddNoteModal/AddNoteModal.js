@@ -8,16 +8,15 @@ const AddNote = () => {
 	const footer = (
 		<>
 			<Button
-				className='btn btn-primary btn-big'
+				className=' btn-big'
 				data-dismiss='modal'
-				variant='light'
 				onClick={() => dispatch(hideModal())}
 			>
 				Save
 			</Button>
 			<Button
-				className='btn btn-outline btn-big'
-				variant='light'
+				className='btn-big'
+				variant='outline'
 				onClick={() => dispatch(hideModal())}
 			>
 				Cancel
