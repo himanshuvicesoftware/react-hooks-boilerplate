@@ -34,7 +34,8 @@ export default function FileList() {
 			fileType: 'Other',
 		},
 	]
-	function ViewButtonFormatter() {
+
+	const ViewButtonFormatter = () => {
 		return (
 			<span>
 				<Button variant='primary' size='sm' className='font-weight-normal'>

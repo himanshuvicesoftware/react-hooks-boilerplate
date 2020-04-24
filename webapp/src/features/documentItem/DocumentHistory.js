@@ -49,11 +49,11 @@ export default function DocumentHistory() {
 
 						<div className='d-flex align-items-center'>
 							<span className='font-weight-normal'>{history.detail}</span>
-							{history.type === 'Version' ? (
+							{history.type === 'Version' && (
 								<Button variant='outline' size='md' className='ml-auto'>
 									View
 								</Button>
-							) : null}
+							)}
 						</div>
 					</Card.Body>
 				</Card>

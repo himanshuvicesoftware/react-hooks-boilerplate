@@ -109,11 +109,11 @@ function DocumentAssignToAndCreatedBy({ title, username }) {
 					<span className='f-15 ml-2 '>{username}</span>
 				</div>
 
-				{title === 'Document Assigned To' ? (
+				{title === 'Document Assigned To' && (
 					<a href='/#' className='d-block ml-auto'>
 						<Image src={Icons.editIcon} width='25' />
 					</a>
-				) : null}
+				)}
 			</div>
 		</div>
 	)
