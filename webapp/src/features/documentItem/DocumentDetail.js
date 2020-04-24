@@ -19,15 +19,15 @@ export default function DocumentDetail() {
 						<dl className='discription-list  mb-0 no-gutters'>
 							<DocumentDetailProp property='Creation Date' value='11/01/20' />
 							<DocumentDetailProp
-								property='Expiration Date:'
+								property='Expiration Date'
 								value='555-555-555555'
 							/>
 							<DocumentDetailProp
-								property='Serial Number:'
+								property='Serial Number'
 								value='666-666-666666'
 							/>
 							<DocumentDetailProp
-								property='Document Status:'
+								property='Document Status'
 								value='Transferred'
 							/>
 							<DocumentDetailProp property='Version Number' value='2' />
@@ -115,8 +115,8 @@ export function DocumentDetailProp({ property, value }) {
 	return (
 		<Fragment>
 			<Row className='no-gutters mb-2 align-items-baseline'>
-				<Col md={7} className='text-light'>
-					{property}
+				<Col md={7} className='text-light font-semi-bold'>
+					{property}:
 				</Col>
 				<Col md={5} className='font-weight-normal f-15 mb-0'>
 					{value}

@@ -41,7 +41,7 @@ export default function DocumentHistory() {
 			{documentHistory.map((history, index) => (
 				<Card key={index} className='border-0 shadow-sm mb-15 text-light'>
 					<Card.Body className='p-25'>
-						<div className='d-flex  mb-15'>
+						<div className='d-flex  mb-15 font-semi-bold'>
 							<span>{history.type}</span>
 							<span className='ml-auto'>{history.time}</span>
 						</div>

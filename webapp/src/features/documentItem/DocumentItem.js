@@ -3,7 +3,6 @@ import DocumentDetail from './DocumentDetail'
 import DocumentHistory from './DocumentHistory'
 import FileList from './FileList'
 import { Row, Col, Container } from 'react-bootstrap'
-
 import './DocumentItem.css'
 
 export default function DocumentItem() {

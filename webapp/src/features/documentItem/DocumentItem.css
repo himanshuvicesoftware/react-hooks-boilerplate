@@ -48,6 +48,17 @@
 	height: 2px;
 }
 
+dt {
+	font-weight: 700;
+}
+/* .body {
+	font-family: ;
+} */
+
+.card-title {
+	letter-spacing: 1.5px;
+}
+
 /*###############-------Btn  css Start------###################*/
 .btn {
 	height: 50px;
@@ -112,6 +123,7 @@
 	align-items: center;
 	justify-content: center;
 	color: white;
+	font-size: 9px;
 }
 /*###############-------Avatar css End------###################*/
 
@@ -119,6 +131,27 @@
 	top: 0;
 }
 
+/* #######################-------Table Style Starts------------############### */
+.headerStyle {
+	background-color: #ffffff;
+}
+.thead {
+	background-color: white;
+}
+.table-bordered {
+	border: none;
+}
+.table-bordered td,
+.table-bordered th {
+	border: none !important;
+}
+.table td,
+.table th {
+	border: none !important;
+}
+.table thead th {
+	border: none !important;
+}
 .tableRowEven {
 	padding: 0.75rem;
 	vertical-align: top;
@@ -132,3 +165,18 @@
 	background-color: white;
 	border-color: white;
 }
+.table thead th:first-child {
+	border-radius: 10px 0px 0px 0px;
+}
+.table thead th:last-child {
+	border-radius: 0px 10px 0px 0px;
+}
+.table tbody td {
+	padding: 15px;
+	border: 0px;
+	vertical-align: middle;
+}
+.table {
+	margin-bottom: 50px;
+}
+/* #######################-------Table Style Ends------------############### */

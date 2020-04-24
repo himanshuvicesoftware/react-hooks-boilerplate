@@ -8,7 +8,7 @@ import Users from './features/users'
 import Settings from './features/settings'
 import SignIn from './features/SignIn'
 import Profile from './features/profile'
-import DocumentItem from './widgets/DocumentItem/DocumentItem'
+import DocumentItem from './features/documentItem/DocumentItem'
 
 export default function Routes() {
 	return (

@@ -42,15 +42,11 @@ export default function FileList() {
 			</span>
 		)
 	}
-	function classesFunction(cell, row, rowIndex, colIndex) {
-		return { cell: 'cellStyle' }
-	}
 
 	const columns = [
 		{
 			dataField: 'fileName',
 			text: 'File Name',
-			classes: classesFunction,
 		},
 		{
 			dataField: 'uploadedBy',
@@ -76,51 +72,14 @@ export default function FileList() {
 
 	return (
 		<Fragment>
-			<div className='table-responsive mb-50'>
-				<BootstrapTable
-					keyField='id'
-					data={files}
-					columns={columns}
-					rowClasses={rowClasses}
-					// sort={true}
-					className='font-weight-normal f-15 table-striped text-secondry'
-				/>
-
-				<table className='table font-weight-normal f-15 table-striped text-secondry'>
-					<thead>
-						<tr className='text-secondry'>
-							<th width='250' className='text-nowrap'>
-								File Name
-							</th>
-							<th width='150'>Uploaded By</th>
-							<th width='150' className='text-nowrap'>
-								Uploaded On
-							</th>
-							<th>Type</th>
-							<th width='120'></th>
-						</tr>
-					</thead>
-
-					<tbody>
-						{files.map((file, index) => (
-							<tr key={index}>
-								<td>{file.fileName} </td>
-								<td>{file.uploadedBy} </td>
-								<td>{file.uploadedOn}</td>
-								<td>{file.fileType}</td>
-								<td>
-									<Button
-										className='btn btn-primary font-weight-normal btn-sm'
-										href='#'
-									>
-										View
-									</Button>
-								</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
+			<BootstrapTable
+				keyField='id'
+				data={files}
+				columns={columns}
+				rowClasses={rowClasses}
+				headerClasses='headerStyle'
+				className='font-weight-normal f-15 table-striped text-secondry'
+			/>
 		</Fragment>
 	)
 }
