@@ -118,3 +118,17 @@
 .user-circle .position-absolute {
 	top: 0;
 }
+
+.tableRowEven {
+	padding: 0.75rem;
+	vertical-align: top;
+	background-color: rgba(0, 0, 0, 0.05);
+	border: 1px solid white !important;
+}
+.cellStyle {
+	border: 1px solid white !important;
+}
+.tableRowOdd {
+	background-color: white;
+	border-color: white;
+}

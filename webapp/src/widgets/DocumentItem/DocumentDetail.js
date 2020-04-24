@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import { Row, Image, Col, Card, Button } from 'react-bootstrap'
+const circleIcon = require('../../assets/icons/circle.svg')
+const editIcon = require('../../assets/icons/Edit.svg')
+const downloadIcon = require('../../assets/icons/Download.svg')
+const logIcon = require('../../assets/icons/Log.svg')
+const flagIcon = require('../../assets/icons/Flag.svg')
 
 export default function DocumentDetail() {
 	return (
@@ -40,7 +42,7 @@ export default function DocumentDetail() {
 							<div className='d-flex'>
 								<div className='d-flex align-items-center '>
 									<div className='user-circle d-inline-block position-relative rounded-circle'>
-										{/* <img width="25" src="./images/icons/circle.svg" alt=""> */}
+										<Image src={circleIcon} width='25' />
 										<div
 											className='position-absolute user-name font-weight-normal'
 											// style='font-size:9px'
@@ -51,8 +53,8 @@ export default function DocumentDetail() {
 									<span className='f-15 ml-2 '>Cody Miles</span>
 								</div>
 
-								<a className='d-block ml-auto' href='#'>
-									{/* <img src="./images/icons/Edit.svg" alt=""> */}
+								<a className='d-block ml-auto'>
+									<Image src={editIcon} width='25' />
 								</a>
 							</div>
 						</div>
@@ -64,7 +66,7 @@ export default function DocumentDetail() {
 							<div className='d-flex'>
 								<div className='d-flex align-items-center '>
 									<div className='user-circle d-inline-block position-relative rounded-circle'>
-										{/* <img width="25" src="./images/icons/circle.svg" alt=""> */}
+										<Image src={circleIcon} width='25' />
 										<div
 											className='position-absolute user-name font-weight-normal'
 											// style='font-size:9px'
@@ -88,19 +90,19 @@ export default function DocumentDetail() {
 						<Button className='btn btn-block btn-secondary'>Add Note</Button>
 						<button className='btn btn-outline btn-block d-flex align-items-center'>
 							View Correction Log
-							{/* <img className="ml-auto" src="./images/icons/Log.svg" alt=""> */}
+							<Image className='ml-auto' src={logIcon} width='25' />
 						</button>
 						<button className='btn btn-outline btn-block d-flex align-items-center'>
 							Flag Document
-							{/* <img className="ml-auto" src="./images/icons/Flag.svg" alt=""> */}
+							<Image className='ml-auto' src={flagIcon} width='25' />
 						</button>
 						<button className='btn btn-outline btn-block d-flex align-items-center'>
 							Export Document
-							{/* <img className="ml-auto" src="./images/icons/Download.svg" alt=""> */}
+							<Image className='ml-auto' src={downloadIcon} width='25' />
 						</button>
 						<button className='btn btn-outline btn-block d-flex align-items-center'>
 							Export History
-							{/* <img className="ml-auto" src="./images/icons/Download.svg" alt=""> */}
+							<Image className='ml-auto' src={downloadIcon} width='25' />
 						</button>
 					</Card.Body>
 				</Card>

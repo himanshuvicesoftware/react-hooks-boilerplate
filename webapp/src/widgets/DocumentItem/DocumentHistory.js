@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Card from 'react-bootstrap/Card'
+import { Card } from 'react-bootstrap'
 
 export default function DocumentHistory() {
 	const documentHistory = [
