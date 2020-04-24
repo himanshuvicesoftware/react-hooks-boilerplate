@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
 import classNames from 'classnames'
 
-export default function FileList() {
+const FileList = () => {
 	const mockFiles = [
 		{
 			id: 1,
@@ -86,3 +86,5 @@ export default function FileList() {
 		/>
 	)
 }
+
+export default FileList

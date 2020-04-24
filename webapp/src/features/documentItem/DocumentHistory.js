@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './DocumentItem.css'
 
-export default function DocumentHistory() {
+const DocumentHistory = () => {
 	const mockDocumentHistory = [
 		{
 			id: 1,
@@ -61,3 +61,5 @@ export default function DocumentHistory() {
 		</>
 	)
 }
+
+export default DocumentHistory

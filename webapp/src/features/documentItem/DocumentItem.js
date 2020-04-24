@@ -5,7 +5,7 @@ import FileList from './FileList'
 import { Row, Col, Container } from 'react-bootstrap'
 import './DocumentItem.css'
 
-export default function DocumentItem() {
+const DocumentItem = () => {
 	return (
 		<>
 			<Container fluid>
@@ -27,3 +27,5 @@ export default function DocumentItem() {
 		</>
 	)
 }
+
+export default DocumentItem
