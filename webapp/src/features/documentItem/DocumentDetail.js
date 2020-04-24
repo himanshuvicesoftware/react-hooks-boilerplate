@@ -117,7 +117,7 @@ export function DocumentAssignToAndCreatedBy({ title, username }) {
 				</div>
 
 				{title === 'Document Assigned To' ? (
-					<a className='d-block ml-auto'>
+					<a href='/#' className='d-block ml-auto'>
 						<Image src={Icons.editIcon} width='25' />
 					</a>
 				) : null}
