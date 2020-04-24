@@ -5,7 +5,7 @@ import { Form, Button, Alert } from 'react-bootstrap'
 import './profileForm.styles.css'
 import isEmpty from 'lodash/isEmpty'
 
-export default function ProfileForm() {
+const ProfileForm = () => {
 	// RegEx for phone number validation
 	const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
 
@@ -100,3 +100,5 @@ export default function ProfileForm() {
 		</Formik>
 	)
 }
+
+export default ProfileForm

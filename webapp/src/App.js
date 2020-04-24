@@ -5,7 +5,7 @@ import NavBar from './widgets/NavBar'
 import Routes from './Routes'
 import './app.css'
 import NotificationPopup from './infrastructure/notificationPopup'
-import FooterBar from './widgets/FooterBar'
+import Footer from './widgets/Footer'
 
 function App() {
 	return (
@@ -15,7 +15,7 @@ function App() {
 				<NotificationPopup />
 				<Routes />
 			</Container>
-			<FooterBar />
+			<Footer />
 		</Router>
 	)
 }

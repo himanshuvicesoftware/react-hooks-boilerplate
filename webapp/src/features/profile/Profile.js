@@ -1,11 +1,11 @@
 import React from 'react'
-import ProfileImage from '../../widgets/ProfileImage/ProfileImage'
-import ProfileForm from '../../widgets/profileForm/ProfileForm'
-import ResetPasswordForm from '../../widgets/resetPasswordForm/ResetPasswordForm'
+import ProfileImage from '../ProfileImage'
+import ProfileForm from '../ProfileForm'
+import ResetPasswordForm from '../ResetPasswordForm'
 import { Card, Row, Col } from 'react-bootstrap'
 import './Profile.styles.css'
 
-export default function Profile() {
+const Profile = () => {
 	return (
 		<>
 			<h2 className='page-title'>Your Profile</h2>
@@ -29,3 +29,5 @@ export default function Profile() {
 		</>
 	)
 }
+
+export default Profile

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FooterBar = () => (
+const Footer = () => (
 	<footer className='bg-secondry p-4'>
 		<div className='container-fluid py-1'>
 			<span className='f-14 font-weight-normal text-white'>
@@ -10,4 +10,4 @@ const FooterBar = () => (
 	</footer>
 )
 
-export default FooterBar
+export default Footer

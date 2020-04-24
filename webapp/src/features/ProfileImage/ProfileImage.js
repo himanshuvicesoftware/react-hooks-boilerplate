@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileImage.css'
-
-export default function ProfileImage() {
+const ProfileImage = () => {
 	const [imageFile, setImageFile] = useState(null)
 	const [imageBlob, setImageBlob] = useState(null)
 	const [error, setError] = useState('')
@@ -54,3 +53,5 @@ export default function ProfileImage() {
 		</>
 	)
 }
+
+export default ProfileImage
