@@ -83,9 +83,6 @@
 	background-color: #283c73;
 	border-color: #283c73;
 }
-/* .btn-primary {
-	color: #0d1e45 !important;
-} */
 .btn-outline {
 	border-color: rgba(50, 55, 60, 0.5);
 	color: #0d1e45;
@@ -93,6 +90,9 @@
 }
 .btn-outline:hover .btn-outline:active {
 	color: #0d1e45;
+}
+.ml-auto {
+	margin-left: auto !important;
 }
 /* ###############-------Btn  css End------################### */
 

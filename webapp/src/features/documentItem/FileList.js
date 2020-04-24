@@ -36,7 +36,7 @@ export default function FileList() {
 	function ViewButtonFormatter(cell, row) {
 		return (
 			<span>
-				<Button className='btn btn-primary font-weight-normal btn-sm'>
+				<Button variant='primary' size='sm' className='font-weight-normal'>
 					View
 				</Button>
 			</span>

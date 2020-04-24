@@ -12,7 +12,7 @@ export default function DocumentDetail() {
 							Document Details
 						</Card.Title>
 
-						<dl className='discription-list  mb-0 no-gutters'>
+						<dl className='mb-0 no-gutters'>
 							<DocumentDetailProp property='Creation Date' value='11/01/20' />
 							<DocumentDetailProp
 								property='Expiration Date'
@@ -43,38 +43,44 @@ export default function DocumentDetail() {
 
 						<div className='bg-secondary opacity-75 separator mt-35 mb-35'></div>
 
-						<Button className='btn btn-block btn-secondary'>
+						<Button variant='secondary' size='block'>
 							Create New Version
 						</Button>
-						<Button className='btn btn-block btn-secondary'>
+						<Button variant='secondary' size='block'>
 							Upload Files
 						</Button>
-						<Button className='btn btn-block btn-secondary'>Add Note</Button>
+						<Button variant='secondary' size='block'>
+							Add Note
+						</Button>
 
 						<Button
-							variant='light'
-							className='btn btn-outline btn-block d-flex align-items-center'
+							variant='outline'
+							size='block'
+							className='d-flex align-items-center'
 						>
 							View Correction Log
 							<Image className='ml-auto' src={Icons.logIcon} width='25' />
 						</Button>
 						<Button
-							variant='light'
-							className='btn btn-outline btn-block d-flex align-items-center'
+							variant='outline'
+							size='block'
+							className='d-flex align-items-center'
 						>
 							Flag Document
 							<Image className='ml-auto' src={Icons.flagIcon} width='25' />
 						</Button>
 						<Button
-							variant='light'
-							className='btn btn-outline btn-block d-flex align-items-center'
+							variant='outline'
+							size='block'
+							className='d-flex align-items-center'
 						>
 							Export Document
 							<Image className='ml-auto' src={Icons.downloadIcon} width='25' />
 						</Button>
 						<Button
-							variant='light'
-							className='btn btn-outline btn-block d-flex align-items-center'
+							variant='outline'
+							size='block'
+							className='d-flex align-items-center'
 						>
 							Export History
 							<Image className='ml-auto' src={Icons.downloadIcon} width='25' />
