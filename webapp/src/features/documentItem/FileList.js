@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Button } from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
+import classNames from 'classnames'
 
 export default function FileList() {
-	const files = [
+	const mockFiles = [
 		{
 			id: 1,
 			fileName: '4473EID-1029.pdf',
@@ -33,7 +34,7 @@ export default function FileList() {
 			fileType: 'Other',
 		},
 	]
-	function ViewButtonFormatter(cell, row) {
+	function ViewButtonFormatter() {
 		return (
 			<span>
 				<Button variant='primary' size='sm' className='font-weight-normal'>
@@ -70,20 +71,17 @@ export default function FileList() {
 			formatter: ViewButtonFormatter,
 		},
 	]
-	const rowClasses = (row, rowIndex) => {
-		return rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd'
-	}
 
 	return (
-		<Fragment>
-			<BootstrapTable
-				keyField='id'
-				data={files}
-				columns={columns}
-				rowClasses={rowClasses}
-				headerClasses='headerStyle'
-				className='font-weight-normal f-15 table-striped text-secondry'
-			/>
-		</Fragment>
+		<BootstrapTable
+			keyField='id'
+			data={mockFiles}
+			columns={columns}
+			rowClasses={(row, rowIndex) =>
+				classNames(rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd')
+			}
+			headerClasses='headerStyle'
+			className='font-weight-normal f-15 table-striped text-secondry'
+		/>
 	)
 }

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import DocumentDetail from './DocumentDetail'
+import React from 'react'
+import DocumentDetailsSidebar from './DocumentDetailsSidebar'
 import DocumentHistory from './DocumentHistory'
 import FileList from './FileList'
 import { Row, Col, Container } from 'react-bootstrap'
@@ -7,7 +7,7 @@ import './DocumentItem.css'
 
 export default function DocumentItem() {
 	return (
-		<Fragment>
+		<>
 			<Container fluid>
 				<Row className='pt-50 mb-50'>
 					<Col md={5} lg={7}>
@@ -15,7 +15,7 @@ export default function DocumentItem() {
 					</Col>
 				</Row>
 				<Row>
-					<DocumentDetail />
+					<DocumentDetailsSidebar />
 					<Col md={8} lg={9}>
 						<FileList />
 						<DocumentHistory />
@@ -24,6 +24,6 @@ export default function DocumentItem() {
 			</Container>
 
 			<div className='spacer'></div>
-		</Fragment>
+		</>
 	)
 }

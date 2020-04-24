@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './DocumentItem.css'
 
 export default function DocumentHistory() {
-	const documentHistory = [
+	const mockDocumentHistory = [
 		{
 			id: 1,
 			type: 'Attachment File',
@@ -36,10 +36,10 @@ export default function DocumentHistory() {
 		},
 	]
 	return (
-		<Fragment>
-			<Card.Title className='font-semi-bold mb-15'>Document Details</Card.Title>
+		<>
+			<Card.Title className='font-semi-bold mb-15'>Document History</Card.Title>
 
-			{documentHistory.map((history, index) => (
+			{mockDocumentHistory.map((history, index) => (
 				<Card key={index} className='border-0 shadow-sm mb-15 text-light'>
 					<Card.Body className='p-25'>
 						<div className='d-flex mb-15 font-semi-bold'>
@@ -58,6 +58,6 @@ export default function DocumentHistory() {
 					</Card.Body>
 				</Card>
 			))}
-		</Fragment>
+		</>
 	)
 }
