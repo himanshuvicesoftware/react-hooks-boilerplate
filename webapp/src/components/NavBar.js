@@ -24,7 +24,6 @@ import { useAuth0 } from '../react-auth0-spa'
 
 const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	//const [count, setCount] = useState(0)
 	const [notifyToggle, setNotifyToggle] = useState(false)
 	const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0()
 	const toggle = () => setIsOpen(!isOpen)
