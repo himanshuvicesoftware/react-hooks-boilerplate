@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileImage.css'
-const ProfileImage = () => {
+
+const ProfileImage = ({ uri, name }) => {
 	const [imageFile, setImageFile] = useState(null)
 	const [imageBlob, setImageBlob] = useState(null)
 	const [error, setError] = useState('')
+
+	const initialofUser = (name) => {
+		const listOfUserInitial = name.split(' ')
+		return (
+			listOfUserInitial[0][0] +
+			listOfUserInitial[listOfUserInitial.length - 1][0]
+		)
+	}
 	const setImage = (e) => {
 		const fileType = e.target.files[0].type
 		if (
@@ -28,15 +37,15 @@ const ProfileImage = () => {
 						<span className='py-1 d-block'>{error}</span>
 					</Alert>
 				)}
-				{imageBlob ? (
+				{imageBlob || uri ? (
 					<img
-						src={imageBlob}
+						src={imageBlob || uri}
 						alt='profile-pic'
 						className='profile-image bg-primary text-white rounded-circle font-weight-normal'
 					/>
 				) : (
 					<span className='profile-image bg-primary text-white rounded-circle font-weight-normal'>
-						CM
+						{initialofUser(name)}
 					</span>
 				)}
 				<Form.Control

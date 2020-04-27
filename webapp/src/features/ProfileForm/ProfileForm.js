@@ -7,7 +7,7 @@ import isEmpty from 'lodash/isEmpty'
 import { PHONE_NUMBER_REG_EXP } from './profileForm.constants'
 import classNames from 'classnames'
 
-const ProfileForm = () => {
+const ProfileForm = ({ name, email, phone }) => {
 	const validationSchema = Yup.object().shape({
 		name: Yup.string().required('Name is required'),
 		email: Yup.string()
@@ -18,7 +18,7 @@ const ProfileForm = () => {
 			.min(10, 'Phone number should be atleast 10 character')
 			.required('Phone number is required'),
 	})
-	const initialValues = { name: '', email: '', phone: '' }
+	const initialValues = { name: name, email: email, phone: phone }
 
 	return (
 		<Formik
