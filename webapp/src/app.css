@@ -11,6 +11,9 @@
 .mb-15 {
 	margin-bottom: 15px !important;
 }
+.mb-20 {
+	margin-bottom: 20px !important;
+}
 .mb-25 {
 	margin-bottom: 25px !important;
 }
@@ -25,6 +28,9 @@
 }
 .pt-50 {
 	padding-top: 50px !important;
+}
+.p-15 {
+	padding: 15px !important;
 }
 .p-25 {
 	padding: 25px !important;
@@ -208,3 +214,6 @@ textarea.form-control {
 }
 
 /*###############-------Form  css ends------###################*/
+.bdr-secondry {
+	border-color: #0d1e45 !important;
+}

@@ -1,12 +1,30 @@
-import React from 'react'
-import { Form, Col, Card } from 'react-bootstrap'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-// import Icons from '../../assets/icons'
-const DocumentVersionSidebar = () => (
-	<Col md={4} lg={3}>
-		<Card className='shadow-sm border-0 mb-25'>
-			<Card.Body className='p-25 wrappedClass'>
+import React, { useState } from 'react'
+import { Form, Col, Card, Image } from 'react-bootstrap'
+import Icons from '../../assets/icons'
+import './DocumentVersion.css'
+
+const DocumentVersionSidebar = () => {
+	const [showSidebar, setShowSidebar] = useState(true)
+	return (
+		<div className='document-wrapper d-flex position-relative'>
+			<aside className='document-sidebar p-15 bg-white border-right bdr-1 bdr-secondry'>
+				<div className='d-flex mb-20'>
+					{showSidebar ? (
+						<Image
+							classNameName='side-toggle ml-auto'
+							src={Icons.minimizeIcon}
+							width='25'
+							onClick={() => setShowSidebar(false)}
+						/>
+					) : (
+						<Image
+							classNameName='close-log side-toggle'
+							src={Icons.maximizeIcon}
+							width='25'
+							onClick={() => setShowSidebar(true)}
+						/>
+					)}
+				</div>
 				<Form>
 					<Form.Group controlId='documentVersionFormCustomerName'>
 						<Form.Label>Customer Name</Form.Label>
@@ -24,7 +42,10 @@ const DocumentVersionSidebar = () => (
 							placeholder='Enter Serial Number'
 						/>
 					</Form.Group>
-					<Form.Group className='mb-15' controlId='documentVersionFormTSN_Name'>
+					<Form.Group
+						classNameName='mb-15'
+						controlId='documentVersionFormTSN_Name'
+					>
 						<Form.Label>TSN Name</Form.Label>
 						<Form.Control
 							type='text'
@@ -51,7 +72,7 @@ const DocumentVersionSidebar = () => (
 						{/* <DatePicker /> */}
 					</Form.Group>
 					<Form.Group
-						className='mb-15'
+						classNameName='mb-15'
 						controlId='documentVersionFormDocumentStatus'
 					>
 						<Form.Label>Document Status</Form.Label>
@@ -69,9 +90,12 @@ const DocumentVersionSidebar = () => (
 						</Form.Control>
 					</Form.Group>
 				</Form>
-			</Card.Body>
-		</Card>
-	</Col>
-)
+			</aside>
+		</div>
+		// 		{/* </Card.Body>
+		// 	</Card>
+		// </Col> */}
+	)
+}
 
 export default DocumentVersionSidebar
