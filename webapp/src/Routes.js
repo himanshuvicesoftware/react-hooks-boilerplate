@@ -5,7 +5,7 @@ import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
 import screenTimeReports from './features/screenTimeReports'
-
+import DocumentItem from './features/silencerhtml/DocumentItem/DocumentItem'
 const {
 	components: { UsersPage, UserDetailsPage },
 } = users
@@ -29,6 +29,9 @@ export default function Routes() {
 				</PageRoute>
 				<PageRoute path='/reports/:userid'>
 					<ScreenTimeReports />
+				</PageRoute>
+				<PageRoute path='/silencerhtml'>
+					<DocumentItem />
 				</PageRoute>
 				<PageRoute path='/'>
 					<UsersPage />
