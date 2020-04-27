@@ -32,11 +32,11 @@ export default function Routes() {
 			<PageRoute path='/sign-in'>
 				<SignIn />
 			</PageRoute>
-			<PageRoute path='/document/:customerId'>
-				<DocumentItem />
-			</PageRoute>
 			<PageRoute path='/document/new-version/:documentId'>
 				<DocumentVersion />
+			</PageRoute>
+			<PageRoute path='/document/:customerId'>
+				<DocumentItem />
 			</PageRoute>
 			<PageRoute path='/'>
 				<Home />

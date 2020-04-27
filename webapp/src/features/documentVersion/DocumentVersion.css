@@ -26,3 +26,14 @@
 dt {
 	font-weight: 700;
 }
+
+/* ############################-----Document Version Sidebar CSS Starts----------############## */
+.wrappedClass {
+	border-right: 1px solid #000;
+	padding: 30px;
+}
+
+.documentVersionHeading {
+	border: 1px solid black !important;
+}
+/* ############################-----Document Version Sidebar CSS Ends----------############## */
