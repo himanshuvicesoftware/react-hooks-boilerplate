@@ -1,0 +1,47 @@
+.table {
+	color: #0d1e45 !important;
+	font-size: 15px !important;
+	font-weight: 400 !important;
+}
+
+#viewButton {
+	min-width: 125px;
+	height: 30px;
+	line-height: 1;
+	font-weight: bold;
+	background-color: #3d71de;
+	border-color: #3d71de;
+}
+
+#viewButton:hover {
+	background-color: #025cbd;
+	border-color: #025cbd;
+}
+
+.table thead th:first-child {
+	border-radius: 10px 0px 0px 0px;
+}
+
+.table thead th:last-child {
+	border-radius: 0px 10px 0px 0px;
+}
+
+.table thead th {
+	vertical-align: 0%;
+	border: 0px !important;
+	background-color: white;
+}
+
+.table tbody td:last-child {
+	text-align: end;
+}
+
+.tableRowEven {
+	vertical-align: top;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tableRowOdd {
+	background-color: white;
+	border-color: white;
+}

@@ -1,0 +1,54 @@
+.shadow-sm,
+.shadow-sm--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+	border: 0 !important;
+	margin-bottom: 25px !important;
+}
+.card-body {
+	padding: 25px !important;
+}
+
+.card-title {
+	margin-bottom: 25px !important;
+	font-weight: 600 !important;
+	letter-spacing: 1.5px;
+}
+
+.form-check input[type='radio']:not(:checked),
+.form-check input[type='radio']:checked {
+	display: none;
+}
+
+.form-check {
+	position: relative;
+	margin-bottom: 0px;
+	line-height: 1.75rem;
+}
+
+.form-check input[type='radio'] + label {
+	display: inline-block;
+	padding-left: 8px;
+}
+
+.form-check input[type='radio'] + label::after {
+	content: '';
+	position: absolute;
+	height: 19px;
+	width: 19px;
+	left: 0px;
+	top: 2px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 0px 1.5px #484747;
+}
+
+.form-check input[type='radio']:checked + label::before {
+	content: '';
+	height: 11px;
+	width: 11px;
+	border-radius: 50%;
+	background-color: #0e1d45;
+	display: block;
+	position: absolute;
+	left: 4px;
+	top: 5.9px;
+}

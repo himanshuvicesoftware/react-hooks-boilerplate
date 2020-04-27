@@ -10,12 +10,16 @@ import SignIn from './features/SignIn'
 import Profile from './features/profile'
 import DocumentItem from './features/documentItem/DocumentItem'
 import DocumentVersion from './features/DocumentVersion'
+import DocumentArchive from './features/DocumentArchive'
 
 export default function Routes() {
 	return (
 		<Switch>
 			<PageRoute path='/profile'>
 				<Profile />
+			</PageRoute>
+			<PageRoute path='/document'>
+				<DocumentArchive />
 			</PageRoute>
 			<PageRoute path='/users'>
 				<Users />
