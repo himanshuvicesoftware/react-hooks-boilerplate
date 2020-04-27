@@ -15,7 +15,7 @@ const DocumentVersion = () => {
 	})
 
 	return (
-		<div>
+		<>
 			<DocumentVersionHeader />
 			<div className={sidebarClass}>
 				<DocumentVersionSidebar
@@ -36,7 +36,7 @@ const DocumentVersion = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 export default DocumentVersion
