@@ -51,6 +51,9 @@
 	padding-left: 25px !important;
 	padding-right: 25px !important;
 }
+.separator {
+	height: 2px;
+}
 /* #####################-------- Margins & Paddings End -----------############ */
 
 /* #####################-------- Font CSS starts -----------############ */
@@ -266,4 +269,10 @@ textarea.form-control {
 }
 .bg-light {
 	background-color: #f1f4f9 !important;
+}
+.text-light {
+	color: rgba(13, 30, 69, 0.75) !important;
+}
+.card-title {
+	letter-spacing: 1.5px;
 }
