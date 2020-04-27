@@ -28,7 +28,7 @@ const AssignUser = () => {
 	)
 	return (
 		<Modal header='Assign To User' footer={footer}>
-			<Form.Group controlId='exampleForm.SelectCustom'>
+			<Form.Group controlId='assignUserControl'>
 				<Form.Label>Select User</Form.Label>
 				<Form.Control as='select' custom>
 					<option>User1</option>

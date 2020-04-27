@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import Modal, { hideModal } from '../modal'
+import Modal, { hideModal } from '../../widgets/modal'
 
 const AddNote = () => {
 	const dispatch = useDispatch()

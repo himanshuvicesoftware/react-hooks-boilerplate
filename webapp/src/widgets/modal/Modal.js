@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Image, Button } from 'react-bootstrap'
+import { Modal, Image } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectShowModal } from './modal.selectors'
 import { actions } from './modal.slice'
@@ -12,20 +12,23 @@ export default function ViceModal({ children, header, footer }) {
 	const show = useSelector(selectShowModal)
 	const dispatch = useDispatch()
 	return (
-		<Modal show={show} onHide={() => dispatch(hideModal())}>
+		<Modal
+			show={show}
+			onHide={() => dispatch(hideModal())}
+			dialogClassName='modal-dialog-centered modal-xl'
+		>
 			<Modal.Header className='border-0'>
-				<h5>
-					<Modal.Title className='f-32 font-semi-bold'>{header}</Modal.Title>
+				<h5 className='f-32 font-semi-bold'>
+					<Modal.Title>{header}</Modal.Title>
 				</h5>
-				<Button
-					variant='light'
+				<button
 					className='close p-0 pr-2'
 					onClick={() => dispatch(hideModal())}
 				>
 					<Image src={closeIcon} alt='' width='25' />
-				</Button>
+				</button>
 			</Modal.Header>
-			<Modal.Body className='py-0'>{children}</Modal.Body>
+			<Modal.Body className='py-0 mb-0'>{children}</Modal.Body>
 			<Modal.Footer className='justify-content-start border-0'>
 				{footer}
 			</Modal.Footer>
