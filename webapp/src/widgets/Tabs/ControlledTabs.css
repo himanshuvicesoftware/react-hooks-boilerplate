@@ -1,0 +1,33 @@
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#controlled-tab-example {
+	font-size: 15px !important;
+}
+a {
+	color: #000000 !important;
+}
+.nav {
+	font-size: 15px !important;
+	display: flex;
+	border: 0 !important;
+	margin-right: 10px;
+	font-weight: 600 !important;
+}
+.nav-tabs {
+	margin-right: 10px;
+}
+
+.tab-pane {
+	border: 1px !important;
+}
+body {
+	color: #0d1e45 !important;
+	background-color: #f1f4f9 !important;
+	font-weight: 600 !important;
+}

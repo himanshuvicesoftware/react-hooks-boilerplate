@@ -1,0 +1,48 @@
+.div {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.card {
+	/* border: 0 !important; */
+	font-weight: 600 !important;
+	box-sizing: border-box !important;
+}
+
+.card-body {
+	padding: 15px !important;
+	/* font-family: 'Proxima'; */
+	color: #0d1e45;
+}
+
+h4 {
+	display: block;
+	margin-block-start: 1.33em;
+	margin-block-end: 1.33em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: 600 !important;
+	font-size: 15px !important;
+	margin-bottom: 11px !important;
+	line-height: 30px;
+	margin-top: 0;
+}
+
+h3 {
+	font-weight: 600 !important;
+	margin-bottom: 0 !important;
+	font-size: 1.75rem;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+span {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	opacity: 0.5;
+	font-family: Proxima;
+}

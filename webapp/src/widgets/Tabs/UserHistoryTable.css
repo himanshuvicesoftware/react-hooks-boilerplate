@@ -1,0 +1,53 @@
+.tab-content {
+	background-color: white;
+
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+.table {
+	font-size: 15px !important;
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529;
+	font-weight: 400 !important;
+}
+
+.tab-pane {
+	padding-top: 50px !important ;
+	padding-bottom: 50px !important ;
+}
+.fade {
+	transition: opacity 0.15s linear;
+}
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+tr {
+	font-size: 15px !important;
+}
+span {
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	opacity: 0.5 !important;
+}
+.d-flex {
+	display: flex !important;
+}
+.nav-tabs .nav-item {
+	margin-right: 10px;
+	border: 0px !important;
+}
+tr th {
+	border: 0 !important;
+}
+.tab-content {
+	background-color: white;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #e9edf0 !important;
+}
