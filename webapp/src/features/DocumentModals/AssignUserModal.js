@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal, { hideModal } from '../modal'
+import Modal, { hideModal } from '../../widgets/modal'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 
