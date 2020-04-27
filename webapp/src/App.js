@@ -12,6 +12,7 @@ function App() {
 			<NavBar />
 			<NotificationPopup />
 			<Routes />
+			<Footer />
 		</Router>
 	)
 }

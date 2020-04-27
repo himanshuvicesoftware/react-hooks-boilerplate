@@ -2,12 +2,12 @@ import React from 'react'
 import ProfileImage from '../ProfileImage'
 import ProfileForm from '../ProfileForm'
 import ResetPasswordForm from '../ResetPasswordForm'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Card, Row, Col, Container } from 'react-bootstrap'
 import './Profile.styles.css'
 
 const Profile = () => {
 	return (
-		<>
+		<Container>
 			<h2 className='page-title'>Your Profile</h2>
 			<Card>
 				<Card.Body>
@@ -26,7 +26,7 @@ const Profile = () => {
 					<ResetPasswordForm />
 				</Card.Body>
 			</Card>
-		</>
+		</Container>
 	)
 }
 
