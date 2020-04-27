@@ -13,11 +13,7 @@ const CorrectionDetails = () => {
 
 	return (
 		<aside
-			className={
-				'correction-log-container bg-white bdr-1 bdr-secondry border-top py-20 px-15' +
-				logClass +
-				showAnnotationClass
-			}
+			className={`correction-log-container bg-white bdr-1 bdr-secondry border-top py-20 px-15 ${logClass} ${showAnnotationClass}`}
 		>
 			<div className='correction-log'>
 				<div className='d-flex'>
@@ -26,11 +22,7 @@ const CorrectionDetails = () => {
 						className='side-toggle ml-auto'
 						onClick={() => setShowLog((showLog) => !showLog)}
 					>
-						{showLog ? (
-							<Image src={Icons.minimizeIcon} />
-						) : (
-							<Image src={Icons.maximizeIcon} />
-						)}
+						<Image src={showLog ? Icons.minimizeIcon : Icons.maximizeIcon} />
 					</span>
 				</div>
 				<div className='correction-list'>
@@ -94,11 +86,7 @@ const CorrectionDetails = () => {
 				</div>
 				<Form.Group className='mb-25'>
 					<Form.Label>Correction Description</Form.Label>
-					<Form.Control
-						type='text'
-						className='form-control'
-						value='Corrected Name of Function'
-					/>
+					<Form.Control type='text' value='Corrected Name of Function' />
 				</Form.Group>
 
 				<CorrectionAnnotations />
