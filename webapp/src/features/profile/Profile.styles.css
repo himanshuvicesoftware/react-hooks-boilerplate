@@ -1,0 +1,25 @@
+.shadow-sm.card,
+.shadow-sm.card--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+	border: 0 !important;
+}
+
+.card {
+	margin-bottom: 50px;
+	border: 0;
+}
+
+.page-title {
+	line-height: 50px !important;
+	padding-top: 50px;
+	margin-bottom: 35px;
+	font-weight: 600 !important;
+}
+
+.card-body {
+	padding: 25px !important;
+}
+
+.text-center {
+	text-align: center !important;
+}

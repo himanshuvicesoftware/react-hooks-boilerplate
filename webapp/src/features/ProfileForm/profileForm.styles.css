@@ -1,0 +1,57 @@
+.error-message {
+	color: #d0021b;
+}
+
+.form-label {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+	margin-bottom: 9px;
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:not(:disabled):not(.disabled):active {
+	background-color: #0d1e45 !important;
+	border-color: #0d1e45 !important;
+}
+.btn-secondary:hover {
+	background-color: #283c73 !important;
+	border-color: #283c73 !important;
+}
+
+.btn {
+	height: 50px;
+	min-width: 290px;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 4px;
+	border-width: 2px;
+}
+
+.form-control {
+	height: 50px !important;
+	border: 1px solid #5f6c7b !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	border-radius: 4px !important;
+}
+
+.error {
+	border: 1px solid #d0021b !important;
+}
+
+.alert-danger {
+	background-color: rgb(185, 13, 31) !important;
+	border: 0 !important;
+	color: #fff !important;
+	font-size: 22px !important;
+	text-align: center !important;
+	padding-bottom: 1rem !important;
+	padding-top: 1rem !important;
+	margin-bottom: 3rem !important;
+}
+.mb-15.form-group {
+	margin-bottom: 25px;
+}
