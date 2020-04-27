@@ -144,3 +144,63 @@ body {
 .f-32 {
 	font-size: 32px !important; /* H2 tag  */
 }
+
+/*###############-------Form  css Start------###################*/
+.form-group {
+	margin-bottom: 15px;
+}
+.form-group > label {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+	margin-bottom: 9px;
+}
+.form-control {
+	height: 50px;
+	border: 1px solid #5f6c7b;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 4px;
+}
+select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url(./assets/icons/Select.svg);
+	background-repeat: no-repeat;
+	background-position: center right 24px;
+	padding-right: 48px;
+}
+.form-control::placeholder {
+	color: rgba(13, 30, 69, 0.5);
+}
+.form-control:disabled {
+	opacity: 0.5;
+}
+.form-control-sm {
+	height: 30px;
+	background-position: center right 10px !important;
+	background-size: 11px;
+	padding-right: 30px !important;
+	min-width: 165px;
+}
+.alert-danger {
+	background-color: rgb(185, 13, 31);
+}
+.form-control.is-invalid {
+	box-shadow: 0px 0px 0px 1px #d0021b;
+}
+.upload-profile {
+	cursor: pointer;
+}
+textarea.form-control {
+	height: 180px;
+}
+.error-message {
+	color: #d0021b;
+}
+.error {
+	border: 1px solid #d0021b !important;
+}
+
+/*###############-------Form  css ends------###################*/
