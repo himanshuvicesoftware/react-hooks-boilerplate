@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'react-bootstrap'
 import './DocumentVersion.css'
 
 const DocumentVersionHeader = () => (
-	<div class='border-top border-bottom py-25 px-15  bdr-1 bdr-secondry bg-white'>
+	<div className='border-top border-bottom py-25 px-15  bdr-1 bdr-secondry bg-white'>
 		<Row>
 			<Col xl={8} lg={6} md={5} sm={12} class='mb-3 mb-md-0'>
 				<h2 className='m-0 font-semi-bold'>[CustomerName]</h2>
