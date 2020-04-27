@@ -9,23 +9,33 @@ import {
 } from 'react-bootstrap'
 import Dropzone from 'react-dropzone'
 import { useDispatch } from 'react-redux'
-import Modal, { showModal } from '../../widgets/modal'
+import Modal, { showModal, hideModal } from '../../widgets/modal'
 import Icons from '../../assets/icons'
 
-const UploadDocuments = () => {
+const UploadDocuments = ({ resetModal }) => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(showModal())
+		return () => {
+			dispatch(hideModal())
+		}
 	})
+
+	const handleClose = () => {
+		dispatch(hideModal())
+		resetModal()
+	}
 	const footer = (
 		<>
-			<Button variant='secondary'>Begin Uploading</Button>
+			<Button variant='secondary' onClick={handleClose}>
+				Begin Uploading
+			</Button>
 			<ProgressBar variant='success' />
 		</>
 	)
 	const [uploadedFiles, setUploadedFiles] = useState([])
 	return (
-		<Modal header='Add Note' footer={footer}>
+		<Modal header='Add Note' footer={footer} reset={resetModal}>
 			<>
 				<p className='mt-15 font-weight-normal'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae

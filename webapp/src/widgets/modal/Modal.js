@@ -8,23 +8,25 @@ const closeIcon = require('../../assets/icons/Close.svg')
 
 const { hideModal } = actions
 
-export default function ViceModal({ children, header, footer }) {
+export default function ViceModal({ children, header, footer, reset }) {
 	const show = useSelector(selectShowModal)
 	const dispatch = useDispatch()
+
+	const handleClose = () => {
+		dispatch(hideModal())
+		if (reset) reset()
+	}
 	return (
 		<Modal
 			show={show}
-			onHide={() => dispatch(hideModal())}
-			dialogClassName='modal-dialog-centered modal-xl'
+			onHide={handleClose}
+			dialogClassName='modal-dialog-centered'
 		>
 			<Modal.Header className='border-0'>
 				<h5 className='f-32 font-semi-bold'>
 					<Modal.Title>{header}</Modal.Title>
 				</h5>
-				<button
-					className='close p-0 pr-2'
-					onClick={() => dispatch(hideModal())}
-				>
+				<button className='close p-0 pr-2' onClick={handleClose}>
 					<Image src={closeIcon} alt='' width='25' />
 				</button>
 			</Modal.Header>

@@ -1,28 +1,11 @@
 import React, { useState } from 'react'
 import { Row, Image, Col, Card, Button } from 'react-bootstrap'
-import AddNoteModal from '../DocumentModals/AddNoteModal'
-import AssignUserModal from '../DocumentModals/AssignUserModal'
-import CorrectionLogModal from '../DocumentModals/CorrectionLogModal'
-import { useDispatch } from 'react-redux'
-import { showModal } from '../../widgets/modal'
 import Icons from '../../assets/icons'
+import getSelectedDocumentModal from '../DocumentModals'
+import { DOCUMENT_MODAL_TYPES } from '../DocumentModals/DocumentModals.contants'
 
 const DocumentDetailsSidebar = () => {
-	const dispatch = useDispatch()
-	const [displayAddNoteModal, setDisplayAddNoteModal] = useState(false)
-	const [displayCorrectionLogModal, setDisplayCorrectionLogModal] = useState(
-		false
-	)
-	const handleDisplayAddNoteModal = () => {
-		setDisplayCorrectionLogModal(false)
-		setDisplayAddNoteModal(true)
-		dispatch(showModal(true))
-	}
-	const handleDisplayCorrectionLogModal = () => {
-		setDisplayAddNoteModal(false)
-		setDisplayCorrectionLogModal(true)
-		dispatch(showModal(true))
-	}
+	const [selectedModal, setSelectedModal] = useState(null)
 
 	return (
 		<Col md={4} lg={3}>
@@ -45,8 +28,7 @@ const DocumentDetailsSidebar = () => {
 					<DocumentAssignToAndCreatedBy
 						title='Document Assigned To'
 						username='Code Miles'
-						setDisplayAddNoteModal={setDisplayAddNoteModal}
-						setDisplayCorrectionLogModal={setDisplayCorrectionLogModal}
+						setSelectedModal={setSelectedModal}
 					/>
 
 					<DocumentAssignToAndCreatedBy
@@ -59,29 +41,37 @@ const DocumentDetailsSidebar = () => {
 					<Button variant='secondary' size='block'>
 						Create New Version
 					</Button>
-					<Button variant='secondary' size='block'>
+					<Button
+						variant='secondary'
+						size='block'
+						onClick={() =>
+							setSelectedModal(DOCUMENT_MODAL_TYPES.UPLOAD_DOC_MODAL)
+						}
+					>
 						Upload Files
 					</Button>
 
 					<Button
 						variant='secondary'
 						size='block'
-						onClick={handleDisplayAddNoteModal}
+						onClick={() =>
+							setSelectedModal(DOCUMENT_MODAL_TYPES.ADD_NOTES_MODAL)
+						}
 					>
 						Add Note
 					</Button>
-					{displayAddNoteModal && <AddNoteModal />}
 
 					<Button
 						variant='outline'
 						size='block'
 						className='d-flex align-items-center'
-						onClick={handleDisplayCorrectionLogModal}
+						onClick={() =>
+							setSelectedModal(DOCUMENT_MODAL_TYPES.CORRECTION_LOG_MODAL)
+						}
 					>
 						View Correction Log
 						<Image className='ml-auto' src={Icons.logIcon} width='25' />
 					</Button>
-					{displayCorrectionLogModal && <CorrectionLogModal />}
 					<Button
 						variant='outline'
 						size='block'
@@ -108,6 +98,8 @@ const DocumentDetailsSidebar = () => {
 					</Button>
 				</Card.Body>
 			</Card>
+			{selectedModal &&
+				getSelectedDocumentModal(selectedModal, setSelectedModal)}
 		</Col>
 	)
 }
@@ -126,18 +118,8 @@ const DocumentDetail = ({ property, value }) => (
 const DocumentAssignToAndCreatedBy = ({
 	title,
 	username,
-	setDisplayAddNoteModal,
-	setDisplayCorrectionLogModal,
+	setSelectedModal,
 }) => {
-	const [displayAssignUserModal, setDisplayAssignUserModal] = useState(false)
-
-	const dispatch = useDispatch()
-	const handleDisplayAssignUserModal = () => {
-		setDisplayAddNoteModal(false)
-		setDisplayCorrectionLogModal(false)
-		setDisplayAssignUserModal(true)
-		dispatch(showModal(true))
-	}
 	return (
 		<>
 			<div className='mb-15'>
@@ -158,11 +140,12 @@ const DocumentAssignToAndCreatedBy = ({
 							<Image
 								src={Icons.editIcon}
 								width='25'
-								onClick={handleDisplayAssignUserModal}
+								onClick={() =>
+									setSelectedModal(DOCUMENT_MODAL_TYPES.ASSIGN_USER_MODAL)
+								}
 							/>
 						</a>
 					)}
-					{displayAssignUserModal && <AssignUserModal />}
 				</div>
 			</div>
 		</>

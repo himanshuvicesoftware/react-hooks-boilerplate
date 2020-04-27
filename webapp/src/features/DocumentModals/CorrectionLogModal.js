@@ -38,19 +38,22 @@ const columns = [
 	},
 ]
 
-const CorrectionLog = () => {
+const CorrectionLog = ({ resetModal }) => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(showModal())
+		return () => {
+			dispatch(hideModal())
+		}
 	})
+
+	const handleClose = () => {
+		dispatch(hideModal())
+		resetModal()
+	}
 	const footer = (props) => (
 		<>
-			<Button
-				className='btn-big'
-				onClick={() => {
-					dispatch(hideModal())
-				}}
-			>
+			<Button className='btn-big' onClick={handleClose}>
 				Close
 			</Button>
 			<ExportCSVButton
@@ -65,7 +68,11 @@ const CorrectionLog = () => {
 	return (
 		<ToolkitProvider keyField='id' data={dummyLogs} columns={columns} exportCSV>
 			{(props) => (
-				<Modal header='Correction Log' footer={footer(props.csv)}>
+				<Modal
+					header='Correction Log'
+					footer={footer(props.csv)}
+					reset={resetModal}
+				>
 					<BootstrapTable
 						bordered={false}
 						bootstrap4={true}
