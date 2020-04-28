@@ -6,7 +6,7 @@ import Page from './widgets/Page/Page'
 import { About } from './features/About'
 import screenTimeReports from './features/screenTimeReports'
 import { Api } from './features/api/Api'
-
+import DashboardContent from './widgets/dashboard/DashboardContent'
 import DashboardChart from './widgets/dashboardChart/components/DashboardChart'
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -23,8 +23,12 @@ export default function Routes() {
 				<PageRoute path='/api'>
 					<Api />
 				</PageRoute>
+
 				<PageRoute path='/about'>
 					<About />
+				</PageRoute>
+				<PageRoute path='/dash'>
+					<DashboardContent />
 				</PageRoute>
 				<PageRoute path='/dashboard'>
 					<DashboardChart />

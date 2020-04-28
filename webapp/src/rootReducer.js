@@ -7,6 +7,7 @@ import pendingRequest from './infrastructure/pendingRequest'
 import httpCache from './infrastructure/httpCache'
 import notificationPopup from './infrastructure/notificationPopup'
 import dashboardChart from './widgets/dashboardChart'
+// import dashboard from './widgets/dashboard'
 export default combineReducers({
 	[users.constants.STATE_NAME]: users.reducer,
 	[busyIndicator.constants.STATE_NAME]: busyIndicator.reducer,
@@ -16,4 +17,5 @@ export default combineReducers({
 	[httpCache.constants.STATE_NAME]: httpCache.reducer,
 	[notificationPopup.constants.STATE_NAME]: notificationPopup.reducer,
 	[dashboardChart.constants.STATE_NAME]: dashboardChart.reducer,
+	// [dashboard.constants.STATE_NAME]: dashboard.reducer,
 })

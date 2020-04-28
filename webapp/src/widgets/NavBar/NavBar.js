@@ -20,6 +20,12 @@ export default function NavBar() {
 				</LinkContainer>
 			</Nav>
 			<Nav className='mr-auto'>
+				<LinkContainer to='/dash'>
+					<Nav.Link href='dash'>Dash</Nav.Link>
+				</LinkContainer>
+			</Nav>
+
+			<Nav className='mr-auto'>
 				<LinkContainer to='/dashboard'>
 					<Nav.Link href='dashboard'>Dashboard</Nav.Link>
 				</LinkContainer>
