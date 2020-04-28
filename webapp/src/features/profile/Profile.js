@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectUserProfile } from './profile.selectors'
 import { fetchAllProfile } from './profile.asyncActions'
 import BusyIndicator from '../../widgets/busyIndicator'
+import isEmpty from 'lodash/isEmpty'
 
 const Profile = () => {
 	const profile = useSelector(selectUserProfile)
@@ -23,18 +24,10 @@ const Profile = () => {
 					<Row>
 						<BusyIndicator>
 							<Col md={6} className='text-center'>
-								{profile.name && (
-									<ProfileImage uri={profile.uri} name={profile.name} />
-								)}
+								{!isEmpty(profile) && <ProfileImage profileData={profile} />}
 							</Col>
 							<Col md={6}>
-								{profile.name && (
-									<ProfileForm
-										name={profile.name}
-										email={profile.email}
-										phone={profile.phone}
-									/>
-								)}
+								{!isEmpty(profile) && <ProfileForm profileData={profile} />}
 							</Col>
 						</BusyIndicator>
 					</Row>

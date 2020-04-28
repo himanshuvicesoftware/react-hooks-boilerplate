@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileImage.css'
 
-const ProfileImage = ({ uri, name }) => {
+const ProfileImage = ({ profileData }) => {
 	const [imageFile, setImageFile] = useState(null)
 	const [imageBlob, setImageBlob] = useState(null)
 	const [error, setError] = useState('')
@@ -37,15 +37,15 @@ const ProfileImage = ({ uri, name }) => {
 						<span className='py-1 d-block'>{error}</span>
 					</Alert>
 				)}
-				{imageBlob || uri ? (
+				{imageBlob || profileData.uri ? (
 					<img
-						src={imageBlob || uri}
+						src={imageBlob || profileData.uri}
 						alt='profile-pic'
 						className='profile-image bg-primary text-white rounded-circle font-weight-normal'
 					/>
 				) : (
 					<span className='profile-image bg-primary text-white rounded-circle font-weight-normal'>
-						{initialofUser(name)}
+						{initialofUser(profileData.name)}
 					</span>
 				)}
 				<Form.Control
