@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './DocumentArchiveSearch.styles.css'
+import './DocumentArchive.styles.css'
 import { Card, Form, Button } from 'react-bootstrap'
 
 const DocumentArchiveSearch = () => {
@@ -34,7 +34,7 @@ const DocumentArchiveSearch = () => {
 						onChange={(ev) => setSearchByName(ev.target.value)}
 					/>
 				</Form.Group>
-				<Button type='button' variant='secondary' size='sm'>
+				<Button className='btn-small' type='button' variant='secondary'>
 					Search
 				</Button>
 			</Card.Body>

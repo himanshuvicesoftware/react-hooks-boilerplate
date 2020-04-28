@@ -10,36 +10,82 @@
 	font-weight: 600 !important;
 }
 
-.calender-input {
-	background-image: url(../../assets/Icons/Calendar.svg);
-	background-repeat: no-repeat;
-	background-position: center right 24px;
-	padding-right: 48px;
+.shadow-sm,
+.shadow-sm--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+	border: 0 !important;
+	margin-bottom: 25px !important;
 }
 
-.btn-secondary,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary:not(:disabled):not(.disabled):active {
-	background-color: #0d1e45 !important;
-	border-color: #0d1e45 !important;
+.card-body {
+	padding: 25px !important;
 }
-.btn-secondary:hover {
-	background-color: #283c73 !important;
-	border-color: #283c73 !important;
+
+.card-title {
+	font-size: 1.5rem;
 }
-.btn {
-	height: 50px;
-	min-width: 100%;
-	font-size: 18px;
-	font-weight: 600;
-	border-radius: 4px;
-	border-width: 2px;
+
+.form-group {
+	margin-bottom: 25px !important;
 }
-.form-control {
-	height: 50px !important;
-	border: 1px solid #5f6c7b !important;
-	font-size: 14px !important;
+
+.card-body {
+	padding: 25px !important;
+}
+
+.card-title {
+	margin-bottom: 25px !important;
 	font-weight: 600 !important;
-	border-radius: 4px !important;
+	letter-spacing: 1.5px;
+}
+
+.table {
+	color: #0d1e45 !important;
+	font-size: 15px !important;
+	font-weight: 400 !important;
+}
+
+#viewButton {
+	min-width: 125px;
+	height: 30px;
+	line-height: 1;
+	font-weight: bold;
+	background-color: #3d71de;
+	border-color: #3d71de;
+}
+
+#viewButton:hover {
+	background-color: #025cbd;
+	border-color: #025cbd;
+}
+.table thead th:first-child {
+	border-radius: 10px 0px 0px 0px;
+}
+
+.table thead th:last-child {
+	border-radius: 0px 10px 0px 0px;
+}
+
+.table thead th {
+	vertical-align: middle;
+	border: 0px !important;
+	background-color: white;
+}
+
+.table td {
+	vertical-align: middle;
+}
+
+.table tbody td:last-child {
+	text-align: end;
+}
+
+.tableRowEven {
+	vertical-align: top;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tableRowOdd {
+	background-color: white;
+	border-color: white;
 }

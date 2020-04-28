@@ -1,8 +1,8 @@
 import React from 'react'
-import DocumentArchiveTable from '../DocumentArchiveTable'
-import DocumentArchiveFilter from '../DocumentArchiveFilter'
-import DocumentArchiveSearch from '../DocumentArchiveSearch'
-import DatePickerComponent from '../DatePicker'
+import DocumentArchiveTable from './DocumentArchiveTable'
+import DocumentArchiveFilter from './DocumentArchiveFilter'
+import DocumentArchiveSearch from './DocumentArchiveSearch'
+import CustomDatePicker from '../DatePicker'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import './DocumentArchive.styles.css'
 
@@ -14,12 +14,12 @@ const DocumentArchive = () => {
 					<h2 className='page-title'>Documents</h2>
 				</Col>
 				<Col lg={2} md={3}>
-					<Button type='button' variant='secondary'>
+					<Button className='btn-block' type='button' variant='secondary'>
 						Assign
 					</Button>
 				</Col>
 				<Col lg={3} md={4}>
-					<DatePickerComponent />
+					<CustomDatePicker />
 				</Col>
 			</Row>
 			<Row>

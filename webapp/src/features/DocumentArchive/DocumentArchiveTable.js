@@ -1,7 +1,8 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
 import { Form, Button } from 'react-bootstrap'
-import './DocumentArchiveTable.styles.css'
+import './DocumentArchive.styles.css'
 
 const customCheckbox = (column) => (
 	<>
@@ -99,28 +100,34 @@ const tableHeader = [
 	{
 		dataField: 'customer',
 		text: 'Customer',
+		sort: true,
 		headerFormatter: customCheckbox,
 		formatter: customCheckbox,
 	},
 	{
 		dataField: 'creation',
 		text: 'Creation',
+		sort: true,
 	},
 	{
 		dataField: 'serialNumber',
 		text: 'Serial Number',
+		sort: true,
 	},
 	{
 		dataField: 'status',
 		text: 'Status',
+		sort: true,
 	},
 	{
 		dataField: 'tsn',
 		text: 'TSN',
+		sort: true,
 	},
 	{
 		dataField: 'assignedUser',
 		text: 'Assigned User',
+		sort: true,
 	},
 	{
 		dataField: 'viewButton',
@@ -134,10 +141,11 @@ const DocumentArchiveTable = () => {
 		<BootstrapTable
 			striped
 			bordered={false}
-			keyField='customer'
+			bootstrap4
+			keyField='viewButton'
+			noDataIndication='Table is Empty'
 			columns={tableHeader}
 			data={tableData}
-			bootstrap4={true}
 			rowClasses={(rowIndex) =>
 				rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd'
 			}

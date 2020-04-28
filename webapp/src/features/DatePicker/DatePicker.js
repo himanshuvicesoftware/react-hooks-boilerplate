@@ -5,12 +5,12 @@ import moment from 'moment'
 import { Form, Button } from 'react-bootstrap'
 import './DatePicker.styles.css'
 
-const DatePickerComponent = () => {
+const CustomDatePicker = () => {
 	const [startDate, setStartDate] = useState(undefined)
 	const [endDate, setEndDate] = useState(undefined)
 	const [selectionComplete, toggleSelectionComplete] = useState(false)
 	const [rangeDate, setRangeDate] = useState()
-	const [closeOnSelect, setCloseOnSelect] = useState(false)
+	const [closeOnSave, setCloseOnSave] = useState(false)
 
 	const handleDateChange = (date) => {
 		if (!selectionComplete && !startDate) {
@@ -20,7 +20,7 @@ const DatePickerComponent = () => {
 		if (!selectionComplete && startDate && !endDate) {
 			setEndDate(date)
 			setRangeDate(
-				`${moment(startDate).format('ll')} - ${moment(endDate).format('ll')}`
+				`${moment(startDate).format('ll')} - ${moment(date).format('ll')}`
 			)
 			toggleSelectionComplete(true)
 		}
@@ -45,6 +45,10 @@ const DatePickerComponent = () => {
 		/>
 	))
 
+	const closeDatePicker = () => {
+		closeOnSave.setOpen(false)
+	}
+
 	return (
 		<DatePicker
 			showPopperArrow={false}
@@ -52,15 +56,17 @@ const DatePickerComponent = () => {
 			selectsEnd={Boolean(startDate)}
 			startDate={startDate}
 			endDate={endDate}
-			shouldCloseOnSelect={closeOnSelect}
+			shouldCloseOnSelect={false}
 			customInput={<CustomInput />}
+			ref={(r) => setCloseOnSave(r)}
 		>
 			<div>
 				<Button
+					className='btn-block'
 					variant='primary'
 					size='lg'
 					type='button'
-					onClick={() => setCloseOnSelect(true)}
+					onClick={closeDatePicker}
 				>
 					Save
 				</Button>
@@ -69,4 +75,4 @@ const DatePickerComponent = () => {
 	)
 }
 
-export default DatePickerComponent
+export default CustomDatePicker
