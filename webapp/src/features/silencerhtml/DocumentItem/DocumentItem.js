@@ -1,9 +1,16 @@
-import React from 'react'
-import './DocumentItem.scss'
+import React, { useState } from 'react'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
 
 export default function Home() {
+	const [date, setDate] = useState(new Date())
+
+	const onChange = (date) => setDate(date)
+
 	return (
 		<div>
+			<Calendar onChange={onChange} value={date} selectRange />
+			{date.toString()}
 			<div className='audit-bar py-1'>
 				<div className='container-fluid'>
 					<div className='d-flex justify-content-between'>
