@@ -6,7 +6,7 @@ import CorrectionDetails from './CorrectionDetails'
 import DocumentEdit from './DocumentEdit'
 import classNames from 'classnames'
 import './DocumentVersion.css'
-import Images from '../../assets/Images'
+import Images from '../../assets/images'
 
 const DocumentVersion = () => {
 	const [showSidebar, setShowSidebar] = useState(true)

@@ -8,13 +8,9 @@ const DocumentVersionSidebar = ({ showSidebar, setShowSidebar }) => (
 		<div className='d-flex mb-20'>
 			<span
 				className='side-toggle ml-auto'
-				onClick={() => setShowSidebar((showSidebar) => !showSidebar)}
+				onClick={() => setShowSidebar(!showSidebar)}
 			>
-				{showSidebar ? (
-					<Image src={Icons.minimizeIcon} />
-				) : (
-					<Image src={Icons.maximizeIcon} />
-				)}
+				<Image src={showSidebar ? Icons.minimizeIcon : Icons.maximizeIcon} />
 			</span>
 		</div>
 		<Form>
