@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './DocumentArchive.styles.css'
 import { Card, Form, Button } from 'react-bootstrap'
 
 const DocumentArchiveSearch = () => {

@@ -18,9 +18,6 @@ export default function Routes() {
 			<PageRoute path='/profile'>
 				<Profile />
 			</PageRoute>
-			<PageRoute path='/document'>
-				<DocumentArchive />
-			</PageRoute>
 			<PageRoute path='/users'>
 				<Users />
 			</PageRoute>
@@ -41,6 +38,9 @@ export default function Routes() {
 			</PageRoute>
 			<PageRoute path='/document/:customerId'>
 				<DocumentItem />
+			</PageRoute>
+			<PageRoute path='/document'>
+				<DocumentArchive />
 			</PageRoute>
 			<PageRoute path='/'>
 				<Home />

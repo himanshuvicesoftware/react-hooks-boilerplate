@@ -24,7 +24,7 @@ export default function NavBar() {
 							</LinkContainer>
 						</Nav.Item>
 						<Nav.Item className=' pl-lg-4 ml-lg-2'>
-							<LinkContainer to='/'>
+							<LinkContainer to='/document'>
 								<Nav.Link>Documents</Nav.Link>
 							</LinkContainer>
 						</Nav.Item>

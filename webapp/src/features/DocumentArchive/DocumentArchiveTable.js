@@ -1,20 +1,20 @@
 import React from 'react'
-import BootstrapTable from 'react-bootstrap-table-next'
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
 import { Form, Button } from 'react-bootstrap'
-import './DocumentArchive.styles.css'
+import Table from '../../widgets/Table'
 
 const customCheckbox = (column) => (
 	<>
-		<Form.Label>
-			<Form.Check
-				type='checkbox'
-				label=''
-				id={`document-Archive-Search-${
-					typeof column === 'string' ? column : column.text
-				}`}
-			/>
-		</Form.Label>
+		<div className='custom-checkbox mr-2 d-inline-block'>
+			<Form.Label>
+				<Form.Check
+					type='checkbox'
+					label=''
+					id={`document-Archive-Search-${
+						typeof column === 'string' ? column : column.text
+					}`}
+				/>
+			</Form.Label>
+		</div>
 		{typeof column === 'string' ? column : column.text}
 	</>
 )
@@ -30,7 +30,7 @@ const viewButton = () => (
 	</Button>
 )
 
-const tableData = [
+const mockDocData = [
 	{
 		customer: 'test1',
 		creation: 'Creation',
@@ -96,7 +96,7 @@ const tableData = [
 		assignedUser: 'User',
 	},
 ]
-const tableHeader = [
+const columns = [
 	{
 		dataField: 'customer',
 		text: 'Customer',
@@ -137,20 +137,7 @@ const tableHeader = [
 ]
 
 const DocumentArchiveTable = () => {
-	return (
-		<BootstrapTable
-			striped
-			bordered={false}
-			bootstrap4
-			keyField='viewButton'
-			noDataIndication='Table is Empty'
-			columns={tableHeader}
-			data={tableData}
-			rowClasses={(rowIndex) =>
-				rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd'
-			}
-		/>
-	)
+	return <Table keyField='customer' columns={columns} data={mockDocData} />
 }
 
 export default DocumentArchiveTable

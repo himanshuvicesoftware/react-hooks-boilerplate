@@ -4,7 +4,6 @@ import DocumentArchiveFilter from './DocumentArchiveFilter'
 import DocumentArchiveSearch from './DocumentArchiveSearch'
 import CustomDatePicker from '../DatePicker'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import './DocumentArchive.styles.css'
 
 const DocumentArchive = () => {
 	return (

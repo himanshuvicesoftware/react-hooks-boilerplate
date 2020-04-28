@@ -1,5 +1,4 @@
 import React from 'react'
-import './DocumentArchive.styles.css'
 import { Card, Form } from 'react-bootstrap'
 
 const DocumentArchiveFilter = () => {
