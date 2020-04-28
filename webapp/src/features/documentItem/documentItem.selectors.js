@@ -14,3 +14,6 @@ export const selectDocumentHistory = (state) =>
 	selectSlice(state).documentHistory
 
 export const selectAttachments = (state) => selectSlice(state).attachments
+
+export const selectDocumentItemCorrectionLog = (state) =>
+	selectSlice(state).documentItemCorrectionLog

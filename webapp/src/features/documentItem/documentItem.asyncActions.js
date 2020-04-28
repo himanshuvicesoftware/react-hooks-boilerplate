@@ -103,3 +103,32 @@ export const fetchAttachmentsByDocumentId = createAsyncThunk(
 			...thunkArgs,
 		})
 )
+
+export const fetchDocumentItemCorrectionLog = createAsyncThunk(
+	'documentItem/getAll',
+	async ({ useCaching, noBusySpinner } = {}, thunkArgs) =>
+		await doAsync({
+			url: 'document-item',
+			useCaching,
+			noBusySpinner,
+			errorMessage: 'Unable to load documentItem. Please try again later.',
+			stubSuccess: [
+				{
+					descriptionOfChange: 'Corrected Military Identification',
+					user: 'Cody Miles',
+					initialDate: '12/12/2020',
+				},
+				{
+					descriptionOfChange: 'Corrected Military Identification',
+					user: 'Cody Miles',
+					initialDate: '12/12/2020',
+				},
+				{
+					descriptionOfChange: 'Corrected Military Identification',
+					user: 'Cody Miles',
+					initialDate: '12/12/2020',
+				},
+			],
+			...thunkArgs,
+		})
+)

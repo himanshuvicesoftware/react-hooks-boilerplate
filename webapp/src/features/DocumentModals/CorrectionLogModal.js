@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import Modal, { showModal, hideModal } from '../../widgets/modal'
 import { Button, Image } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import BootstrapTable from 'react-bootstrap-table-next'
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit'
 import Icons from '../../assets/icons'
 import { actions } from '../documentItem/documentItem.slice'
+import { selectDocumentItemCorrectionLog } from '../documentItem/documentItem.selectors'
+
 const { setSelectedDocumentModal } = actions
 const { ExportCSVButton } = CSVExport
 
@@ -13,22 +15,18 @@ const viewButtonFormatter = () => (
 	<Button className='font-weight-normal btn-sm'>View</Button>
 )
 
-const dummyLogs = [
-	{ id: 1, name: 'DummyLog', price: 20 },
-	{ id: 2, name: 'DummyLog2', price: 200 },
-]
 const columns = [
 	{
-		dataField: 'id',
+		dataField: 'descriptionOfChange',
 		text: 'Descripition of Change',
 	},
 	{
-		dataField: 'name',
+		dataField: 'user',
 		text: 'User',
 		sort: true,
 	},
 	{
-		dataField: 'price',
+		dataField: 'initialDate',
 		text: 'Initial Date',
 		sort: true,
 	},
@@ -41,6 +39,7 @@ const columns = [
 ]
 
 const CorrectionLog = () => {
+	const correctionLogData = useSelector(selectDocumentItemCorrectionLog)
 	const dispatch = useDispatch()
 	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
@@ -69,7 +68,12 @@ const CorrectionLog = () => {
 		</>
 	)
 	return (
-		<ToolkitProvider keyField='id' data={dummyLogs} columns={columns} exportCSV>
+		<ToolkitProvider
+			keyField='id'
+			data={correctionLogData}
+			columns={columns}
+			exportCSV
+		>
 			{(props) => (
 				<Modal
 					title='Correction Log'
