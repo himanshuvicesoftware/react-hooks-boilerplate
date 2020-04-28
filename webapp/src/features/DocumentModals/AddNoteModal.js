@@ -2,14 +2,14 @@ import React, { useEffect } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import Modal, { hideModal, showModal } from '../../widgets/modal'
+import { actions } from '../documentItem/documentItem.slice'
+const { setSelectedDocumentModal } = actions
 
-const AddNote = ({ resetModal }) => {
+const AddNote = () => {
 	const dispatch = useDispatch()
+	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
 		dispatch(showModal())
-		return () => {
-			dispatch(hideModal())
-		}
 	})
 
 	const handleClose = () => {

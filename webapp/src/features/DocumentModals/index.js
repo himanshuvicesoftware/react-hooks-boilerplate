@@ -5,16 +5,16 @@ import CorrectionLogModal from './CorrectionLogModal'
 import UploadDocumentModal from './UploadDocumentsModal'
 import { DOCUMENT_MODAL_TYPES } from './DocumentModals.contants'
 
-const getSelectedDocumentModal = (modalName, resetModal) => {
+const getSelectedDocumentModal = (modalName) => {
 	switch (modalName) {
 		case DOCUMENT_MODAL_TYPES.ADD_NOTES_MODAL:
-			return <AddNoteModal resetModal={resetModal} />
+			return <AddNoteModal />
 		case DOCUMENT_MODAL_TYPES.ASSIGN_USER_MODAL:
-			return <AssignUserModal resetModal={resetModal} />
+			return <AssignUserModal />
 		case DOCUMENT_MODAL_TYPES.CORRECTION_LOG_MODAL:
-			return <CorrectionLogModal resetModal={resetModal} />
+			return <CorrectionLogModal />
 		case DOCUMENT_MODAL_TYPES.UPLOAD_DOC_MODAL:
-			return <UploadDocumentModal resetModal={resetModal} />
+			return <UploadDocumentModal />
 		default:
 			return null
 	}

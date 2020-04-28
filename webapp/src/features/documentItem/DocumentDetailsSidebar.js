@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Row, Image, Col, Card, Button } from 'react-bootstrap'
 import Icons from '../../assets/icons'
 import getSelectedDocumentModal from '../DocumentModals'
 import { DOCUMENT_MODAL_TYPES } from '../DocumentModals/DocumentModals.contants'
+import { actions } from './documentItem.slice'
+import { selectedDocumentModal } from './documentItem.selectors'
+import { useSelector, useDispatch } from 'react-redux'
+const { setSelectedDocumentModal } = actions
 
 const DocumentDetailsSidebar = () => {
-	const [selectedModal, setSelectedModal] = useState(null)
+	const selectedModal = useSelector(selectedDocumentModal)
+
+	const dispatch = useDispatch()
 
 	return (
 		<Col md={4} lg={3}>
@@ -28,7 +34,7 @@ const DocumentDetailsSidebar = () => {
 					<DocumentAssignToAndCreatedBy
 						title='Document Assigned To'
 						username='Code Miles'
-						setSelectedModal={setSelectedModal}
+						setSelectedDocumentModal={setSelectedDocumentModal}
 					/>
 
 					<DocumentAssignToAndCreatedBy
@@ -45,7 +51,9 @@ const DocumentDetailsSidebar = () => {
 						variant='secondary'
 						size='block'
 						onClick={() =>
-							setSelectedModal(DOCUMENT_MODAL_TYPES.UPLOAD_DOC_MODAL)
+							dispatch(
+								setSelectedDocumentModal(DOCUMENT_MODAL_TYPES.UPLOAD_DOC_MODAL)
+							)
 						}
 					>
 						Upload Files
@@ -55,7 +63,9 @@ const DocumentDetailsSidebar = () => {
 						variant='secondary'
 						size='block'
 						onClick={() =>
-							setSelectedModal(DOCUMENT_MODAL_TYPES.ADD_NOTES_MODAL)
+							dispatch(
+								setSelectedDocumentModal(DOCUMENT_MODAL_TYPES.ADD_NOTES_MODAL)
+							)
 						}
 					>
 						Add Note
@@ -66,7 +76,11 @@ const DocumentDetailsSidebar = () => {
 						size='block'
 						className='d-flex align-items-center'
 						onClick={() =>
-							setSelectedModal(DOCUMENT_MODAL_TYPES.CORRECTION_LOG_MODAL)
+							dispatch(
+								setSelectedDocumentModal(
+									DOCUMENT_MODAL_TYPES.CORRECTION_LOG_MODAL
+								)
+							)
 						}
 					>
 						View Correction Log
@@ -98,8 +112,7 @@ const DocumentDetailsSidebar = () => {
 					</Button>
 				</Card.Body>
 			</Card>
-			{selectedModal &&
-				getSelectedDocumentModal(selectedModal, setSelectedModal)}
+			{selectedModal && getSelectedDocumentModal(selectedModal)}
 		</Col>
 	)
 }
@@ -118,8 +131,9 @@ const DocumentDetail = ({ property, value }) => (
 const DocumentAssignToAndCreatedBy = ({
 	title,
 	username,
-	setSelectedModal,
+	setSelectedDocumentModal,
 }) => {
+	const dispatch = useDispatch()
 	return (
 		<>
 			<div className='mb-15'>
@@ -141,7 +155,11 @@ const DocumentAssignToAndCreatedBy = ({
 								src={Icons.editIcon}
 								width='25'
 								onClick={() =>
-									setSelectedModal(DOCUMENT_MODAL_TYPES.ASSIGN_USER_MODAL)
+									dispatch(
+										setSelectedDocumentModal(
+											DOCUMENT_MODAL_TYPES.ASSIGN_USER_MODAL
+										)
+									)
 								}
 							/>
 						</a>

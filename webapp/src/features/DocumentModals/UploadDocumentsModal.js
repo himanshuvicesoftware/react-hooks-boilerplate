@@ -11,9 +11,13 @@ import Dropzone from 'react-dropzone'
 import { useDispatch } from 'react-redux'
 import Modal, { showModal, hideModal } from '../../widgets/modal'
 import Icons from '../../assets/icons'
+import { actions } from '../documentItem/documentItem.slice'
+const { setSelectedDocumentModal } = actions
 
-const UploadDocuments = ({ resetModal }) => {
+const UploadDocuments = () => {
 	const dispatch = useDispatch()
+	const resetModal = () => dispatch(setSelectedDocumentModal(null))
+
 	useEffect(() => {
 		dispatch(showModal())
 		return () => {

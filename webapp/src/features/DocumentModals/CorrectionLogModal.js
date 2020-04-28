@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux'
 import BootstrapTable from 'react-bootstrap-table-next'
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit'
 import Icons from '../../assets/icons'
+import { actions } from '../documentItem/documentItem.slice'
+const { setSelectedDocumentModal } = actions
 const { ExportCSVButton } = CSVExport
 
 const viewButtonFormatter = () => (
@@ -38,8 +40,9 @@ const columns = [
 	},
 ]
 
-const CorrectionLog = ({ resetModal }) => {
+const CorrectionLog = () => {
 	const dispatch = useDispatch()
+	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
 		dispatch(showModal())
 		return () => {

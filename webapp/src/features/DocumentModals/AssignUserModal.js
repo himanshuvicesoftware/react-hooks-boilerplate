@@ -2,14 +2,14 @@ import React, { useEffect } from 'react'
 import Modal, { hideModal, showModal } from '../../widgets/modal'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
+import { actions } from '../documentItem/documentItem.slice'
+const { setSelectedDocumentModal } = actions
 
-const AssignUser = ({ resetModal }) => {
+const AssignUser = () => {
 	const dispatch = useDispatch()
+	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
 		dispatch(showModal())
-		return () => {
-			dispatch(hideModal())
-		}
 	})
 
 	const handleClose = () => {

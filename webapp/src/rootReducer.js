@@ -8,6 +8,7 @@ import * as httpCache from './infrastructure/httpCache'
 import * as settings from './features/settings'
 import * as userContext from './features/userContext'
 import * as profile from './features/profile'
+import * as documentItem from './features/documentItem'
 
 export default combineReducers({
 	[busyIndicator.name]: busyIndicator.reducer,
@@ -19,4 +20,5 @@ export default combineReducers({
 	[settings.name]: settings.reducer,
 	[userContext.name]: userContext.reducer,
 	[profile.name]: profile.reducer,
+	[documentItem.name]: documentItem.reducer,
 })
