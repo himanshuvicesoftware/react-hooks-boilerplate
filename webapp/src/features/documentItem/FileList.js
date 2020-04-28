@@ -2,39 +2,9 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
 import classNames from 'classnames'
+import BusyIndicator from '../../widgets/busyIndicator'
 
-const FileList = () => {
-	const mockFiles = [
-		{
-			id: 1,
-			fileName: '4473EID-1029.pdf',
-			uploadedBy: 'Cody Miles',
-			uploadedOn: '11/01/20',
-			fileType: '4473',
-		},
-		{
-			id: 2,
-			fileName: 'attachment-file.pdf',
-			uploadedBy: 'Cody Miles',
-			uploadedOn: '11/01/20',
-			fileType: 'ATF F 3310.12',
-		},
-		{
-			id: 3,
-			fileName: 'attachment-file.pdf',
-			uploadedBy: 'Cody Miles',
-			uploadedOn: '11/01/20',
-			fileType: 'ATF Form-4',
-		},
-		{
-			id: 4,
-			fileName: 'attachment-file.pdf',
-			uploadedBy: 'Cody Miles',
-			uploadedOn: '11/01/20',
-			fileType: 'Other',
-		},
-	]
-
+const FileList = ({ attachmentListData }) => {
 	const ViewButtonFormatter = () => {
 		return (
 			<span>
@@ -74,16 +44,18 @@ const FileList = () => {
 	]
 
 	return (
-		<BootstrapTable
-			keyField='id'
-			data={mockFiles}
-			columns={columns}
-			rowClasses={(row, rowIndex) =>
-				classNames(rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd')
-			}
-			headerClasses='headerStyle'
-			className='font-weight-normal f-15 table-striped text-secondry'
-		/>
+		<BusyIndicator>
+			<BootstrapTable
+				keyField='id'
+				data={attachmentListData}
+				columns={columns}
+				rowClasses={(row, rowIndex) =>
+					classNames(rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd')
+				}
+				headerClasses='headerStyle'
+				className='font-weight-normal f-15 table-striped text-secondry'
+			/>
+		</BusyIndicator>
 	)
 }
 

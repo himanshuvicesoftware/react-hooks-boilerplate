@@ -4,14 +4,16 @@ import DocumentDetailsSidebar from './DocumentDetailsSidebar'
 import DocumentHistory from './DocumentHistory'
 import FileList from './FileList'
 import { Row, Col, Container } from 'react-bootstrap'
-import { fetchDocumentHistoryByDocumentId } from './documentItem.asyncActions'
-import { selectDocumentHistory } from './documentItem.selectors'
+import { fetchAttachmentListByDocumentId } from './documentItem.asyncActions'
+import { selectAttachmentList } from './documentItem.selectors'
 import './DocumentItem.css'
 
 const DocumentItem = () => {
+	const attachmentListData = useSelector(selectAttachmentList)
 	const documentHistoryData = useSelector(selectDocumentHistory)
 	const dispatch = useDispatch()
 	useEffect(() => {
+		dispatch(fetchAttachmentListByDocumentId(123))
 		dispatch(fetchDocumentHistoryByDocumentId(2))
 	}, [dispatch])
 
@@ -26,7 +28,7 @@ const DocumentItem = () => {
 				<Row>
 					<DocumentDetailsSidebar />
 					<Col md={8} lg={9}>
-						<FileList />
+						<FileList attachmentListData={attachmentListData} />
 						<DocumentHistory documentHistoryData={documentHistoryData} />
 					</Col>
 				</Row>
