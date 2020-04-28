@@ -5,6 +5,7 @@ const initialState = {
 	allDocumentItem: [],
 	filter: '',
 	selectedDocumentModal: null,
+	documentHistory: [],
 }
 
 const slice = createSlice({
@@ -20,9 +21,11 @@ const slice = createSlice({
 		},
 	},
 	extraReducers: {
-		// asynchronous actions
-		[asyncActions.fetchAllDocumentItem.fulfilled]: (state, action) => {
-			state.allDocumentItem = action.payload
+		[asyncActions.fetchDocumentHistoryByDocumentId.fulfilled]: (
+			state,
+			action
+		) => {
+			state.documentHistory = action.payload
 		},
 	},
 })

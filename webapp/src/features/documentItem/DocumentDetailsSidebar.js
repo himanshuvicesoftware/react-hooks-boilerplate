@@ -124,7 +124,7 @@ const DocumentDetailsSidebar = () => {
 
 const DocumentDetail = ({ property, value }) => (
 	<Row className='no-gutters mb-2 align-items-baseline'>
-		<Col md={7} className='text-light font-semi-bold'>
+		<Col md={7} className='text-dark font-semi-bold'>
 			{property}:
 		</Col>
 		<Col md={5} className='font-weight-normal f-15 mb-0'>
