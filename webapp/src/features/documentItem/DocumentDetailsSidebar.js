@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row, Image, Col, Card, Button } from 'react-bootstrap'
 import Icons from '../../assets/icons'
-import getSelectedDocumentModal from '../DocumentModals'
-import { DOCUMENT_MODAL_TYPES } from '../DocumentModals/DocumentModals.contants'
+import getDocumentModal from '../DocumentModals'
+import { DOCUMENT_MODAL_TYPES } from '../DocumentModals/DocumentModals.constants'
 import { actions } from './documentItem.slice'
 import { selectedDocumentModal } from './documentItem.selectors'
 import { useSelector, useDispatch } from 'react-redux'
@@ -112,7 +112,7 @@ const DocumentDetailsSidebar = () => {
 					</Button>
 				</Card.Body>
 			</Card>
-			{selectedModal && getSelectedDocumentModal(selectedModal)}
+			{selectedModal && getDocumentModal(selectedModal)}
 		</Col>
 	)
 }

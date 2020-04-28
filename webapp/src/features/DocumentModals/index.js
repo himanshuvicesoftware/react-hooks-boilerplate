@@ -3,9 +3,9 @@ import AddNoteModal from './AddNoteModal'
 import AssignUserModal from './AssignUserModal'
 import CorrectionLogModal from './CorrectionLogModal'
 import UploadDocumentModal from './UploadDocumentsModal'
-import { DOCUMENT_MODAL_TYPES } from './DocumentModals.contants'
+import { DOCUMENT_MODAL_TYPES } from './DocumentModals.constants'
 
-const getSelectedDocumentModal = (modalName) => {
+const getDocumentModal = (modalName) => {
 	switch (modalName) {
 		case DOCUMENT_MODAL_TYPES.ADD_NOTES_MODAL:
 			return <AddNoteModal />
@@ -20,4 +20,4 @@ const getSelectedDocumentModal = (modalName) => {
 	}
 }
 
-export default getSelectedDocumentModal
+export default getDocumentModal
