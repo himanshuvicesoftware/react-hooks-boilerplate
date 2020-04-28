@@ -2,7 +2,7 @@ import React from 'react'
 import DocumentArchiveTable from './DocumentArchiveTable'
 import DocumentArchiveFilter from './DocumentArchiveFilter'
 import DocumentArchiveSearch from './DocumentArchiveSearch'
-import CustomDatePicker from '../DatePicker'
+import CustomDatePicker from '../../widgets/DatePicker'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const DocumentArchive = () => {
