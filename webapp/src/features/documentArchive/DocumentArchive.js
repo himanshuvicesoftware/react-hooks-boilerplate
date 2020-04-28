@@ -8,7 +8,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 const DocumentArchive = () => {
 	return (
 		<Container fluid>
-			<Row>
+			<Row className='pt-50 mb-35'>
 				<Col lg={7} md={5}>
 					<h2 className='page-title'>Documents</h2>
 				</Col>
