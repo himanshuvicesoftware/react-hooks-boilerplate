@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Navbar, Nav, Dropdown, Image as Img } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { selectIsAuthenticated, logout } from '../../features/userContext'
 import './NavBar.css'
 import Icons from '../../assets/icons'
+import classNames from 'classnames'
+import { useLocation } from 'react-router-dom'
 
 export default function NavBar() {
+	const location = useLocation()
+	const [selected, setSelected] = useState('')
 	const isAuthenticated = useSelector(selectIsAuthenticated)
 	const dispatch = useDispatch()
+	useEffect(() => {
+		const path = location.pathname.replace(/\//g, '')
+		setSelected(path)
+	}, [location])
 	return (
 		<Navbar bg='white' expand='lg' className='p-0'>
 			<div className='container-fluid pl-0'>
@@ -18,12 +26,20 @@ export default function NavBar() {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse className='collapse px-4 px-lg-0'>
 					<Nav className='mr-auto align-items-lg-center '>
-						<Nav.Item className='pl-lg-4 ml-lg-2 active'>
+						<Nav.Item
+							className={classNames(' pl-lg-4 ml-lg-2', {
+								active: selected === '',
+							})}
+						>
 							<LinkContainer to='/'>
 								<Nav.Link>Dashboard</Nav.Link>
 							</LinkContainer>
 						</Nav.Item>
-						<Nav.Item className=' pl-lg-4 ml-lg-2'>
+						<Nav.Item
+							className={classNames(' pl-lg-4 ml-lg-2', {
+								active: selected === 'document',
+							})}
+						>
 							<LinkContainer to='/document'>
 								<Nav.Link>Documents</Nav.Link>
 							</LinkContainer>

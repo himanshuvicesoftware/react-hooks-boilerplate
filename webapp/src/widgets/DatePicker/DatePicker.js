@@ -59,6 +59,11 @@ const CustomDatePicker = () => {
 			shouldCloseOnSelect={false}
 			customInput={<CustomInput />}
 			ref={(r) => setCloseOnSave(r)}
+			popperModifiers={{
+				preventOverflow: {
+					enabled: true,
+				},
+			}}
 		>
 			<div>
 				<Button
