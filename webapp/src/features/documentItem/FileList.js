@@ -4,7 +4,7 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import classNames from 'classnames'
 import BusyIndicator from '../../widgets/busyIndicator'
 
-const FileList = ({ attachmentListData }) => {
+const FileList = ({ attachmentsData }) => {
 	const ViewButtonFormatter = () => {
 		return (
 			<span>
@@ -47,7 +47,7 @@ const FileList = ({ attachmentListData }) => {
 		<BusyIndicator>
 			<BootstrapTable
 				keyField='id'
-				data={attachmentListData}
+				data={attachmentsData}
 				columns={columns}
 				rowClasses={(row, rowIndex) =>
 					classNames(rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd')

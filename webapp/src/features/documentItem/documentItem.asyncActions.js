@@ -33,7 +33,8 @@ const mockDocumentHistory = [
 		detail: 'Document Created',
 	},
 ]
-const mockAttachmentList = [
+
+const mockAttachments = [
 	{
 		id: 1,
 		fileName: '4473EID-1029.pdf',
@@ -90,15 +91,15 @@ export const fetchDocumentHistoryByDocumentId = createAsyncThunk(
 			...thunkArgs,
 		})
 )
-export const fetchAttachmentListByDocumentId = createAsyncThunk(
+export const fetchAttachmentsByDocumentId = createAsyncThunk(
 	'documentItem/getAttachmentList',
 	async (documentId, thunkArgs, { useCaching, noBusySpinner } = {}) =>
 		await doAsync({
-			url: `documentItem/getAttachmentList/${documentId}`,
+			url: `document/${documentId}/attachments`,
 			useCaching,
 			noBusySpinner,
-			errorMessage: 'Unable to load documentItem. Please try again later.',
-			stubSuccess: mockAttachmentList,
+			errorMessage: 'Unable to load attachments. Please try again later.',
+			stubSuccess: mockAttachments,
 			...thunkArgs,
 		})
 )

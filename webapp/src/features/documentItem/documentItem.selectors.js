@@ -13,4 +13,4 @@ export const selectedDocumentModal = (state) =>
 export const selectDocumentHistory = (state) =>
 	selectSlice(state).documentHistory
 
-export const selectAttachmentList = (state) => selectSlice(state).attachmentList
+export const selectAttachments = (state) => selectSlice(state).attachments
