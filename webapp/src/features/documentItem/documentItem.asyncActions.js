@@ -105,10 +105,10 @@ export const fetchAttachmentsByDocumentId = createAsyncThunk(
 )
 
 export const fetchDocumentItemCorrectionLog = createAsyncThunk(
-	'documentItem/getAll',
-	async ({ useCaching, noBusySpinner } = {}, thunkArgs) =>
+	'documentItem/getCorrectionLogs',
+	async (documentId, thunkArgs, { useCaching, noBusySpinner } = {}) =>
 		await doAsync({
-			url: 'document-item',
+			url: `documentItem/${documentId}/getCorrectionLogs`,
 			useCaching,
 			noBusySpinner,
 			errorMessage: 'Unable to load documentItem. Please try again later.',

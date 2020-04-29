@@ -22,7 +22,7 @@ const DocumentItem = () => {
 	useEffect(() => {
 		dispatch(fetchAttachmentsByDocumentId(123))
 		dispatch(fetchDocumentHistoryByDocumentId(2))
-		dispatch(fetchDocumentItemCorrectionLog())
+		dispatch(fetchDocumentItemCorrectionLog(1))
 	}, [dispatch])
 
 	return (
