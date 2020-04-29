@@ -7,32 +7,22 @@ import {
 	Container,
 	Row,
 	Col,
+	Image,
 } from 'react-bootstrap'
-// import userThumb from '../dashboard/user-thumb.jpg'
+const imageIcon = require('../dashboard/user-thumb.jpg')
+
 function DashboardContent() {
 	return (
-		// <div>
-		<Container>
-			<Row>
-				<Col></Col>
-			</Row>
-
+		<div>
 			<div className='row py-50'>
 				<div className='col-xl-7 col-lg-5 col-md-5 col-sm-12 mb-3 mb-md-0'>
 					<h2 className='page-title m-0 font-semi-bold'>Users</h2>
 				</div>
 				<div className='col-xl-3 col-lg-4 col-md-4 col-sm-6'>
-					{/* <FormGroup className='form-control form-control-md'> */}
-					{/* <Input type='text' placeholder='hhh' /> */}
 					<FormControl
 						className='form-control form-control-md'
 						placeholder='Search Users'
 					></FormControl>
-					{/* </FormGroup> */}
-					{/* <InputGroup
-					className='form-control form-control-md'
-					// placeholder='Search Users'
-				></InputGroup> */}
 				</div>
 				<div className='col-xl-2 col-lg-3 col-md-3 col-sm-6'>
 					<Button className='btn btn-secondary btn-md btn-block'>
@@ -58,16 +48,21 @@ function DashboardContent() {
 					</thead>
 					<tbody>
 						<tr className='text-secondry'>
-							{/* <td>
-								<a href='#'>
-									<img
-										className='rounded-circle mr-3'
-										src={userThumb}
-										alt=''
-									></img>
-								</a>
-							</td>{' '} */}
-							<td>Cody Miles</td>
+							<td>
+								<div className='d-flex align-items-center'>
+									<Container>
+										<Row>
+											<Col xs={0} md={0}></Col>
+											<Col>
+												<Image src={imageIcon} roundedCircle fluid />
+											</Col>
+											<Col xs={6} md={6}></Col>
+										</Row>
+									</Container>
+
+									<span>Cody Miles</span>
+								</div>
+							</td>
 							<td>Admin</td>
 							<td>Yesterday at 11:00pm</td>
 							<td>
@@ -76,11 +71,7 @@ function DashboardContent() {
 								</a>
 							</td>
 							<td>Enabled</td>
-							{/* <td>
-								<a href='#'>
-									 <img src='webapp/public/Delete' alt=''></img>
-								</a>
-							</td>  */}
+
 							<td>
 								<Button className='btn btn-primary font-weight-normal btn-sm'>
 									View
@@ -88,7 +79,22 @@ function DashboardContent() {
 							</td>
 						</tr>
 						<tr>
-							<td>Jeff Ross</td>
+							<td>
+								<div className='d-flex align-items-center'>
+									<Container>
+										<Row>
+											<Col xs={0} md={0}></Col>
+											<Col>
+												<Image src={imageIcon} roundedCircle fluid />
+											</Col>
+											<Col xs={6} md={6}></Col>
+										</Row>
+									</Container>
+
+									<span>Cody Miles</span>
+								</div>
+							</td>
+
 							<td>Admin</td>
 							<td>Yesterday at 11:00pm</td>
 							<td>
@@ -105,7 +111,22 @@ function DashboardContent() {
 							</td>
 						</tr>
 						<tr>
-							<td>Daniel Rayes</td>
+							<td>
+								<div className='d-flex align-items-center'>
+									<Container>
+										<Row>
+											<Col xs={0} md={0}></Col>
+											<Col>
+												<Image src={imageIcon} roundedCircle fluid />
+											</Col>
+											<Col xs={6} md={6}></Col>
+										</Row>
+									</Container>
+
+									<span>Cody Miles</span>
+								</div>
+							</td>
+
 							<td>Admin</td>
 							<td>Yesterday at 11:00pm</td>
 							<td>
@@ -124,8 +145,7 @@ function DashboardContent() {
 					</tbody>
 				</Table>
 			</div>
-			{/* </div> */}
-		</Container>
+		</div>
 	)
 }
 export default DashboardContent
