@@ -3,14 +3,16 @@ import { Form, Image } from 'react-bootstrap'
 import Icons from '../../assets/icons'
 import './DocumentVersion.css'
 
-const DocumentVersionSidebar = ({ showSidebar, setShowSidebar }) => (
+const DocumentVersionSidebar = ({ isSidebarVisible, setIsSidebarVisible }) => (
 	<aside className='document-sidebar p-15 bg-white border-right bdr-1 bdr-secondary'>
 		<div className='d-flex mb-20'>
 			<span
 				className='side-toggle ml-auto'
-				onClick={() => setShowSidebar(!showSidebar)}
+				onClick={() => setIsSidebarVisible(!isSidebarVisible)}
 			>
-				<Image src={showSidebar ? Icons.minimizeIcon : Icons.maximizeIcon} />
+				<Image
+					src={isSidebarVisible ? Icons.minimizeIcon : Icons.maximizeIcon}
+				/>
 			</span>
 		</div>
 		<Form>

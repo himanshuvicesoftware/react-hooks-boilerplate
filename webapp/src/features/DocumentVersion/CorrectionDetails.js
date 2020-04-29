@@ -4,13 +4,16 @@ import { Image, ListGroup, Form, Button } from 'react-bootstrap'
 import classNames from 'classnames'
 
 const CorrectionDetails = () => {
-	const [showLog, setShowLog] = useState(true)
-	const [showAnnotation, setShowAnnotation] = useState(false)
+	const [shouldShowLogs, setShouldShowLogs] = useState(true)
+	const [shouldShowAnnotations, setShouldShowAnnotations] = useState(false)
 	return (
 		<aside
 			className={classNames(
 				'correction-log-container bg-white bdr-1 bdr-secondary border-top py-20 px-15',
-				{ ' open-correction': showAnnotation, ' close-log': !showLog }
+				{
+					' open-correction': shouldShowAnnotations,
+					' close-log': !shouldShowLogs,
+				}
 			)}
 		>
 			<div className='correction-log'>
@@ -18,9 +21,13 @@ const CorrectionDetails = () => {
 					<h5 className='mb-0 font-semi-bold'>Correction Log</h5>
 					<span
 						className='side-toggle ml-auto'
-						onClick={() => setShowLog((showLog) => !showLog)}
+						onClick={() =>
+							setShouldShowLogs((shouldShowLogs) => !shouldShowLogs)
+						}
 					>
-						<Image src={showLog ? Icons.minimizeIcon : Icons.maximizeIcon} />
+						<Image
+							src={shouldShowLogs ? Icons.minimizeIcon : Icons.maximizeIcon}
+						/>
 					</span>
 				</div>
 				<div className='correction-list'>
@@ -45,7 +52,7 @@ const CorrectionDetails = () => {
 								</h4>
 								<Image
 									src={Icons.editIcon}
-									onClick={() => setShowAnnotation(true)}
+									onClick={() => setShouldShowAnnotations(true)}
 									alt='edit-icon'
 									width='20'
 									className='mr-2 correction-link'
@@ -78,7 +85,7 @@ const CorrectionDetails = () => {
 							alt='close-icon'
 							width='20'
 							className='ml-2 correction-link'
-							onClick={() => setShowAnnotation(false)}
+							onClick={() => setShouldShowAnnotations(false)}
 						/>
 					</div>
 				</div>

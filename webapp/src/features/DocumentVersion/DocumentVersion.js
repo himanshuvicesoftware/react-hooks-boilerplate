@@ -9,19 +9,19 @@ import './DocumentVersion.css'
 import Images from '../../assets/images'
 
 const DocumentVersion = () => {
-	const [showSidebar, setShowSidebar] = useState(true)
+	const [isSidebarVisible, setIsSidebarVisible] = useState(true)
 
 	return (
 		<>
 			<DocumentVersionHeader />
 			<div
 				className={classNames('document-wrapper d-flex position-relative', {
-					'close-aside': !showSidebar,
+					'close-aside': !isSidebarVisible,
 				})}
 			>
 				<DocumentVersionSidebar
-					showSidebar={showSidebar}
-					setShowSidebar={setShowSidebar}
+					isSidebarVisible={isSidebarVisible}
+					setIsSidebarVisible={setIsSidebarVisible}
 				/>
 				<div className='flex-fill pl-5 pl-lg-0'>
 					<DocumentEdit />
