@@ -4,7 +4,6 @@ import 'react-calendar/dist/Calendar.css'
 
 export default function Home() {
 	const [date, setDate] = useState(new Date())
-
 	const onChange = (date) => setDate(date)
 
 	return (
@@ -91,11 +90,7 @@ export default function Home() {
 									className='dropdown-menu dropdown-menu-center notification-dropdown p-15 text-center shadow'
 									aria-labelledby='navbarDropdown'
 								>
-									<a
-										className='dropdown-item f-12 text-wrap'
-										className=''
-										href='#'
-									>
+									<a className='dropdown-item f-12 text-wrap' href='#'>
 										Cody Miles Created a New Version of #1235 Cody Miles Created
 										a New
 									</a>
@@ -520,7 +515,7 @@ export default function Home() {
 			<div
 				className='modal fade assign-user-modal'
 				id='assign-user-modal'
-				tabindex='-1'
+				// tabindex='-1'
 				role='dialog'
 				aria-labelledby='exampleModalCenterTitle'
 				aria-hidden='true'
@@ -541,7 +536,7 @@ export default function Home() {
 							</button>
 						</div>
 						<div className='modal-body'>
-							<label for=''></label>
+							<label></label>
 							<select className='form-control' name=''>
 								<option>Select User</option>
 							</select>
@@ -565,7 +560,7 @@ export default function Home() {
 			<div
 				className='modal fade upload-file-modal'
 				id='upload-file-modal'
-				tabindex='-1'
+				// tabindex='-1'
 				role='dialog'
 				aria-labelledby='exampleModalCenterTitle'
 				aria-hidden='true'
@@ -673,7 +668,7 @@ export default function Home() {
 			<div
 				className='modal fade add-note-modal'
 				id='add-note-modal'
-				tabindex='-1'
+				// tabindex='-1'
 				role='dialog'
 				aria-labelledby='exampleModalCenterTitle'
 				aria-hidden='true'
@@ -718,7 +713,7 @@ export default function Home() {
 			<div
 				className='modal fade correction-log-modal'
 				id='correction-log-modal'
-				tabindex='-1'
+				// tabindex='-1'
 				role='dialog'
 				aria-labelledby='exampleModalCenterTitle'
 				aria-hidden='true'
