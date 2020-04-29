@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, Form, Button } from 'react-bootstrap'
 
 const DocumentArchiveSearch = () => {
-	const [valueToBeSearched, setValueToBeSearched] = useState('')
+	const [valueToBeSearch, setValueToBeSearch] = useState('')
 	const radioButtonFields = [
 		'By Customer Name',
 		'By Creation Date',
@@ -28,9 +28,9 @@ const DocumentArchiveSearch = () => {
 				<Form.Group>
 					<Form.Control
 						type='text'
-						value={valueToBeSearched}
+						value={valueToBeSearch}
 						placeholder='Customer Name'
-						onChange={(ev) => setValueToBeSearched(ev.target.value)}
+						onChange={(ev) => setValueToBeSearch(ev.target.value)}
 					/>
 				</Form.Group>
 				<Button className='btn-small' type='button' variant='secondary'>
