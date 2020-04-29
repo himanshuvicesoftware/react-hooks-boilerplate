@@ -3,9 +3,9 @@ import doAsync from '../../infrastructure/doAsync'
 
 export const fetchAllProfile = createAsyncThunk(
 	'profile/id',
-	async ({ useCaching, noBusySpinner } = {}, thunkArgs) =>
+	async ({ useCaching, noBusySpinner } = {}, thunkArgs, id) =>
 		await doAsync({
-			url: 'profile',
+			url: `profile/${id}`,
 			useCaching,
 			noBusySpinner,
 			errorMessage: 'Unable to load profile. Please try again later.',

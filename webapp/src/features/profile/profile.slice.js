@@ -10,6 +10,7 @@ const slice = createSlice({
 	name: 'profile',
 	initialState,
 	reducers: {
+		// synchronous actions
 		updateFilter(state, action) {
 			state.filter = action.payload
 		},
