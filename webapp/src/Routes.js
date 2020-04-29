@@ -8,6 +8,7 @@ import screenTimeReports from './features/screenTimeReports'
 import { Api } from './features/api/Api'
 import DashboardContent from './widgets/dashboard/DashboardContent'
 import DashboardChart from './widgets/dashboardChart/components/DashboardChart'
+import Settings from './widgets/settings/Settings'
 const {
 	components: { UsersPage, UserDetailsPage },
 } = users
@@ -29,6 +30,9 @@ export default function Routes() {
 				</PageRoute>
 				<PageRoute path='/dash'>
 					<DashboardContent />
+				</PageRoute>
+				<PageRoute path='/settings'>
+					<Settings />
 				</PageRoute>
 				<PageRoute path='/dashboard'>
 					<DashboardChart />

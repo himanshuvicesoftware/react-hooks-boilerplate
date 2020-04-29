@@ -24,6 +24,11 @@ export default function NavBar() {
 					<Nav.Link href='dash'>Dash</Nav.Link>
 				</LinkContainer>
 			</Nav>
+			<Nav className='mr-auto'>
+				<LinkContainer to='/settings'>
+					<Nav.Link href='settings'>Settings</Nav.Link>
+				</LinkContainer>
+			</Nav>
 
 			<Nav className='mr-auto'>
 				<LinkContainer to='/dashboard'>
