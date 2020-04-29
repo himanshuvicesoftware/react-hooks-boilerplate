@@ -5,15 +5,16 @@ import './profileImage.css'
 const ProfileImage = ({ profileData }) => {
 	const [imageFile, setImageFile] = useState(null)
 	const [imageBlob, setImageBlob] = useState(null)
+	const profilePicSrs = imageBlob || profileData.uri
 	const [error, setError] = useState('')
 
-	const initialofUser = (name) => {
-		const listOfUserInitial = name.split(' ')
-		return (
-			listOfUserInitial[0][0] +
-			listOfUserInitial[listOfUserInitial.length - 1][0]
-		)
+	const userInitials = (name) => {
+		const listOfUserInitials = name.split(' ')
+		const firstName = listOfUserInitials[0][0]
+		const lastName = listOfUserInitials[listOfUserInitials.length - 1][0]
+		return firstName + lastName
 	}
+
 	const setImage = (e) => {
 		const fileType = e.target.files[0].type
 		if (
@@ -37,15 +38,15 @@ const ProfileImage = ({ profileData }) => {
 						<span className='py-1 d-block'>{error}</span>
 					</Alert>
 				)}
-				{imageBlob || profileData.uri ? (
+				{profilePicSrs ? (
 					<img
-						src={imageBlob || profileData.uri}
+						src={profilePicSrs}
 						alt='profile-pic'
 						className='profile-image bg-primary text-white rounded-circle font-weight-normal'
 					/>
 				) : (
 					<span className='profile-image bg-primary text-white rounded-circle font-weight-normal'>
-						{initialofUser(profileData.name)}
+						{userInitials(profileData.name)}
 					</span>
 				)}
 				<Form.Control
