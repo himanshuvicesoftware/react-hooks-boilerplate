@@ -132,14 +132,7 @@ const columns = [
 ]
 
 const DocumentArchiveTable = () => {
-	return (
-		<Table
-			keyField='customer'
-			columns={columns}
-			data={mockDocData}
-			rowClasses='text-secondry'
-		/>
-	)
+	return <Table keyField='customer' columns={columns} data={mockDocData} />
 }
 
 export default DocumentArchiveTable

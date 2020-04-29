@@ -18,7 +18,7 @@ const DocumentArchiveFilter = () => {
 				<Form.Check
 					type='checkbox'
 					label='Only Show Flagged Documents'
-					id='document-Archive-Filter'
+					id='document-archive-filter'
 				/>
 			</Card.Body>
 		</Card>

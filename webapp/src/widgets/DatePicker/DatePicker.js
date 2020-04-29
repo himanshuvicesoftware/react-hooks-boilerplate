@@ -3,14 +3,14 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
 import { Form, Button } from 'react-bootstrap'
-import './DatePicker.styles.css'
+import './DatePicker.css'
 
 const CustomDatePicker = () => {
 	const [startDate, setStartDate] = useState(undefined)
 	const [endDate, setEndDate] = useState(undefined)
 	const [selectionComplete, toggleSelectionComplete] = useState(false)
 	const [rangeDate, setRangeDate] = useState()
-	const [closeOnSave, setCloseOnSave] = useState(false)
+	const [datePickerRef, setDatePickerRef] = useState(false)
 
 	const handleDateChange = (date) => {
 		if (!selectionComplete && !startDate) {
@@ -46,7 +46,7 @@ const CustomDatePicker = () => {
 	))
 
 	const closeDatePicker = () => {
-		closeOnSave.setOpen(false)
+		datePickerRef.setOpen(false)
 	}
 
 	return (
@@ -58,7 +58,7 @@ const CustomDatePicker = () => {
 			endDate={endDate}
 			shouldCloseOnSelect={false}
 			customInput={<CustomInput />}
-			ref={(r) => setCloseOnSave(r)}
+			ref={(r) => setDatePickerRef(r)}
 			popperModifiers={{
 				preventOverflow: {
 					enabled: true,

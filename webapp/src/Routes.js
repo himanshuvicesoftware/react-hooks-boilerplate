@@ -39,7 +39,7 @@ export default function Routes() {
 			<PageRoute path='/document/:customerId'>
 				<DocumentItem />
 			</PageRoute>
-			<PageRoute path='/document'>
+			<PageRoute path='/documents'>
 				<DocumentArchive />
 			</PageRoute>
 			<PageRoute path='/'>

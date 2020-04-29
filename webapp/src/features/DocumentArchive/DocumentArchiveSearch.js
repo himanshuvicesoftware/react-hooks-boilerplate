@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Card, Form, Button } from 'react-bootstrap'
 
 const DocumentArchiveSearch = () => {
-	const [searchByName, setSearchByName] = useState('')
-	const radioButtonTitle = [
+	const [valueToBeSearched, setValueToBeSearched] = useState('')
+	const radioButtonFields = [
 		'By Customer Name',
 		'By Creation Date',
 		'By Serial Number',
@@ -15,22 +15,22 @@ const DocumentArchiveSearch = () => {
 				<Card.Title>Search</Card.Title>
 				<Form.Group>
 					<Form.Label>Filter by Document Status</Form.Label>
-					{radioButtonTitle.map((title, index) => (
+					{radioButtonFields.map((field, index) => (
 						<Form.Check
-							key={index}
+							key={field}
 							type='radio'
-							label={title}
-							id={`document-Archive-Search-${index}`}
-							name='document-Archive-Search'
+							label={field}
+							id={`document-archive-search-${index}`}
+							name='document-archive-search'
 						/>
 					))}
 				</Form.Group>
 				<Form.Group>
 					<Form.Control
 						type='text'
-						value={searchByName}
+						value={valueToBeSearched}
 						placeholder='Customer Name'
-						onChange={(ev) => setSearchByName(ev.target.value)}
+						onChange={(ev) => setValueToBeSearched(ev.target.value)}
 					/>
 				</Form.Group>
 				<Button className='btn-small' type='button' variant='secondary'>

@@ -10,12 +10,12 @@ import { useLocation } from 'react-router-dom'
 
 export default function NavBar() {
 	const location = useLocation()
-	const [selected, setSelected] = useState('')
+	const [selectedNav, setSelectedNav] = useState('')
 	const isAuthenticated = useSelector(selectIsAuthenticated)
 	const dispatch = useDispatch()
 	useEffect(() => {
 		const path = location.pathname.replace(/\//g, '')
-		setSelected(path)
+		setSelectedNav(path)
 	}, [location])
 	return (
 		<Navbar bg='white' expand='lg' className='p-0'>
@@ -28,7 +28,7 @@ export default function NavBar() {
 					<Nav className='mr-auto align-items-lg-center '>
 						<Nav.Item
 							className={classNames(' pl-lg-4 ml-lg-2', {
-								active: selected === '',
+								active: selectedNav === '',
 							})}
 						>
 							<LinkContainer to='/'>
@@ -37,10 +37,10 @@ export default function NavBar() {
 						</Nav.Item>
 						<Nav.Item
 							className={classNames(' pl-lg-4 ml-lg-2', {
-								active: selected === 'document',
+								active: selectedNav === 'documents',
 							})}
 						>
-							<LinkContainer to='/document'>
+							<LinkContainer to='/documents'>
 								<Nav.Link>Documents</Nav.Link>
 							</LinkContainer>
 						</Nav.Item>
