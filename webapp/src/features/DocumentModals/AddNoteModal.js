@@ -28,7 +28,7 @@ const AddNote = () => {
 		</>
 	)
 	return (
-		<Modal header='Add Note' footer={footer} reset={resetModal}>
+		<Modal title='Add Note' footer={footer} reset={resetModal}>
 			<Form.Group controlId='controlTextarea'>
 				<Form.Control
 					as='textarea'

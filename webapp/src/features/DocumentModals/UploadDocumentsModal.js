@@ -39,7 +39,7 @@ const UploadDocuments = () => {
 	)
 	const [uploadedFiles, setUploadedFiles] = useState([])
 	return (
-		<Modal header='Add Note' footer={footer} reset={resetModal}>
+		<Modal title='Upload Files' footer={footer} reset={resetModal}>
 			<>
 				<p className='mt-15 font-weight-normal'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae
@@ -63,7 +63,7 @@ const UploadDocuments = () => {
 							>
 								<span>
 									Drag Files to Upload or
-									<a href='#' className='text-dark'>
+									<a href='#select' className='text-dark'>
 										<u> Select Files</u>
 									</a>
 								</span>

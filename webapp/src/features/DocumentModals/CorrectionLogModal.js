@@ -72,7 +72,7 @@ const CorrectionLog = () => {
 		<ToolkitProvider keyField='id' data={dummyLogs} columns={columns} exportCSV>
 			{(props) => (
 				<Modal
-					header='Correction Log'
+					title='Correction Log'
 					footer={footer(props.csv)}
 					reset={resetModal}
 				>

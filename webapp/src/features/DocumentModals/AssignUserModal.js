@@ -28,7 +28,7 @@ const AssignUser = () => {
 		</>
 	)
 	return (
-		<Modal header='Assign To User' footer={footer} reset={resetModal}>
+		<Modal title='Assign To User' footer={footer} reset={resetModal}>
 			<Form.Group controlId='assignUserControl'>
 				<Form.Label>Select User</Form.Label>
 				<Form.Control as='select'>
