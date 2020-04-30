@@ -52,7 +52,7 @@ export const fetchDocumentHistoryByDocumentId = createAsyncThunk(
 	'documentItem/getDocumentHistory',
 	async (documentId, thunkArgs, { useCaching, noBusySpinner } = {}) =>
 		await doAsync({
-			url: `documentItem/getDocumentHistory/${documentId}`,
+			url: `document/${documentId}/history`,
 			useCaching,
 			noBusySpinner,
 			errorMessage: 'Unable to load document history. Please try again later.',
