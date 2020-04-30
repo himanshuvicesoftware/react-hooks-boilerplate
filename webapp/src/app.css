@@ -79,6 +79,10 @@
 .btn-outline:hover .btn-outline:active {
 	color: #0d1e45;
 }
+.btn-link {
+	min-width: auto;
+	line-height: initial;
+}
 .ml-auto {
 	margin-left: auto !important;
 }

@@ -9,7 +9,7 @@ export const {
 	reducer,
 } = slice
 
-export const { fetchAllProfile } = asyncActions
+export const { fetchUserProfile } = asyncActions
 
 // we prefix all selectors with the the "select" prefix
 export const { selectAllProfile, selectProfileFilter } = selectors

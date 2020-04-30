@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import * as asyncActions from './profile.asyncActions'
 
 const initialState = {
-	allProfile: [],
+	userProfile: {},
 	filter: '',
 }
 
@@ -10,15 +10,13 @@ const slice = createSlice({
 	name: 'profile',
 	initialState,
 	reducers: {
-		// synchronous actions
 		updateFilter(state, action) {
 			state.filter = action.payload
 		},
 	},
 	extraReducers: {
-		// asynchronous actions
-		[asyncActions.fetchAllProfile.fulfilled]: (state, action) => {
-			state.allProfile = action.payload
+		[asyncActions.fetchUserProfile.fulfilled]: (state, action) => {
+			state.userProfile = action.payload
 		},
 	},
 })
