@@ -1,4 +1,4 @@
-export const getUserInitials = (name) => {
+export const getUserInitialsFromFullName = (name) => {
 	const listOfUserInitials = name.split(' ')
 	const POS_FIRST_NAME = 0
 	const POS_FIRST_CHAR = 0

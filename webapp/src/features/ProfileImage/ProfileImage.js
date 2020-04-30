@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './profileImage.css'
-import { getUserInitials } from './profileImage.utils'
+import { getUserInitialsFromFullName } from './profileImage.utils'
 
 const ProfileImage = ({ profileData }) => {
 	const [imageFile, setImageFile] = useState(null)
@@ -40,7 +40,7 @@ const ProfileImage = ({ profileData }) => {
 					/>
 				) : (
 					<span className='profile-image bg-primary text-white rounded-circle font-weight-normal'>
-						{getUserInitials(profileData.name)}
+						{getUserInitialsFromFullName(profileData.name)}
 					</span>
 				)}
 				<Form.Control

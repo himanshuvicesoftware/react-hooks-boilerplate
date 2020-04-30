@@ -9,15 +9,13 @@ export const fetchAllProfile = createAsyncThunk(
 			useCaching,
 			noBusySpinner,
 			errorMessage: 'Unable to load profile. Please try again later.',
-			stubSuccess: [
-				{
-					id: 1,
-					name: 'First User',
-					email: 'FirstUser@test.com',
-					phone: 1234567890,
-					uri: '',
-				},
-			],
+			stubSuccess: {
+				id: 1,
+				name: 'First User',
+				email: 'FirstUser@test.com',
+				phone: 1234567890,
+				uri: '',
+			},
 			...thunkArgs,
 		})
 )
