@@ -6,7 +6,7 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit'
 import Icons from '../../assets/icons'
 import { actions } from '../documentItem/documentItem.slice'
-import { selectDocumentItemCorrectionLog } from '../documentItem/documentItem.selectors'
+import { selectDocumentCorrectionLogs } from '../documentItem/documentItem.selectors'
 
 const { setSelectedDocumentModal } = actions
 const { ExportCSVButton } = CSVExport
@@ -39,7 +39,7 @@ const columns = [
 ]
 
 const CorrectionLog = () => {
-	const correctionLogData = useSelector(selectDocumentItemCorrectionLog)
+	const correctionLogData = useSelector(selectDocumentCorrectionLogs)
 	const dispatch = useDispatch()
 	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
