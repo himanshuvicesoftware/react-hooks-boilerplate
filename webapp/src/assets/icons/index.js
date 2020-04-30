@@ -6,6 +6,7 @@ import editIcon from './Edit.svg'
 import flagIcon from './Flag.svg'
 import logIcon from './Log.svg'
 import deleteIcon from './Delete.svg'
+import closeIcon from './close.svg'
 
 export default {
 	circleIcon,
@@ -16,4 +17,5 @@ export default {
 	bellIcon,
 	caretIcon,
 	deleteIcon,
+	closeIcon,
 }

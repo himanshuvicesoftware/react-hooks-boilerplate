@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectShowModal } from './modal.selectors'
 import { actions } from './modal.slice'
 import './Modal.css'
-const closeIcon = require('../../assets/icons/Close.svg')
+import Icons from '../../assets/icons'
 
 const { hideModal } = actions
 
@@ -29,7 +29,7 @@ export default function ViceModal({ children, header, footer, title, reset }) {
 					</h5>
 				)}
 				<button className='close p-0 pr-2' onClick={handleClose}>
-					<Image src={closeIcon} alt='' width='25' />
+					<Image src={Icons.closeIcon} alt='' width='25' />
 				</button>
 			</Modal.Header>
 			<Modal.Body className='py-0 mb-0'>{children}</Modal.Body>
