@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Modal, { showModal, hideModal } from '../../widgets/modal'
 import { Button, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import BootstrapTable from 'react-bootstrap-table-next'
+import Table from '../../widgets/Table'
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit'
 import Icons from '../../assets/icons'
 import { actions } from '../documentItem/documentItem.slice'
@@ -39,7 +39,7 @@ const columns = [
 ]
 
 const CorrectionLog = () => {
-	const correctionLogData = useSelector(selectDocumentCorrectionLogs)
+	const correctionLogs = useSelector(selectDocumentCorrectionLogs)
 	const dispatch = useDispatch()
 	const resetModal = () => dispatch(setSelectedDocumentModal(null))
 	useEffect(() => {
@@ -70,7 +70,7 @@ const CorrectionLog = () => {
 	return (
 		<ToolkitProvider
 			keyField='id'
-			data={correctionLogData}
+			data={correctionLogs}
 			columns={columns}
 			exportCSV
 		>
@@ -80,13 +80,7 @@ const CorrectionLog = () => {
 					footer={footer(props.csv)}
 					reset={resetModal}
 				>
-					<BootstrapTable
-						bordered={false}
-						bootstrap4={true}
-						hover
-						striped
-						{...props.baseProps}
-					/>
+					<Table {...props.baseProps} />
 				</Modal>
 			)}
 		</ToolkitProvider>

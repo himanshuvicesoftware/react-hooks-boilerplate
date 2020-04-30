@@ -65,7 +65,7 @@ const mockAttachments = [
 	},
 ]
 
-const mockCorrectionLogData = [
+const mockCorrectionLogs = [
 	{
 		descriptionOfChange: 'Corrected Military Identification',
 		user: 'Cody Miles',
@@ -131,7 +131,7 @@ export const fetchDocumentCorrectionLogs = createAsyncThunk(
 			noBusySpinner,
 			errorMessage:
 				'Unable to load document correction logs. Please try again later.',
-			stubSuccess: mockCorrectionLogData,
+			stubSuccess: mockCorrectionLogs,
 			...thunkArgs,
 		})
 )
