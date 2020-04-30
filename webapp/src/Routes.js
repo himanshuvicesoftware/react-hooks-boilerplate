@@ -19,39 +19,39 @@ const {
 
 export default function Routes() {
 	return (
-		<Container>
-			<Switch>
-				<PageRoute path='/api'>
-					<Api />
-				</PageRoute>
+		// <Container>
+		<Switch>
+			<PageRoute path='/api'>
+				<Api />
+			</PageRoute>
 
-				<PageRoute path='/about'>
-					<About />
-				</PageRoute>
-				<PageRoute path='/dash'>
-					<DashboardContent />
-				</PageRoute>
-				<PageRoute path='/settings'>
-					<Settings />
-				</PageRoute>
-				<PageRoute path='/dashboard'>
-					<DashboardChart />
-				</PageRoute>
+			<PageRoute path='/about'>
+				<About />
+			</PageRoute>
+			<PageRoute path='/dash'>
+				<DashboardContent />
+			</PageRoute>
+			<PageRoute path='/settings'>
+				<Settings />
+			</PageRoute>
+			<PageRoute path='/dashboard'>
+				<DashboardChart />
+			</PageRoute>
 
-				<PageRoute path='/users/:id'>
-					<UserDetailsPage />
-				</PageRoute>
-				<PageRoute path='/users'>
-					<UsersPage />
-				</PageRoute>
-				<PageRoute path='/reports/:userid'>
-					<ScreenTimeReports />
-				</PageRoute>
-				<PageRoute path='/'>
-					<UsersPage />
-				</PageRoute>
-			</Switch>
-		</Container>
+			<PageRoute path='/users/:id'>
+				<UserDetailsPage />
+			</PageRoute>
+			<PageRoute path='/users'>
+				<UsersPage />
+			</PageRoute>
+			<PageRoute path='/reports/:userid'>
+				<ScreenTimeReports />
+			</PageRoute>
+			<PageRoute path='/'>
+				<UsersPage />
+			</PageRoute>
+		</Switch>
+		// </Container>
 	)
 }
 

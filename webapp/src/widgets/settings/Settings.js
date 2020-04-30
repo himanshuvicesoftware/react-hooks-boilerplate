@@ -8,17 +8,51 @@ import {
 	FormControl,
 	Button,
 	Image,
-	InputGroup,
 } from 'react-bootstrap'
 const imageIcon = require('../settings/Download.svg')
 function Settings() {
 	return (
 		<div>
-			<h2 className='page-title m-0 font-semi-bold'>FFL Settings</h2>
-			<a href='#' className='nav-link py-1 active'>
-				Settings
-			</a>
-			<h5 className='font-semi-bold opacity-50 mb-25'>Details</h5>
+			<div className='container'>
+				{/* <div className='row py-50'>
+						<div className='col-md-12'> */}
+				{/* <Container fluid>
+						<Row>
+							<Col
+							//  className='page-title m-0 font-semi-bold'
+							>
+								FFL Settings
+							</Col>{' '} */}
+				<div className=' py-50'>
+					<div className='col-md-12'>
+						<h2 className='page-title m-0 font-semi-bold'>FFL Settings</h2>
+					</div>
+				</div>
+				{/* <Col></Col> */}
+				{/* </Row>
+					</Container> */}
+				{/* </div> */}
+				{/* </div> */}
+			</div>
+			<div className=''>
+				<ul className='nav nav-tabs border-0 f-15'>
+					<li className='nav-item'>
+						<a href='#' className='nav-link py-1 active'>
+							Settings
+						</a>
+					</li>
+				</ul>
+			</div>
+			<br></br>
+			<div className='tab-content bg-white'>
+				<div className='tab-pane fade active show'>
+					<div className=''>
+						<div className='mb-50'>
+							<h5 className='font-semi-bold opacity-50 mb-25'>Details</h5>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div>
 				<Formik
 					initialValues={{
@@ -40,6 +74,7 @@ function Settings() {
 										<div className='form-group'>
 											<FormLabel>FFL Name</FormLabel>
 											<FormControl
+												className='form-control'
 												type='text'
 												placeholder='FFL Name'
 												onChange={props.handleChange}
@@ -141,19 +176,24 @@ function Settings() {
 										</div>
 									</div>
 								</div>
-
 								<div className='mb-25'>
 									<div className='custom-control custom-switch'>
-										<InputGroup className='custom-control-input d-none' />
-										<label className='custom-control-label f-18 pl-2'>
+										<FormControl
+											type='checkbox'
+											className='custom-control-input'
+											id='customSwitchesChecked'
+											defaultChecked
+										/>
+										<FormLabel
+											className='custom-control-label'
+											htmlFor='customSwitchesChecked'
+										>
 											Automatically Delete Documents When Expired
-										</label>
+										</FormLabel>
 									</div>
 								</div>
 
-								<Button type='button' className='btn btn-secondary'>
-									Save
-								</Button>
+								<Button className='btn btn-secondary'>Save</Button>
 
 								<div className='py-50'>
 									<h5 className='font-semi-bold opacity-50 mb-15'>
@@ -166,18 +206,12 @@ function Settings() {
 
 									<div className='row'>
 										<div className='col-lg-3 col-md-4'>
-											<Button
-												type='button'
-												className='btn btn-secondary btn-block mb-md-0 mb-3'
-											>
+											<Button className='btn btn-secondary btn-block mb-md-0 mb-3'>
 												Delete FFL
 											</Button>
 										</div>
 										<div className='col-lg-4 col-md-5'>
-											<Button
-												type='button'
-												className='btn-block btn btn-outline d-flex align-items-center'
-											>
+											<Button className='btn-block btn btn-outline d-flex align-items-center'>
 												Download File Exporter
 												<Image className='ml-auto' src={imageIcon} alt='' />
 											</Button>

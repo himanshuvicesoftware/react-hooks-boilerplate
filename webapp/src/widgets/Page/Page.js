@@ -5,7 +5,8 @@ import './page.css'
 export default function Page({ children }) {
 	return (
 		<div>
-			<Container style={{ marginTop: '20px' }}>{children}</Container>
+			{/* <Container style={{ marginTop: '20px' }}>{children}</Container> */}
+			<>{children}</>
 		</div>
 	)
 }
