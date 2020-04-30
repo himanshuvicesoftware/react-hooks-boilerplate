@@ -6,3 +6,6 @@ export const selectAllDocumentItem = (state) =>
 	selectSlice(state).allDocumentItem
 
 export const selectDocumentItemFilter = (state) => selectSlice(state).filter
+
+export const selectedDocumentModal = (state) =>
+	selectSlice(state).selectedDocumentModal

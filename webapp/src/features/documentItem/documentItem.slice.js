@@ -4,6 +4,7 @@ import * as asyncActions from './documentItem.asyncActions'
 const initialState = {
 	allDocumentItem: [],
 	filter: '',
+	selectedDocumentModal: null,
 }
 
 const slice = createSlice({
@@ -13,6 +14,9 @@ const slice = createSlice({
 		// synchronous actions
 		updateFilter(state, action) {
 			state.filter = action.payload
+		},
+		setSelectedDocumentModal(state, action) {
+			state.selectedDocumentModal = action.payload
 		},
 	},
 	extraReducers: {

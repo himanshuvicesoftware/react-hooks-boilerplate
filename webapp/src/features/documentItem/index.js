@@ -5,7 +5,7 @@ import slice from './documentItem.slice'
 
 export const {
 	name,
-	actions: { updateFilter },
+	actions: { updateFilter, setSelectedDocumentModal },
 	reducer,
 } = slice
 

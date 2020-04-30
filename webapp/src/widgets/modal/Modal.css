@@ -1,0 +1,27 @@
+.modal-footer,
+.modal-header,
+.modal-body {
+	padding: 25px 20px;
+}
+.modal-backdrop {
+	background-color: #0d1e45;
+}
+.upload-container {
+	min-height: 150px;
+	border: 2px dashed rgba(13, 30, 69, 0.5) !important;
+	border-radius: 4px;
+}
+.modal-header p {
+	line-height: 28px;
+}
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: 690px;
+	}
+}
+@media (min-width: 992px) {
+	.modal-lg,
+	.modal-xl {
+		max-width: 980px;
+	}
+}
