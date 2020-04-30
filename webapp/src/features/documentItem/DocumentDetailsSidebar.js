@@ -150,7 +150,7 @@ const DocumentAssignToAndCreatedBy = ({
 					</div>
 
 					{title === 'Document Assigned To' && (
-						<a className='d-block ml-auto'>
+						<Button variant='link' className='p-0 h-auto ml-auto'>
 							<Image
 								src={Icons.editIcon}
 								width='25'
@@ -162,7 +162,7 @@ const DocumentAssignToAndCreatedBy = ({
 									)
 								}
 							/>
-						</a>
+						</Button>
 					)}
 				</div>
 			</div>

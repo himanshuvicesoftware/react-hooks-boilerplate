@@ -14,7 +14,7 @@ const Profile = () => {
 	const profile = useSelector(selectUserProfile)
 	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(fetchUserProfile())
+		dispatch(fetchUserProfile(1))
 	}, [dispatch])
 	return (
 		<Container>
