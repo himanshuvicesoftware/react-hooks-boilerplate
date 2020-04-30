@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import doAsync from '../../infrastructure/doAsync'
 
-export const fetchAllProfile = createAsyncThunk(
+export const fetchUserProfile = createAsyncThunk(
 	'profile/id',
 	async ({ useCaching, noBusySpinner } = {}, thunkArgs, id) =>
 		await doAsync({

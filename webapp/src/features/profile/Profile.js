@@ -6,7 +6,7 @@ import { Card, Row, Col, Container } from 'react-bootstrap'
 import './Profile.styles.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectUserProfile } from './profile.selectors'
-import { fetchAllProfile } from './profile.asyncActions'
+import { fetchUserProfile } from './profile.asyncActions'
 import BusyIndicator from '../../widgets/busyIndicator'
 import isEmpty from 'lodash/isEmpty'
 
@@ -14,7 +14,7 @@ const Profile = () => {
 	const profile = useSelector(selectUserProfile)
 	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(fetchAllProfile())
+		dispatch(fetchUserProfile())
 	}, [dispatch])
 	return (
 		<Container>

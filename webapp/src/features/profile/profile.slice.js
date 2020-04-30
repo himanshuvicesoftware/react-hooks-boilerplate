@@ -15,7 +15,7 @@ const slice = createSlice({
 		},
 	},
 	extraReducers: {
-		[asyncActions.fetchAllProfile.fulfilled]: (state, action) => {
+		[asyncActions.fetchUserProfile.fulfilled]: (state, action) => {
 			state.userProfile = action.payload
 		},
 	},
