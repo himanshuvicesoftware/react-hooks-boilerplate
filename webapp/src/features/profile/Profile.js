@@ -18,7 +18,9 @@ const Profile = () => {
 	}, [dispatch])
 	return (
 		<Container>
-			<h2 className='page-title'>Your Profile</h2>
+			<h2 className='page-page-title pt-50 mb-35 m-0 font-semi-bold'>
+				Your Profile
+			</h2>
 			<Card>
 				<Card.Body>
 					<Row>

@@ -51,7 +51,9 @@ const ProfileImage = ({ profileData }) => {
 					accept='image/jpg, image/png'
 				/>
 			</div>
-			<Button variant='secondary'>Upload Profile Image</Button>
+			<Button variant='secondary' disabled={!imageBlob}>
+				Upload Profile Image
+			</Button>
 		</>
 	)
 }

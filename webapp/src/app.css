@@ -11,6 +11,9 @@
 .mb-15 {
 	margin-bottom: 15px !important;
 }
+.mb-20 {
+	margin-bottom: 20px !important;
+}
 .mb-25 {
 	margin-bottom: 25px !important;
 }
@@ -26,10 +29,48 @@
 .pt-50 {
 	padding-top: 50px !important;
 }
+.p-15 {
+	padding: 15px !important;
+}
 .p-25 {
 	padding: 25px !important;
 }
+.py-10 {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+.py-20 {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+.py-25 {
+	padding-top: 25px !important;
+	padding-bottom: 25px !important;
+}
+.px-15 {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+.px-25 {
+	padding-left: 25px !important;
+	padding-right: 25px !important;
+}
+.separator {
+	height: 2px;
+}
 /* #####################-------- Margins & Paddings End -----------############ */
+
+/* #####################-------- Font CSS starts -----------############ */
+.font-semi-bold {
+	font-weight: 600 !important;
+}
+.font-weight-normal {
+	font-weight: 400 !important;
+}
+.f-15 {
+	font-size: 15px !important;
+}
+/* #####################-------- Font CSS End -----------############ */
 
 /* ###############-------Btn  css Start------################### */
 .btn {
@@ -89,6 +130,10 @@
 .btn-big {
 	min-width: 210px !important;
 	height: 65px;
+}
+.btn-light {
+	background-color: #e9edf0 !important;
+	border-color: #e9edf0 !important;
 }
 /* ###############-------Btn  css End------################### */
 
@@ -170,7 +215,7 @@ select.form-control {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-image: url(./assets/icons/Select.svg);
+	background-image: url(./assets/icons/select.svg);
 	background-repeat: no-repeat;
 	background-position: center right 24px;
 	padding-right: 48px;
@@ -208,3 +253,31 @@ textarea.form-control {
 }
 
 /*###############-------Form  css ends------###################*/
+.bdr-secondary {
+	border-color: #0d1e45 !important;
+}
+.calender-input {
+	background-image: url(./assets/icons/calendar.svg);
+	background-repeat: no-repeat;
+	background-position: center right 24px;
+	padding-right: 48px;
+}
+.list-group .list-group-item:last-child {
+	margin-bottom: 0px;
+}
+.counter {
+	height: 30px;
+	width: 30px;
+}
+.bg-primary {
+	background-color: #3d71de !important;
+}
+.bg-light {
+	background-color: #f1f4f9 !important;
+}
+.text-light {
+	color: rgba(13, 30, 69, 0.75) !important;
+}
+.card-title {
+	letter-spacing: 1.5px;
+}

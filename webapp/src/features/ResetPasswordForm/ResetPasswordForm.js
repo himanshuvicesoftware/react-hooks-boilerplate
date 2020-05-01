@@ -10,7 +10,9 @@ const ResetPasswordForm = () => {
 	const validationSchema = Yup.object().shape({
 		currentPassword: Yup.string().required('This field cannot be empty'),
 		newPassword: Yup.string().required('This field cannot be empty'),
-		confirmPassword: Yup.string().required('This field cannot be empty'),
+		confirmPassword: Yup.string()
+			.required('This field cannot be empty')
+			.oneOf([Yup.ref('newPassword'), null], 'Passwords must match'),
 	})
 	const initialValues = {
 		currentPassword: '',

@@ -9,6 +9,7 @@ import Settings from './features/settings'
 import SignIn from './features/SignIn'
 import Profile from './features/profile'
 import DocumentItem from './features/documentItem/DocumentItem'
+import DocumentVersion from './features/DocumentVersion'
 
 export default function Routes() {
 	return (
@@ -30,6 +31,9 @@ export default function Routes() {
 			</PageRoute>
 			<PageRoute path='/sign-in'>
 				<SignIn />
+			</PageRoute>
+			<PageRoute path='/document/new-version/:documentId'>
+				<DocumentVersion />
 			</PageRoute>
 			<PageRoute path='/document/:customerId'>
 				<DocumentItem />

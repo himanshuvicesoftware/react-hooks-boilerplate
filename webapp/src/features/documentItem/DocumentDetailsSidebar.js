@@ -6,11 +6,12 @@ import { DOCUMENT_MODAL_TYPES } from '../DocumentModals/DocumentModals.constants
 import { actions } from './documentItem.slice'
 import { selectedDocumentModal } from './documentItem.selectors'
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 const { setSelectedDocumentModal } = actions
 
 const DocumentDetailsSidebar = () => {
 	const selectedModal = useSelector(selectedDocumentModal)
-
+	const history = useHistory()
 	const dispatch = useDispatch()
 
 	return (
@@ -44,7 +45,11 @@ const DocumentDetailsSidebar = () => {
 
 					<div className='bg-secondary opacity-75 separator mt-35 mb-35'></div>
 
-					<Button variant='secondary' size='block'>
+					<Button
+						variant='secondary'
+						size='block'
+						onClick={() => history.push(`new-version/1`)}
+					>
 						Create New Version
 					</Button>
 					<Button
