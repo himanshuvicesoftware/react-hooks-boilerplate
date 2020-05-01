@@ -29,8 +29,6 @@ export default {
 	logIcon,
 	bellIcon,
 	caretIcon,
-	deleteIcon,
-	closeIcon,
 	minimizeIcon,
 	maximizeIcon,
 	arrowLeftDarkIcon,
