@@ -18,7 +18,7 @@ const DocumentItem = () => {
 	return (
 		<>
 			<Container fluid>
-				<Row className='mb-50'>
+				<Row className='mb-50 pt-50'>
 					<Col md={5} lg={7}>
 						<h2 className='page-title  m-0 font-semi-bold'>[CustomerName]</h2>
 					</Col>
