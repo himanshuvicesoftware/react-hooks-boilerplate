@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Container from 'react-bootstrap/Container'
+// import Container from 'react-bootstrap/Container'
 import users from './features/users'
 import Page from './widgets/Page/Page'
 import { About } from './features/About'
