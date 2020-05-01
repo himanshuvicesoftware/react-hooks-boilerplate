@@ -9,7 +9,6 @@ import * as settings from './features/settings'
 import * as userContext from './features/userContext'
 import * as profile from './features/profile'
 import * as documentItem from './features/documentItem'
-import * as documentArchive from './features/documentArchive'
 
 export default combineReducers({
 	[busyIndicator.name]: busyIndicator.reducer,
@@ -22,5 +21,4 @@ export default combineReducers({
 	[userContext.name]: userContext.reducer,
 	[profile.name]: profile.reducer,
 	[documentItem.name]: documentItem.reducer,
-	[documentArchive.name]: documentArchive.reducer,
 })
