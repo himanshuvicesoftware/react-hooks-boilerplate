@@ -5,9 +5,6 @@
 .font-semi-bold {
 	font-weight: 600 !important;
 }
-.text-light {
-	color: rgba(13, 30, 69, 0.75) !important;
-}
 /* ####################--------- Fonts Ends ---------------########### */
 
 /* ###############-------Avatar css Start------################### */
@@ -106,9 +103,6 @@
 }
 .separator {
 	height: 2px;
-}
-.card-title {
-	letter-spacing: 1.5px;
 }
 dt {
 	font-weight: 700;
