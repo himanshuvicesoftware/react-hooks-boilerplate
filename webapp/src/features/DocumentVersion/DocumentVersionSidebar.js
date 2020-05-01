@@ -62,12 +62,6 @@ const DocumentVersionSidebar = ({ isSidebarVisible, setIsSidebarVisible }) => (
 					placeholder='Enter Transfer Date'
 					className='calender-input'
 				/>
-				<Image
-					src={Icons.calendarIcon}
-					className='calender-icon'
-					alt='calender-icon'
-					width='20'
-				/>
 			</Form.Group>
 			<Form.Group controlId='documentVersionFormCreationDate'>
 				<Form.Label>Creation Date</Form.Label>
@@ -76,12 +70,6 @@ const DocumentVersionSidebar = ({ isSidebarVisible, setIsSidebarVisible }) => (
 					name='creationDate'
 					placeholder='Enter Creation Date'
 					className='calender-input'
-				/>
-				<Image
-					className='calender-icon'
-					src={Icons.calendarIcon}
-					alt='calender-icon'
-					width='20'
 				/>
 			</Form.Group>
 			<Form.Group
