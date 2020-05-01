@@ -9,6 +9,7 @@ import { Api } from './features/api/Api'
 import DashboardContent from './widgets/dashboard/DashboardContent'
 import DashboardChart from './widgets/dashboardChart/components/DashboardChart'
 import Settings from './widgets/settings/Settings'
+import AuditMgmt from './widgets/auditManagement/AuditMgmt'
 const {
 	components: { UsersPage, UserDetailsPage },
 } = users
@@ -33,6 +34,9 @@ export default function Routes() {
 			</PageRoute>
 			<PageRoute path='/settings'>
 				<Settings />
+			</PageRoute>
+			<PageRoute path='/audit'>
+				<AuditMgmt />
 			</PageRoute>
 			<PageRoute path='/dashboard'>
 				<DashboardChart />
