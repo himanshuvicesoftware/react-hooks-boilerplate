@@ -10,7 +10,7 @@ const DocumentArchive = () => {
 		<Container fluid>
 			<Row className='pt-50 mb-35'>
 				<Col lg={7} md={5}>
-					<h2 className='page-title'>Documents</h2>
+					<h2 className='page-title m-0 font-semi-bold'>Documents</h2>
 				</Col>
 				<Col lg={2} md={3}>
 					<Button className='btn-block' type='button' variant='secondary'>

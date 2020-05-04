@@ -46,7 +46,7 @@ const DocumentVersionSidebar = ({ isSidebarVisible, setIsSidebarVisible }) => (
 					<span className='f-12 ml-2'>Add Serial Number</span>
 				</span>
 			</Form.Group>
-			<Form.Group classNameName='mb-15' controlId='documentVersionFormTSN_Name'>
+			<Form.Group className='mb-15' controlId='documentVersionFormTSN_Name'>
 				<Form.Label>TSN Name</Form.Label>
 				<Form.Control
 					type='text'
@@ -73,7 +73,7 @@ const DocumentVersionSidebar = ({ isSidebarVisible, setIsSidebarVisible }) => (
 				/>
 			</Form.Group>
 			<Form.Group
-				classNameName='mb-15'
+				className='mb-15'
 				controlId='documentVersionFormDocumentStatus'
 			>
 				<Form.Label>Document Status</Form.Label>
