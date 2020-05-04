@@ -1,9 +1,6 @@
 import React from 'react'
-import './Organization.css'
 import {
 	Container,
-	Row,
-	Col,
 	Button,
 	Navbar,
 	Nav,
@@ -12,14 +9,15 @@ import {
 	Image,
 } from 'react-bootstrap'
 import GenericTabs from '../GenericTabs'
-import FFLs from '../FFLs'
+import Users from '../Users'
 import Setting from '../Setting'
-export const Organization = () => {
+
+export const FFLSettings = () => {
 	const tabData = (props) => {
 		return (
 			<div>
-				{props === 'FFLs' ? <FFLs /> : ''}
 				{props === 'Setting' ? <Setting /> : ''}
+				{props === 'Users' ? <Users /> : ''}
 			</div>
 		)
 	}
@@ -107,22 +105,17 @@ export const Organization = () => {
 			</Navbar>
 
 			<Container>
-				<Row className='py-50 '>
-					<Col xl='10' lg='8' md='6'>
+				<Container className='row py-50 '>
+					<Container className='col-xl-10 col-lg-8 col-md-6'>
 						<h2 className='page-title m-0 font-semi-bold mb-3 mb-md-0'>
-							Your Organization
+							FFL Settings
 						</h2>
-					</Col>
-					<Col className='text-right' xl='2' lg='4' md='6'>
-						<Button type='button' className='btn btn-primary btn-block '>
-							Add FFL
-						</Button>
-					</Col>
-				</Row>
+					</Container>
+				</Container>
 			</Container>
 
 			<Container>
-				<GenericTabs props={['FFLs', 'Setting']} tabData={tabData} />
+				<GenericTabs props={['Setting', 'Users']} tabData={tabData} />
 			</Container>
 
 			<footer className='bg-secondry p-4'>

@@ -19,6 +19,9 @@ export default function NavBar() {
 				<LinkContainer to='/silencerorg'>
 					<Nav.Link href='silencerorg'>SilencerOrg</Nav.Link>
 				</LinkContainer>
+				<LinkContainer to='/fflsettings'>
+					<Nav.Link href='fflsettings'>FFL Setting</Nav.Link>
+				</LinkContainer>
 			</Nav>
 		</Navbar>
 	)

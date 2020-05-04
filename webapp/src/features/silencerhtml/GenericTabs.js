@@ -5,10 +5,9 @@ const GenericTabs = (props) => {
 	console.log(props)
 	return (
 		<Container>
-			<h1>Generic Tabs</h1>
 			<Tabs id='controlled-tab-example'>
 				{props.props.map((each) => (
-					<Tab eventKey={each} title={each}>
+					<Tab eventKey={each} title={each} key={each}>
 						{props.tabData(each)}
 					</Tab>
 				))}

@@ -7,6 +7,7 @@ import { About } from './features/About'
 import screenTimeReports from './features/screenTimeReports'
 import DocumentItem from './features/silencerhtml/DocumentItem/DocumentItem'
 import { Organization } from './features/silencerhtml/Organization/Organization'
+import { FFLSettings } from './features/silencerhtml/FFLSettings/FFLSettings'
 
 const {
 	components: { UsersPage, UserDetailsPage },
@@ -37,6 +38,9 @@ export default function Routes() {
 				</PageRoute>
 				<PageRoute path='/silencerhtml'>
 					<DocumentItem />
+				</PageRoute>
+				<PageRoute path='/fflsettings'>
+					<FFLSettings />
 				</PageRoute>
 				<PageRoute path='/'>
 					<UsersPage />
