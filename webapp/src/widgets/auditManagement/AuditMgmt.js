@@ -3,9 +3,33 @@ import './AuditMgmt.css'
 import { Button, Image, Table, Tabs, Tab } from 'react-bootstrap'
 const imageIcon = require('../auditManagement/arrow-right-dark.svg')
 const profileImage = require('../auditManagement/user-thumb.jpg')
+const bellIcon = require('../auditManagement/Bell.svg')
 function AuditMgmt() {
 	return (
 		<div>
+			<ul className='navbar-nav nav-bar-right'>
+				<li className='nav-item  dropdown notification-dropdown mr-lg-1'>
+					<a className='nav-link position-relative'>
+						<span className='position-relative'>
+							<Image src={bellIcon} alt='' className='bell-icon' width='25' />
+							<span className='badge badge-pill bg-primary text-white font-weight-normal '>
+								5
+							</span>
+						</span>
+					</a>
+					<div className='dropdown-menu dropdown-menu-center notification-dropdown p-15 text-center'>
+						<a className='dropdown-item f-12' href='#'>
+							Cody Miles Created a New Version of #1235
+						</a>
+						<a className='dropdown-item f-12' href='#'>
+							Ashley Rayes Created #123456
+						</a>
+						<a className='dropdown-item f-12' href='#'>
+							Daniel Noel Flagged #1234568
+						</a>
+					</div>
+				</li>
+			</ul>
 			<div className='container-fluid px-0 '>
 				<div className='row py-50 '>
 					<div className='col-xl-9 col-lg-8 col-md-6'>
@@ -13,7 +37,7 @@ function AuditMgmt() {
 							Audit Management
 						</h2>
 					</div>
-					<div className='col-xl-2 col-lg-4 col-md-6 text-right pr-5'>
+					<div className='col-xl-2 col-lg-4 col-md-6 text-right pr-'>
 						<Button className='btn btn-danger btn-block '>End Audit</Button>
 					</div>
 				</div>

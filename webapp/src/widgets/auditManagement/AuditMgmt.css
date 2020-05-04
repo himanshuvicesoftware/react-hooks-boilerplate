@@ -101,24 +101,37 @@
 	padding-top: 50px !important;
 	padding-bottom: 50px !important;
 	background-color: #fff;
-	/* padding-left: 24px !important;
-	margin-left: 0px !important;
-	margin-right: 0px !important;
-
-	padding-right: 0px; */
 }
 .container-fluid .nav-link {
 	color: black !important;
 	width: 140px !important;
 	border: none !important;
-	/* padding-bottom: 0.25rem !important;
-	padding-top: 0.25 !important; */
-	/* padding-left: 100px !important; */
-	/* padding-left: 10px !important; */
 }
 .nav-tabs a:nth-child(1) {
 	margin-left: 150px !important;
 }
-/* .nav-tabs {
-	margin-left: 100px !important;
-} */
+.notification-dropdown .nav-link span.badge {
+	height: 18px;
+	width: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: -10px;
+	top: -2px;
+	line-height: initial;
+}
+.p-15 {
+	padding: 15px !important;
+}
+.f-12 {
+	font-size: 12px !important;
+}
+.shadow-sm,
+.shadow-sm--on-hover:hover {
+	box-shadow: 0 0.125rem 0.25rem rgba(132, 138, 163, 0.1) !important;
+}
+.shadow,
+.shadow--on-hover:hover {
+	box-shadow: 0 0.75rem 0.75rem 0.0375rem rgba(132, 138, 163, 0.1) !important;
+}
