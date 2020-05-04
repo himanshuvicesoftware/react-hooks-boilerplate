@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import moment from 'moment'
+import moment from 'moment/moment'
 import { Form, Button } from 'react-bootstrap'
 import './DatePicker.css'
 
