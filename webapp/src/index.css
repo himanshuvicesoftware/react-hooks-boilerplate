@@ -1,8 +1,35 @@
+@font-face {
+	font-family: 'Proxima';
+	src: url('./assets/fonts/proximaNova/proximaNovaThin.otf') format('opentype');
+	font-weight: 100;
+}
+@font-face {
+	font-family: 'Proxima';
+	src: url('./assets//fonts/proximaNova/proximaNovaRegular.otf')
+		format('opentype');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Proxima';
+	src: url('./assets//fonts/proximaNova/proximaNovaBold.otf') format('opentype');
+	font-weight: 600;
+}
+@font-face {
+	font-family: 'Proxima';
+	src: url('./assets//fonts/proximaNova/proximaNovaExtrabold.otf')
+		format('opentype');
+	font-weight: 800;
+}
+@font-face {
+	font-family: 'Proxima';
+	src: url('./assets//fonts/proximaNova/proximaNovaBlack.otf')
+		format('opentype');
+	font-weight: 900;
+}
+
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: Proxima !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #f1f4f9 !important;

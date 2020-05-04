@@ -10,6 +10,7 @@ import SignIn from './features/SignIn'
 import Profile from './features/profile'
 import DocumentItem from './features/documentItem/DocumentItem'
 import DocumentVersion from './features/DocumentVersion'
+import DocumentArchive from './features/DocumentArchive'
 
 export default function Routes() {
 	return (
@@ -32,11 +33,14 @@ export default function Routes() {
 			<PageRoute path='/sign-in'>
 				<SignIn />
 			</PageRoute>
-			<PageRoute path='/document/new-version/:documentId'>
+			<PageRoute path='/documents/new-version/:documentId'>
 				<DocumentVersion />
 			</PageRoute>
-			<PageRoute path='/document/:customerId'>
+			<PageRoute path='/documents/:customerId'>
 				<DocumentItem />
+			</PageRoute>
+			<PageRoute path='/documents'>
+				<DocumentArchive />
 			</PageRoute>
 			<PageRoute path='/'>
 				<Home />

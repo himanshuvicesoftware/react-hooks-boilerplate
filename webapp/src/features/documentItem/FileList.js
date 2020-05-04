@@ -1,8 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import BootstrapTable from 'react-bootstrap-table-next'
-import classNames from 'classnames'
-import BusyIndicator from '../../widgets/busyIndicator'
+import Table from '../../widgets/Table'
 
 const FileList = ({ attachmentsData }) => {
 	const ViewButtonFormatter = () => {
@@ -43,20 +41,7 @@ const FileList = ({ attachmentsData }) => {
 		},
 	]
 
-	return (
-		<BusyIndicator>
-			<BootstrapTable
-				keyField='id'
-				data={attachmentsData}
-				columns={columns}
-				rowClasses={(row, rowIndex) =>
-					classNames(rowIndex % 2 === 0 ? 'tableRowEven' : 'tableRowOdd')
-				}
-				headerClasses='headerStyle'
-				className='font-weight-normal f-15 table-striped text-secondry'
-			/>
-		</BusyIndicator>
-	)
+	return <Table keyField='id' data={attachmentsData} columns={columns} />
 }
 
 export default FileList
