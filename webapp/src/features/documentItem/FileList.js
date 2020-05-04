@@ -18,16 +18,19 @@ const FileList = ({ attachmentsData }) => {
 			dataField: 'fileName',
 			text: 'File Name',
 			sort: true,
+			headerClasses: 'text-nowwrap',
 		},
 		{
 			dataField: 'uploadedBy',
 			text: 'Uploaded By',
 			sort: true,
+			headerClasses: 'text-nowwrap',
 		},
 		{
 			dataField: 'uploadedOn',
 			text: 'Uploaded On',
 			sort: true,
+			headerClasses: 'text-nowwrap',
 		},
 		{
 			dataField: 'fileType',

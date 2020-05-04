@@ -65,6 +65,24 @@ const mockAttachments = [
 	},
 ]
 
+const mockCorrectionLogs = [
+	{
+		descriptionOfChange: 'Corrected Military Identification',
+		user: 'Cody Miles',
+		initialDate: '12/12/2020',
+	},
+	{
+		descriptionOfChange: 'Corrected Military Identification',
+		user: 'Cody Miles',
+		initialDate: '12/12/2020',
+	},
+	{
+		descriptionOfChange: 'Corrected Military Identification',
+		user: 'Cody Miles',
+		initialDate: '12/12/2020',
+	},
+]
+
 export const fetchAllDocumentItem = createAsyncThunk(
 	'documentItem/getAll',
 	async ({ useCaching, noBusySpinner } = {}, thunkArgs) =>
@@ -100,6 +118,20 @@ export const fetchAttachmentsByDocumentId = createAsyncThunk(
 			noBusySpinner,
 			errorMessage: 'Unable to load attachments. Please try again later.',
 			stubSuccess: mockAttachments,
+			...thunkArgs,
+		})
+)
+
+export const fetchDocumentCorrectionLogs = createAsyncThunk(
+	`document/documentId/correctionLogs`,
+	async (documentId, thunkArgs, { useCaching, noBusySpinner } = {}) =>
+		await doAsync({
+			url: `document/${documentId}/correctionLogs`,
+			useCaching,
+			noBusySpinner,
+			errorMessage:
+				'Unable to load document correction logs. Please try again later.',
+			stubSuccess: mockCorrectionLogs,
 			...thunkArgs,
 		})
 )

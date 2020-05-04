@@ -8,8 +8,10 @@ const Table = ({ columns, data, keyField }) => {
 			keyField={keyField}
 			data={data}
 			columns={columns}
-			wrapperClasses='font-weight-normal f-15 table-striped text-table-data'
+			wrapperClasses='table-responsive mb-25'
 			rowClasses='text-table-data'
+			headerClasses='.text-table-data'
+			classes='font-weight-normal f-15 table-striped .text-table-data'
 		/>
 	)
 }

@@ -7,6 +7,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 import {
 	fetchDocumentHistoryByDocumentId,
 	fetchAttachmentsByDocumentId,
+	fetchDocumentCorrectionLogs,
 } from './documentItem.asyncActions'
 import {
 	selectDocumentHistory,
@@ -21,6 +22,7 @@ const DocumentItem = () => {
 	useEffect(() => {
 		dispatch(fetchAttachmentsByDocumentId(123))
 		dispatch(fetchDocumentHistoryByDocumentId(2))
+		dispatch(fetchDocumentCorrectionLogs(1))
 	}, [dispatch])
 
 	return (

@@ -67,8 +67,32 @@
 .font-weight-normal {
 	font-weight: 400 !important;
 }
+.f-10 {
+	font-size: 10px;
+}
+.f-12 {
+	font-size: 12px !important;
+}
+.f-14 {
+	font-size: 14px !important;
+}
 .f-15 {
 	font-size: 15px !important;
+}
+.f-18 {
+	font-size: 18px !important;
+}
+.f-22 {
+	font-size: 22px !important;
+}
+.f-24 {
+	font-size: 24px !important;
+}
+.f-28 {
+	font-size: 28px !important; /* H3 tag  */
+}
+.f-32 {
+	font-size: 32px !important; /* H2 tag  */
 }
 /* #####################-------- Font CSS End -----------############ */
 
@@ -165,33 +189,6 @@ body {
 }
 .bg-secondry {
 	background-color: #0d1e45 !important;
-}
-.f-10 {
-	font-size: 10px;
-}
-.f-12 {
-	font-size: 12px !important;
-}
-.f-14 {
-	font-size: 14px !important;
-}
-.f-15 {
-	font-size: 15px !important;
-}
-.f-18 {
-	font-size: 18px !important;
-}
-.f-22 {
-	font-size: 22px !important;
-}
-.f-24 {
-	font-size: 24px !important;
-}
-.f-28 {
-	font-size: 28px !important; /* H3 tag  */
-}
-.f-32 {
-	font-size: 32px !important; /* H2 tag  */
 }
 
 /*###############-------Form  css Start------###################*/
