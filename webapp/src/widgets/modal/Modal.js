@@ -21,12 +21,11 @@ export default function ViceModal({ children, header, footer, title, reset }) {
 			show={show}
 			onHide={handleClose}
 			dialogClassName='modal-dialog-centered'
+			size='lg'
 		>
 			<Modal.Header className='border-0'>
 				{header || (
-					<h5 className='f-32 font-semi-bold'>
-						<Modal.Title>{title}</Modal.Title>
-					</h5>
+					<Modal.Title className='f-32 font-semi-bold'>{title}</Modal.Title>
 				)}
 				<button className='close p-0 pr-2' onClick={handleClose}>
 					<Image src={Icons.closeIcon} alt='' width='25' />

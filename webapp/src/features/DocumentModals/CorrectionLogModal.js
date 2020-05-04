@@ -80,7 +80,7 @@ const CorrectionLog = () => {
 					footer={footer(props.csv)}
 					reset={resetModal}
 				>
-					<Table {...props.baseProps} />
+					<Table keyField='id' {...props.baseProps} />
 				</Modal>
 			)}
 		</ToolkitProvider>
