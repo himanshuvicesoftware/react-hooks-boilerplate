@@ -8,7 +8,7 @@ function AuditMgmt() {
 		<div>
 			<div className='container-fluid px-0 '>
 				<div className='row py-50 '>
-					<div className='col-xl-10 col-lg-8 col-md-6 pl-5'>
+					<div className='col-xl-9 col-lg-8 col-md-6'>
 						<h2 className='page-title m-0 font-semi-bold mb-3 mb-md-0'>
 							Audit Management
 						</h2>
@@ -22,7 +22,7 @@ function AuditMgmt() {
 					<Tab eventKey='audit' title='Audit Settings'>
 						<div className='tab-content bg-white'>
 							<div className='tab-pane py-50 fade show active'>
-								<div className='container pl-3 ml-0'>
+								<div className='container'>
 									<p className='mb-2 text-muted font-weight-bold'>
 										Auditors were given access to the following date range:
 									</p>
@@ -88,8 +88,8 @@ function AuditMgmt() {
 						</div>
 					</Tab>
 					<Tab eventKey='auditors' title='Auditors'>
-						<div className='tab-pane py-10'>
-							<div className='container pl-4 pr-5 mr-1 ml-3'>
+						<div className='py-10'>
+							<div className='container'>
 								<p className='mb-2 text-muted font-weight-bold'>
 									The lead auditor has added the following auditors to your
 									account:
