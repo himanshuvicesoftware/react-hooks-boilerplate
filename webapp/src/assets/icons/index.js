@@ -19,7 +19,7 @@ import strikethroughIcon from './strikethrough.svg'
 import zoomInIcon from './zoomIn.svg'
 import zoomOutIcon from './zoomOut.svg'
 import closeIcon from './close.svg'
-import selectIcon from './select.svg'
+import selectIcon from './selectIcon.svg'
 
 export default {
 	circleIcon,

@@ -6,6 +6,7 @@ const initialState = {
 	filter: '',
 	selectedDocumentModal: null,
 	documentHistory: [],
+	attachments: [],
 }
 
 const slice = createSlice({
@@ -26,6 +27,9 @@ const slice = createSlice({
 			action
 		) => {
 			state.documentHistory = action.payload
+		},
+		[asyncActions.fetchAttachmentsByDocumentId.fulfilled]: (state, action) => {
+			state.attachments = action.payload
 		},
 	},
 })

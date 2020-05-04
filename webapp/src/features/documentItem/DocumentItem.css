@@ -92,6 +92,9 @@
 	border-bottom: 4px solid \9;
 	content: '';
 }
+.react-bootstrap-table {
+	margin-bottom: 50px;
+}
 /* #######################-------Table Style Ends------------############### */
 
 .shadow-sm,
