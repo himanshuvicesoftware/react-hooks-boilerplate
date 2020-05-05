@@ -22,6 +22,9 @@ export default function NavBar() {
 				<LinkContainer to='/fflsettings'>
 					<Nav.Link href='fflsettings'>FFL Setting</Nav.Link>
 				</LinkContainer>
+				<LinkContainer to='/pdffiller'>
+					<Nav.Link href='pdffiller'>Pdf Filler</Nav.Link>
+				</LinkContainer>
 			</Nav>
 		</Navbar>
 	)
