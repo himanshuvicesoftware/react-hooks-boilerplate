@@ -63,14 +63,20 @@ export default function NavBar() {
 											width='25'
 										/>
 										<span className='badge badge-pill bg-primary text-white font-weight-normal '>
-											1
+											5
 										</span>
 									</span>
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu className='dropdown-menu-center notification-dropdown p-15 text-center shadow'>
 									<Dropdown.Item className='dropdown-item f-12 text-wrap'>
-										Dummy Notification #1235
+										Cody Miles Created a New Version of #1235
+									</Dropdown.Item>
+									<Dropdown.Item className='dropdown-item f-12 text-wrap'>
+										Ashley Rayes Created #123456
+									</Dropdown.Item>
+									<Dropdown.Item className='dropdown-item f-12 text-wrap'>
+										Daniel Noel Flagged #1234568
 									</Dropdown.Item>
 								</Dropdown.Menu>
 							</Dropdown>
@@ -93,10 +99,35 @@ export default function NavBar() {
 									/>
 								</Dropdown.Toggle>
 
-								<Dropdown.Menu className='dropdown-menu-right p-15 text-center shadow'>
+								<Dropdown.Menu className='dropdown-menu-right p-15 text-center  '>
+									<Dropdown.Item>
+										<LinkContainer to='/switch'>
+											<Nav.Link>Switch FFL</Nav.Link>
+										</LinkContainer>
+									</Dropdown.Item>
+									<Dropdown.Item>
+										<LinkContainer to='/audit'>
+											<Nav.Link>Audit Management</Nav.Link>
+										</LinkContainer>
+									</Dropdown.Item>
+									<Dropdown.Item>
+										<LinkContainer to='/user'>
+											<Nav.Link>User Management</Nav.Link>
+										</LinkContainer>
+									</Dropdown.Item>
+									<Dropdown.Item>
+										<LinkContainer to='/organization'>
+											<Nav.Link>Organization Settings </Nav.Link>
+										</LinkContainer>
+									</Dropdown.Item>
 									<Dropdown.Item>
 										<LinkContainer to='/profile'>
 											<Nav.Link>My Profile</Nav.Link>
+										</LinkContainer>
+									</Dropdown.Item>
+									<Dropdown.Item>
+										<LinkContainer to='/billing'>
+											<Nav.Link>Billing</Nav.Link>
 										</LinkContainer>
 									</Dropdown.Item>
 									<Dropdown.Item>

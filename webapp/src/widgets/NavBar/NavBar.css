@@ -57,9 +57,10 @@
 	border-radius: 0px;
 }
 .dropdown-menu .dropdown-item {
-	line-height: 30px;
-	font-weight: 600;
+	line-height: 30px !important;
+	font-weight: 600 !important;
 	color: #0d1e45;
+
 	padding: 15px 0px;
 	border-bottom: 2px solid #0d1e45;
 }
@@ -85,9 +86,13 @@
 }
 @media (max-width: 992px) {
 	.dropdown-menu-center {
-		margin-left: 0px;
+		margin-left: 0px !important;
 	}
 	.dropdown-menu.dropdown-menu-center::after {
 		display: none;
 	}
+}
+.nav-link {
+	padding: 0 !important;
+	color: black !important;
 }
