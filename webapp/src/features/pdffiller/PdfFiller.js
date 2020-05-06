@@ -6,10 +6,8 @@ import {
 	Document,
 	StyleSheet,
 	PDFDownloadLink,
-	Canvas,
 } from '@react-pdf/renderer'
-
-// Create styles
+import DemoCanvasDraw from './DemoCanvasDraw'
 const styles = StyleSheet.create({
 	page: {
 		flexDirection: 'row',
@@ -20,7 +18,6 @@ const styles = StyleSheet.create({
 		padding: 10,
 		flexGrow: 1,
 	},
-	canvas: {},
 })
 
 const Download = () => (
@@ -46,9 +43,10 @@ const Doc = () => (
 
 const PdfFiller = () => {
 	return (
-		<>
+		<div>
 			<Download />
-		</>
+			<DemoCanvasDraw />
+		</div>
 	)
 }
 
