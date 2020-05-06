@@ -1,8 +1,8 @@
 import React from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Image } from 'react-bootstrap'
 import Table from '../../widgets/Table'
 import { useHistory } from 'react-router-dom'
-
+const caretIcon = require('../../assets/icons/Decrease.svg')
 const DocumentArchiveTable = () => {
 	const history = useHistory()
 	const customCheckbox = (column) => (
@@ -115,26 +115,146 @@ const DocumentArchiveTable = () => {
 			dataField: 'creation',
 			text: 'Creation',
 			sort: true,
+			sortCaret: (order, column) => {
+				if (!order)
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'asc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'desc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				return column
+			},
 		},
 		{
 			dataField: 'serialNumber',
 			text: 'Serial Number',
 			sort: true,
+			sortCaret: (order, column) => {
+				if (!order)
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'asc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'desc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				return column
+			},
 		},
 		{
 			dataField: 'status',
 			text: 'Status',
 			sort: true,
+			sortCaret: (order, column) => {
+				if (!order)
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'asc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'desc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				return column
+			},
 		},
 		{
 			dataField: 'tsn',
 			text: 'TSN',
 			sort: true,
+			sortCaret: (order, column) => {
+				if (!order)
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'asc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'desc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				return column
+			},
 		},
 		{
 			dataField: 'assignedUser',
 			text: 'Assigned User',
 			sort: true,
+			sortCaret: (order, column) => {
+				if (!order)
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'asc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				else if (order === 'desc')
+					return (
+						<span>
+							&nbsp;&nbsp;
+							<Image src={caretIcon} />
+						</span>
+					)
+				return column
+			},
 		},
 		{
 			dataField: 'id',
