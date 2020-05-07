@@ -67,7 +67,7 @@ const CustomDatePicker = () => {
 		>
 			<div>
 				<Button
-					className='btn-block'
+					className='ml-3 mb-3 '
 					variant='primary'
 					size='lg'
 					type='button'
