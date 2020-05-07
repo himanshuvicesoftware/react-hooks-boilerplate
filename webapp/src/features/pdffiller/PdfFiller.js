@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
 	Page,
 	Text,
@@ -7,7 +8,9 @@ import {
 	StyleSheet,
 	PDFDownloadLink,
 } from '@react-pdf/renderer'
+
 import DemoCanvasDraw from './DemoCanvasDraw'
+
 const styles = StyleSheet.create({
 	page: {
 		flexDirection: 'row',
