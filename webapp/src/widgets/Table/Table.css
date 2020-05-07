@@ -46,3 +46,7 @@
 img {
 	height: 13px;
 }
+
+.rotational {
+	transform: rotate(180deg);
+}

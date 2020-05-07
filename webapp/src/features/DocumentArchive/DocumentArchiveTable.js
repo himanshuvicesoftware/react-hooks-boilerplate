@@ -2,7 +2,9 @@ import React from 'react'
 import { Form, Button, Image } from 'react-bootstrap'
 import Table from '../../widgets/Table'
 import { useHistory } from 'react-router-dom'
-const caretIcon = require('../../assets/icons/Decrease.svg')
+const decreaseIcon = require('../../assets/icons/Decrease.svg')
+
+const selectIcon = require('../../assets/icons/selectIcon.svg')
 const DocumentArchiveTable = () => {
 	const history = useHistory()
 	const customCheckbox = (column) => (
@@ -115,145 +117,145 @@ const DocumentArchiveTable = () => {
 			dataField: 'creation',
 			text: 'Creation',
 			sort: true,
-			sortCaret: (order, column) => {
+			sortCaret: (order) => {
 				if (!order)
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={decreaseIcon} />
 						</span>
 					)
 				else if (order === 'asc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} />
 						</span>
 					)
 				else if (order === 'desc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return column
+				return null
 			},
 		},
 		{
 			dataField: 'serialNumber',
 			text: 'Serial Number',
 			sort: true,
-			sortCaret: (order, column) => {
+			sortCaret: (order) => {
 				if (!order)
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={decreaseIcon} />
 						</span>
 					)
 				else if (order === 'asc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} />
 						</span>
 					)
 				else if (order === 'desc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return column
+				return null
 			},
 		},
 		{
 			dataField: 'status',
 			text: 'Status',
 			sort: true,
-			sortCaret: (order, column) => {
+			sortCaret: (order) => {
 				if (!order)
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={decreaseIcon} />
 						</span>
 					)
 				else if (order === 'asc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} />
 						</span>
 					)
 				else if (order === 'desc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return column
+				return null
 			},
 		},
 		{
 			dataField: 'tsn',
 			text: 'TSN',
 			sort: true,
-			sortCaret: (order, column) => {
+			sortCaret: (order) => {
 				if (!order)
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={decreaseIcon} />
 						</span>
 					)
 				else if (order === 'asc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} />
 						</span>
 					)
 				else if (order === 'desc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return column
+				return null
 			},
 		},
 		{
 			dataField: 'assignedUser',
 			text: 'Assigned User',
 			sort: true,
-			sortCaret: (order, column) => {
+			sortCaret: (order) => {
 				if (!order)
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={decreaseIcon} />
 						</span>
 					)
 				else if (order === 'asc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} />
 						</span>
 					)
 				else if (order === 'desc')
 					return (
 						<span>
 							&nbsp;&nbsp;
-							<Image src={caretIcon} />
+							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return column
+				return null
 			},
 		},
 		{
