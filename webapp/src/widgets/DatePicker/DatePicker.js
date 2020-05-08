@@ -36,13 +36,15 @@ const CustomDatePicker = () => {
 	const ref = React.createRef()
 	// eslint-disable-next-line react/display-name
 	const CustomInput = React.forwardRef(({ onClick }, ref) => (
-		<Form.Control
-			type='text'
-			defaultValue={rangeDate}
-			className='calender-input'
-			placeholder='Feb 1 - Feb 28, 2020'
-			onClick={onClick}
-		/>
+		<>
+			<Form.Control
+				type='text'
+				defaultValue={rangeDate}
+				className='calender-input col-12'
+				placeholder='Feb 1 - Feb 28, 2020'
+				onClick={onClick}
+			/>
+		</>
 	))
 
 	const closeDatePicker = () => {

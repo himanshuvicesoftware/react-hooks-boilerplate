@@ -6,6 +6,7 @@
 }
 .react-datepicker__header {
 	padding-top: 0.8em;
+	background-color: white !important;
 }
 .react-datepicker__month {
 	margin: 0.4em 1em;
@@ -30,5 +31,10 @@
 }
 .react-datepicker__navigation--next {
 	border-left-color: #ccc;
+
 	right: 1em;
+}
+
+.react-datepicker-wrapper {
+	width: 100% !important;
 }

@@ -117,7 +117,7 @@ const DocumentArchiveTable = () => {
 			dataField: 'creation',
 			text: 'Creation',
 			sort: true,
-			sortCaret: (order) => {
+			sortCaret: (order, column) => {
 				if (!order)
 					return (
 						<span>
@@ -139,14 +139,14 @@ const DocumentArchiveTable = () => {
 							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return null
+				return column
 			},
 		},
 		{
 			dataField: 'serialNumber',
 			text: 'Serial Number',
 			sort: true,
-			sortCaret: (order) => {
+			sortCaret: (order, column) => {
 				if (!order)
 					return (
 						<span>
@@ -168,14 +168,14 @@ const DocumentArchiveTable = () => {
 							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return null
+				return column
 			},
 		},
 		{
 			dataField: 'status',
 			text: 'Status',
 			sort: true,
-			sortCaret: (order) => {
+			sortCaret: (order, column) => {
 				if (!order)
 					return (
 						<span>
@@ -197,14 +197,14 @@ const DocumentArchiveTable = () => {
 							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return null
+				return column
 			},
 		},
 		{
 			dataField: 'tsn',
 			text: 'TSN',
 			sort: true,
-			sortCaret: (order) => {
+			sortCaret: (order, column) => {
 				if (!order)
 					return (
 						<span>
@@ -226,14 +226,14 @@ const DocumentArchiveTable = () => {
 							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return null
+				return column
 			},
 		},
 		{
 			dataField: 'assignedUser',
 			text: 'Assigned User',
 			sort: true,
-			sortCaret: (order) => {
+			sortCaret: (order, column) => {
 				if (!order)
 					return (
 						<span>
@@ -255,7 +255,7 @@ const DocumentArchiveTable = () => {
 							<Image src={selectIcon} className='rotational'></Image>
 						</span>
 					)
-				return null
+				return column
 			},
 		},
 		{
